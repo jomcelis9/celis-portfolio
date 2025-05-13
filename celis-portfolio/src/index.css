@@ -1,6 +1,50 @@
+
+@font-face {
+  font-family: "ClashDisplay-Variable";
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("./assets/fonts/ClashDisplay-Variable.ttf") format("truetype");
+
+}
+
+@font-face {
+
+  font-family: "EbGaramond-VariableFont_wght";
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("./assets/fonts/EBGaramond-VariableFont_wght.ttf") format("truetype");
+
+}
+
+@font-face {
+
+  font-family: "Satoshi-Variable";
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("./assets/fonts/Satoshi-Variable.ttf") format("truetype");
+
+}
+
+
+
+@theme{
+  --font-Clash: "ClashDisplay-Variable", "sans-serif";
+  --font-Garamond: "EbGaramond-VariableFont_wght", "sans-serif";
+  --font-Satoshi: "Satoshi-Variable", "sans-serif";
+}
+
+
+
 @import "tailwindcss";
 
+  
 :root {
+
+  --font-ClashDisplay-Regular: "Regular", sans-serif;
+
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;

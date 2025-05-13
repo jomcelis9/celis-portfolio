@@ -1,9 +1,9 @@
+import "../index.css";
+
 export default function Home(){
     return(
-        <div>
-            <h1 className="text-3xl font-bold underline">
-            Home Page
-            </h1>
+        <div className="font-Garamond text-8xl font-semibold">
+            Jomari Celis
         </div>
     )
 }
