@@ -28,12 +28,12 @@
 
 }
 
-
-
 @theme{
   --font-Clash: "ClashDisplay-Variable", "sans-serif";
   --font-Garamond: "EbGaramond-VariableFont_wght", "sans-serif";
   --font-Satoshi: "Satoshi-Variable", "sans-serif";
+  --color-jomsGray: #3B3939;
+  
 }
 
 
