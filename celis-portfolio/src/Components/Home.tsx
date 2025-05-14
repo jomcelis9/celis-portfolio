@@ -2,9 +2,9 @@ import "../index.css";
 import profileImage from "../assets/Images/Placeholder1.png";
 export default function Home(){
     return(
-        <div className=" border h-screen items-center font-Garamond flex flex-col bg-radial from-white to-zinc-900 to-250% h-full">
+        <div className=" border h-screen items-center font-Garamond flex flex-col bg-radial from-white to-zinc-850 to-250% h-full">
             <div className="pt-16">
-                <p className="text-jomsGray text-9xl    font-semibold">Jomari Celis</p>
+                <p className="text-jomsGray text-8xl    font-semibold">Jomari Celis</p>
             </div>
 
             <div className="bottom-0 absolute">
