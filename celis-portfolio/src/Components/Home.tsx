@@ -8,7 +8,7 @@ export default function Home(){
                 <p className= "text-center text-slate-50 text-9xl font-regular ">Jomari Celis</p>
             </div>
 
-            <div className="grid grid-cols-2 border items-center text-white m-5 p-5">
+            <div className="grid grid-cols-2 border items-center text-white m-10 p-5">
                 <div className="border m-5 p-5">
 
                     Left border
