@@ -2,14 +2,26 @@ import "../index.css";
 import profileImage from "../assets/Images/Placeholder1.png";
 export default function Home(){
     return(
-        <div className=" border h-screen items-center font-Garamond flex flex-col bg-radial from-white to-zinc-900 to-300% h-full">
-            <div className="pt-16">
-                <p className="text-jomsGray text-8xl font-semibold">Jomari Celis</p>
+    <div className="absolute inset-0 -z-10 h-full w-full bg-slate-900 bg-[linear-gradient(to_right,rgba(240,240,240,0.2)_0px,transparent_1px),linear-gradient(to_bottom,rgba(240,240,240,0.2)_0px,transparent_1px)] bg-[size:18rem_12rem] bg-[position:center] flex-col items-center">
+
+            <div className=" pt-16 font-Clash">
+                <p className= "text-center text-slate-50 text-9xl font-regular ">Jomari Celis</p>
             </div>
 
-            <div className="bottom-0 absolute">
-            <img className="h-auto w-xl" src={profileImage} alt="Placeholder "/>
+            <div className="grid grid-cols-2 border items-center text-white m-5 p-5">
+                <div className="border m-5 p-5">
+
+                    Left border
+                    
+                </div>
+
+                <div className="border m-5 p-5">
+
+                Right border
+
+                </div>
             </div>
+
         </div>
     )   
 }
