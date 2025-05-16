@@ -36,6 +36,15 @@
   --text-BigAss: 15rem;  
 }
 
+#meshCircles > div{
+margin: 1rem;
+padding: 1rem;
+}
+
+#meshCircles > div> h3{
+  margin-top: 1rem;
+}
+
 
 
 
