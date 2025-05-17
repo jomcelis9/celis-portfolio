@@ -2,7 +2,7 @@ import "../index.css";
 import profileImage from "../assets/Images/Placeholder1.png";
 import meshCircle from "../assets/Images/Mesh Circle.svg";
 import meshCircle2 from "../assets/Images/Mesh Circle2.svg";
-import {motion, vw} from "motion/react"
+import {motion, MotionConfig, vw} from "motion/react"
 
 
 export default function Home(){
@@ -19,6 +19,9 @@ export default function Home(){
                 <p className="text-center text-slate-50 text-xl font-regular">pick a jom!</p>
             </div>
 
+            <MotionConfig>
+                
+            </MotionConfig>
             <div id="meshCircles" className="flex justify-center items-center gap-x-10 text-white mt-5">
                     {/* Orange Circle */}
                     <div className="flex flex-col items-center">
@@ -27,14 +30,12 @@ export default function Home(){
                                 className="lg:w-180 md:w-100" 
                                 src={meshCircle2} 
                                 initial={{ 
-                                    rotate: 0,
                                     x: "58%"
                                 }} 
                                 animate={{ 
-                                    rotate: 360,
                                     x: "0"
                                 }} 
-                                transition={{ delay:2, duration: 2, ease: "easeInOut" }}
+                                transition={{ delay:2, duration: 2, ease: "linear" }}
                             />  
                         </div>
 
@@ -50,14 +51,14 @@ export default function Home(){
                                     className="lg:w-180 md:w-100" 
                                     src={meshCircle} 
                                     initial={{ 
-                                        rotate: 0,
+                                        
                                         x: "-56.45%"
                                     }} 
                                     animate={{ 
-                                        rotate: 360,
+                                        opacity:"100%",
                                         x: "0"
                                     }} 
-                                    transition={{ delay:2, duration: 2, repeat:"Infinity" }}
+                                    transition={{ delay:2, duration: 2, ease: "linear" }}
                                 />  
                             </div>
 
@@ -82,7 +83,6 @@ export default function Home(){
                             </svg>
                         </div>
                 </div>
-
             </div>
 
 
