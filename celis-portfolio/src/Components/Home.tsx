@@ -9,7 +9,7 @@ import { div } from "motion/react-m";
 export default function Home(){
     return(
     <div className="bg-slate-900">
-        <motion.div initial={{opacity:"0%"}} transition={{duration:2, ease:easeIn}} animate={{opacity:"100%"}} className="min-h-screen w-full bg-slate-900 bg-[linear-gradient(to_right,rgba(240,240,240,0.2)_0px,transparent_1px),linear-gradient(to_bottom,rgba(240,240,240,0.2)_0px,transparent_1px)] bg-[size:18rem_12rem] bg-[position:center] items-center">
+        <motion.div initial={{opacity:"0%"}} transition={{duration:1, ease:easeIn}} animate={{opacity:"100%"}} className="min-h-screen w-full bg-slate-900 bg-[linear-gradient(to_right,rgba(240,240,240,0.2)_0px,transparent_1px),linear-gradient(to_bottom,rgba(240,240,240,0.2)_0px,transparent_1px)] bg-[size:18rem_12rem] bg-[position:center] items-center">
             <div className=" pt-8 font-Clash mb-2">
                     <p className= "text-center text-slate-50 lg:text-7xl sm:text-5xl font-regular ">Jomari Celis</p>
             </div>    
