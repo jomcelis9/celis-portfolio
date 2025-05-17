@@ -34,7 +34,7 @@ export default function Home(){
                                     rotate: 360,
                                     x: "0"
                                 }} 
-                                transition={{ delay:2, duration: 2, ease: "linear" }}
+                                transition={{ delay:2, duration: 2, ease: "easeInOut" }}
                             />  
                         </div>
 
@@ -51,13 +51,13 @@ export default function Home(){
                                     src={meshCircle} 
                                     initial={{ 
                                         rotate: 0,
-                                        x: "-56%"
+                                        x: "-56.45%"
                                     }} 
                                     animate={{ 
                                         rotate: 360,
                                         x: "0"
                                     }} 
-                                    transition={{ delay:2, duration: 2, ease: "linear" }}
+                                    transition={{ delay:2, duration: 2, repeat:"Infinity" }}
                                 />  
                             </div>
 
