@@ -4,6 +4,7 @@ import meshCircle from "../assets/Images/Mesh Circle.svg";
 import meshCircle2 from "../assets/Images/Mesh Circle2.svg";
 import {easeIn, easeInOut, easeOut, motion, MotionConfig, spring} from "motion/react"
 import { div } from "motion/react-m";
+import { delay } from "motion";
 
 
 export default function Home(){
@@ -22,7 +23,7 @@ export default function Home(){
                     <MotionConfig 
                     transition={{delay:2, duration: 2, ease: easeInOut}}>
 
-                        <div id="meshCircles" className="flex justify-center items-center gap-x-10 text-white mt-5">
+                        <div id="meshCircles" className="flex flex-col md:flex-row justify-center items-center gap-x-10 text-white mt-5">
                                 {/* Orange Circle */}
                                 <div className="flex flex-col items-center">
                                     <div>
@@ -39,9 +40,13 @@ export default function Home(){
                                             }} 
                                         />  
                                     </div>
-                                        <div className="absolute text-center font-Clash lg:text-7xl md:text-6xl sm:text-5xl lg:bottom-20 m-5 z-10">
+                                        <motion.div className="absolute text-center font-Clash lg:text-7xl md:text-6xl sm:text-5xl lg:bottom-20 m-5 z-10"
+                                        initial={{opacity:0}}
+                                        animate={{opacity:1}}
+                                        transition={{delay: 3, duration:1, ease:"easeInOut"}}
+                                        >
                                             <p>Multimedia <br /> Portfolio</p>
-                                        </div> 
+                                        </motion.div> 
                                     </div>
 
                                     {/* Blue Circle  */}
@@ -61,16 +66,19 @@ export default function Home(){
                                             />  
                                         </div>
 
-                                        <div className="absolute text-center font-Clash lg:text-7xl md:text-6xl  sm:text-xl lg:bottom-20 m-5 z-10">
+                                        <motion.div className="absolute text-center font-Clash lg:text-7xl md:text-6xl  sm:text-xl lg:bottom-20 m-5 z-10"
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        transition={{delay: 3, duration: 1, ease: "easeInOut"}}
+                                        >
                                             <p>Programming <br /> Portfolio</p>
-                                        </div> 
+                                        </motion.div> 
                                     </div>
 
-                                    <div className="absolute left-1/2 transform -translate-x-1/2 col-span-2 w-178.5 z-20">
-                                        <svg className="w-165" viewBox="0 0 984 982" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <svg className="lg:w-165 absolute sm:50 " viewBox="0 0 984 982" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <motion.circle
-                                                initial={{pathLength:0}} 
-                                                whileInView={{pathLength:1}}
+                                                initial={{ pathLength:0 }} 
+                                                whileInView={{ pathLength:1 }}
                                                 transition={{
                                                     duration: 2,
                                                     ease: 'easeInOut'
@@ -80,7 +88,6 @@ export default function Home(){
                                                 r="491" 
                                                 stroke="#F8FAFC"/>
                                         </svg>  
-                                    </div>
                         </div>
 
                     </MotionConfig>
