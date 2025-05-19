@@ -75,7 +75,7 @@ export default function Home(){
                                         </motion.div> 
                                     </div>
 
-                                        <svg className="lg:w-165 absolute sm:50 " viewBox="0 0 984 982" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <svg className="absolute lg:w-165    sm:50 " viewBox="0 0 984 982" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <motion.circle
                                                 initial={{ pathLength:0 }} 
                                                 whileInView={{ pathLength:1 }}
