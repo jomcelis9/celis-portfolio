@@ -72,7 +72,7 @@ export default function Home(){
                                         <motion.img
                                             
                                             id="orangeCircle" 
-                                            initial= {{opacity:0, x:"57.5%"}}
+                                            initial= {{opacity:0, x:"50%"}}
                                             className="lg:w-180 md:w-100" 
                                             src={meshCircle2} 
                                         />  
@@ -92,7 +92,7 @@ export default function Home(){
                                             <motion.img
                                                 
                                                 id="blueCircle"
-                                                initial= {{ opacity: 0, x: "-57%" }}
+                                                initial= {{ opacity: 0, x: "-50%" }}
                                                 className="lg:w-180 md:w-100" 
                                                 src={meshCircle} 
                                                 onClick={handleClick}
