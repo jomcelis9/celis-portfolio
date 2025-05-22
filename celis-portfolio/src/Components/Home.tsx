@@ -57,7 +57,7 @@ export default function Home(){
                                         <motion.img
                                             
                                             id="orangeCircle" 
-                                            initial= {{opacity:0, x:"58%"}}
+                                            initial= {{opacity:0, x:"57.5%"}}
                                             className="lg:w-180 md:w-100" 
                                             src={meshCircle2} 
                                         />  
@@ -77,7 +77,7 @@ export default function Home(){
                                             <motion.img
                                                 
                                                 id="blueCircle"
-                                                initial= {{ opacity: 0, x: "-56.45%" }}
+                                                initial= {{ opacity: 0, x: "-57%" }}
                                                 className="lg:w-180 md:w-100" 
                                                 src={meshCircle} 
                                             />  
