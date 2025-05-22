@@ -13,6 +13,8 @@ import {useEffect, useState} from "react";
 
 export default function Home(){
 
+    const [isClicked, setIsClick] = useState(false);
+
     const [scope, animate] = useAnimate();
     
      useEffect( () => {
@@ -26,8 +28,8 @@ export default function Home(){
      };
 
      const entranceAnimationOrange = async () => {
-    await animate("#orangeCircle", { opacity: 1 }, { duration: 3, ease: easeInOut });
-    await animate("#orangeCircle", { x: 0 }, {duration: 3, ease: easeInOut})
+        await animate("#orangeCircle", { opacity: 1 }, { duration: 3, ease: easeInOut });
+        await animate("#orangeCircle", { x: 0 }, {duration: 3, ease: easeInOut})
 
      }
 
@@ -36,13 +38,26 @@ export default function Home(){
 
      },[animate, scope]);
 
+     const handleClick = () =>{
+        setIsClick(true)
+
+        animate("#blueCircle", {x: "-57%", scale: 1.3}, {duration: 3})
+        
+        animate("#orangeCircleClass", { opacity: 0 }, {duration: 3})
+
+        animate("#myName", { opacity: 0 })
+
+
+
+     }
+
      
 
     return(
-    <div className="bg-slate-900">
+    <div ref={scope}  className="bg-slate-900 relative">
         <motion.div initial={{opacity:"0%"}} transition={{duration:1, ease:easeIn}} animate={{opacity:"100%"}} className="min-h-screen w-full bg-slate-900 bg-[linear-gradient(to_right,rgba(240,240,240,0.2)_0px,transparent_1px),linear-gradient(to_bottom,rgba(240,240,240,0.2)_0px,transparent_1px)] bg-[size:18rem_12rem] bg-[position:center] items-center">
             <div className=" pt-8 font-Clash mb-2">
-                    <p className= "text-center text-slate-50 lg:text-7xl sm:text-5xl font-regular ">Jomari Celis</p>
+                    <p id="myName" className= "text-center text-slate-50 lg:text-7xl sm:text-5xl font-regular ">Jomari Celis</p>
             </div>    
                 <div className="mx-5"> 
 
@@ -50,9 +65,9 @@ export default function Home(){
                         <p className="text-center text-slate-50 text-xl font-regular">pick a jom!</p>
                     </div>
 
-                        <div ref={scope} id="meshCircles" className="flex flex-col md:flex-row justify-center items-center gap-x-10 text-white mt-5">
+                        <div id="meshCircles" className="flex flex-col md:flex-row justify-center items-center gap-x-10 text-white mt-5">
                                 {/* Orange Circle */}
-                                <div className="flex flex-col items-center relative">
+                                <div id="orangeCircleClass" className="flex flex-col items-center relative">
                                     <div>
                                         <motion.img
                                             
@@ -80,6 +95,8 @@ export default function Home(){
                                                 initial= {{ opacity: 0, x: "-57%" }}
                                                 className="lg:w-180 md:w-100" 
                                                 src={meshCircle} 
+                                                onClick={handleClick}
+
                                             />  
                                         </div>
 
