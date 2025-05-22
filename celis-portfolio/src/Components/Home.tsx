@@ -21,8 +21,9 @@ export default function Home(){
 
 
      const entranceAnimationBlue = async () => {
-        
-      await animate("#blueCircle", { opacity: 1}, { duration: 3, ease: easeInOut });
+
+         animate("#blueCircle", { rotate: 360 }, { duration: 30, ease: "linear", repeat: Infinity });
+    await animate("#blueCircle", { opacity: 1 }, { duration: 3, ease: easeInOut });
       await animate("#blueCircle", { x: 0 }, {duration: 3, ease: easeInOut})
 
      };
@@ -41,7 +42,7 @@ export default function Home(){
      const handleClick = () =>{
         setIsClick(true)
 
-        animate("#blueCircle", {x: "-58%", filter: "blur(25px)" ,scale: 1.5}, {duration: 3})
+        animate("#blueCircle", {x: "-58%", filter: "blur(25px)" ,scale: 2}, {duration: 3})
         
         animate("#orangeCircleClass", { opacity: 0 }, {duration: 3})
 
