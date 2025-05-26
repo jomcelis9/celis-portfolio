@@ -41,25 +41,15 @@ export default function Home(){
      const handleClickBlue = () => {
         setIsClick(true)
         animate("#blueWrapper", {x: "-58%", scale: 2}, {duration: 3})
-        animate("#blueWrapper", {filter: "blur(25px)"}, {duration: 3, delay:2.5, ease:easeOut})
+        animate("#blueWrapper", {filter: "blur(15px)"}, {duration: 3, delay:2.5, ease:easeOut})
         animate("#orangeCircleClass", { opacity: 0 }, {duration: 3})
         animate("#myName", { opacity: 0 })
      };
-
-     const whiteCircleAnimation = () =>{
-
-        animate("#whiteCircle", {pathLength:1}, {duration:3, ease:easeInOut })
-
-     }
 
      const whiteCircleVariants = {
           entrance: { pathLength: 1 },
           exit: {pathLength: 0}
      };
-
-      
-
-     
 
     return(
     <div ref={scope}  className="bg-slate-900 bg-cover fixed">
@@ -104,7 +94,7 @@ export default function Home(){
 
                                         <motion.div className="absolute text-center font-Clash lg:text-7xl md:text-6xl  sm:text-xl lg:bottom-20 m-5 z-10"
                                         initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
+                                        animate={isClicked ? {opacity:0} : {opacity:1}}
                                         transition={{delay: 3, duration: 1, ease: "easeInOut"}}
                                         >
                                             <p>Programming <br /> Portfolio</p>
@@ -115,7 +105,7 @@ export default function Home(){
                                             <motion.circle
                                                 initial={{ pathLength:0 }} 
                                                 variants={whiteCircleVariants}
-                                                whileInView={isClicked ? "entrance" : "exit"}
+                                                animate={isClicked ? "exit" : "entrance"}
                                                 transition={{
                                                     duration: 2,
                                                     ease: 'easeInOut'
