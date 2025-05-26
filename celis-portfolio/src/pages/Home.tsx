@@ -1,17 +1,20 @@
 import "../index.css";
-import profileImage from "../assets/Images/Placeholder1.png";
 import meshCircle from "../assets/Images/Mesh Circle.svg";
 import meshCircle2 from "../assets/Images/Mesh Circle2.svg";
-import {easeIn, easeInOut, easeOut, motion, MotionConfig, spring} from "motion/react"
-import { div } from "motion/react-m";
-import { delay } from "motion";
-import { useAnimate } from "motion/react";
+import {easeIn, easeInOut, easeOut, motion} from "motion/react"
+import { useAnimate, AnimatePresence } from "motion/react";
 import {useEffect, useState} from "react";
+import { NavLink, useNavigate } from "react-router";
+
 
 
 
 
 export default function Home(){
+
+    const navigate = useNavigate();
+
+    const [isExiting, setIsExiting] = useState(false);
 
     const [isClicked, setIsClick] = useState(false);
 
@@ -21,7 +24,7 @@ export default function Home(){
 
 
      const entranceAnimationBlue = async () => {
-         animate("#blueCircle", { rotate: 360 }, { duration: 30, ease: "linear", repeat: Infinity });
+        //  animate("#blueCircle", { rotate: 360 }, { duration: 30, ease: "linear" });
         await animate("#blueCircle", { opacity: 1 }, { duration: 3, ease: easeInOut });
          await animate("#blueCircle", { x: 0 }, {duration: 3, ease: easeIn})
 
@@ -38,13 +41,49 @@ export default function Home(){
 
      },[animate, scope]);
 
-     const handleClickBlue = () => {
-        setIsClick(true)
-        animate("#blueWrapper", {x: "-58%", scale: 2}, {duration: 3})
-        animate("#blueWrapper", {filter: "blur(15px)"}, {duration: 3, delay:2.5, ease:easeOut})
-        animate("#orangeCircleClass", { opacity: 0 }, {duration: 3})
-        animate("#myName", { opacity: 0 })
-     };
+    const handleClickBlue = async () => {
+        setIsClick(true);
+        
+        try {
+                animate("#orangeCircleClass", 
+                { 
+                    opacity: 0 
+                }, 
+                { 
+                    duration: 1 ,
+                    delay: 3
+                },
+            ),
+
+            // First animation group
+            await animate("#blueWrapper", { 
+                x: "-58%", 
+                scale: 2 
+            }, { 
+                duration: 3 
+            })
+            
+            // Second animation group
+            await Promise.all([
+                animate("#blueWrapper", { 
+                    filter: "blur(15px)" 
+                }, { 
+                    duration: 3, 
+                    ease: easeOut 
+                })
+            ]);
+
+            // Add delay before navigation
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            // Navigate to next page
+            navigate("/Programming");
+            
+        } catch (error) {
+            console.error("Animation error:", error);
+        }
+    };
+
 
      const whiteCircleVariants = {
           entrance: { pathLength: 1 },
@@ -79,27 +118,26 @@ export default function Home(){
                                     </div>
 
                                     {/* Blue Circle  */}
-                                    <div className="flex flex-col items-center relative">
+                                    <div className="flex flex-col items-center relative cursor-pointer" onClick={handleClickBlue}>
                                         <div id="blueWrapper">
                                             <motion.img
-                                                
-                                                id="blueCircle"
-                                                initial= {{ opacity: 0, x: "-50vh" }}
-                                                className="lg:w-180 md:w-10" 
-                                                src={meshCircle} 
-                                                onClick={handleClickBlue}
-
-                                            />  
+                                            id="blueCircle"
+                                            initial={{ opacity: 0, x: "-50vh" }}
+                                            className="lg:w-180 md:w-10"
+                                            src={meshCircle}
+                                            />
                                         </div>
 
-                                        <motion.div className="absolute text-center font-Clash lg:text-7xl md:text-6xl  sm:text-xl lg:bottom-20 m-5 z-10"
-                                        initial={{ opacity: 0 }}
-                                        animate={isClicked ? {opacity:0} : {opacity:1}}
-                                        transition={{delay: 3, duration: 1, ease: "easeInOut"}}
+                                        <motion.div
+                                            className="absolute text-center font-Clash lg:text-7xl md:text-6xl sm:text-xl lg:bottom-20 m-5 z-10"
+                                            initial={{ opacity: 0 }}
+                                            animate={isClicked ? { opacity: 0 } : { opacity: 1 }}
+                                            transition={{ delay: 3, duration: 1, ease: "easeInOut" }}
                                         >
                                             <p>Programming <br /> Portfolio</p>
-                                        </motion.div> 
+                                        </motion.div>
                                     </div>
+
 
                                         <svg id="whiteCircle" className="lg:w-165 absolute sm:50 " viewBox="0 0 984 982" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <motion.circle
