@@ -115,7 +115,7 @@ export default function Home(){
                                         >
                                             <p>Multimedia <br /> Portfolio</p>
                                         </motion.div> 
-                                    </div>
+                                </div>
 
                                     {/* Blue Circle  */}
                                     <div className="flex flex-col items-center relative cursor-pointer" onClick={handleClickBlue}>
