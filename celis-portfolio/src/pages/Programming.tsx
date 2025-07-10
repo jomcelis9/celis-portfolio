@@ -46,7 +46,24 @@ export default function Programming(){
                                 <p>Programming <br /> Portfolio</p>
                             </motion.div>
                         </div>
+
+                                    <div className="absolute z-10 m-5 p-5 font-Clash text-9xl text-white ">
+
+                <p>Hello I'm Jom!,
+                    <br />
+                    <p className="text-7xl">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto, iusto! 
+                    Veritatis iusto sit quasi asperiores quos harum. 
+                    Delectus nisi doloremque tempore. Quidem odio voluptatum natus saepe eum ducimus sed quaerat?
+                    </p>
+
+                </p>
+
+
+            </div>
                 </div>
+
+                
             </div>
         </motion.div>
     </div>
