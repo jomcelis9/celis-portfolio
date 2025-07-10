@@ -3,9 +3,9 @@ import { createRoot } from 'react-dom/client'
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router";
 import App from './App.tsx'
-import Home from './Components/Home.tsx'
-import Programming from './Components/Programming.tsx'
-import Multimedia from './Components/Multimedia.tsx';
+import Home from './pages/Home.tsx'
+import Programming from './pages/Programming.tsx'
+import Multimedia from './pages/Multimedia.tsx';
 
 
 createRoot(document.getElementById('root')!).render(
