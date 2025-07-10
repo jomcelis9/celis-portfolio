@@ -58,7 +58,7 @@ export default function Home(){
             // First animation group
             await animate("#blueWrapper", { 
                 x: "-58%", 
-                scale: 2 
+                scale: 2
             }, { 
                 duration: 3 
             })
