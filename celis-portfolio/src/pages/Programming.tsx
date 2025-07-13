@@ -1,5 +1,6 @@
 import "../index.css";
 import meshCircle from "../assets/Images/Mesh Circle.svg";
+import meshCircle2 from "../assets/Images/Mesh Circle2.svg";
 import { motion } from "motion/react";
 
 export default function Programming() {
@@ -67,7 +68,7 @@ export default function Programming() {
         <section className="flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash">
           <div className="flex flex-row max-w-3xl text-left">
             <div>
-              <h2 className="text-5xl mb-8">About Me</h2>
+              <h2 className="text-5xl mb-8">Who I am</h2>
               <p className="text-lg">
                 I’m Jom, a passionate developer who loves building immersive
                 digital experiences. Whether I’m crafting sleek front-end
@@ -76,11 +77,22 @@ export default function Programming() {
                 learning new technologies and creating inspiring projects.
               </p>
             </div>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque,
-            dignissimos repellendus reprehenderit debitis nobis minima quidem?
-            Aperiam odio, quisquam reprehenderit tempora, dolor amet accusamus
-            quas earum velit illo, sed ipsum?
-            <div></div>
+            <img src={meshCircle2} className="w-100" alt="" />
+          </div>
+        </section>
+
+        <section className="flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash">
+          <div className="flex flex-row max-w-3xl text-left">
+            <div>
+              <h2 className="text-5xl mb-8">My Skills</h2>
+              <p className="text-lg">
+                I’m Jom, a passionate developer who loves building immersive
+                digital experiences. Whether I’m crafting sleek front-end
+                interfaces or experimenting with creative animations, I strive
+                for clean code and compelling visuals. Outside coding, I enjoy
+                learning new technologies and creating inspiring projects.
+              </p>
+            </div>
           </div>
         </section>
       </main>
