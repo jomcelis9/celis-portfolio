@@ -13,10 +13,14 @@ export default function Programming() {
           scale: 1.2,
           filter: "blur(15px)",
         }}
+        animate={{
+          opacity: 0.5,
+          scale: 1.1,
+        }}
         transition={{
           duration: 5,
-          repeat: Infinity,
-          repeatType: "mirror",
+          //   repeat: Infinity,
+          //   repeatType: "mirror",
         }}
         className="
           fixed
@@ -82,16 +86,49 @@ export default function Programming() {
             <div>
               <h2 className="text-5xl mb-8">My Skills</h2>
               <p className="text-lg">
-                I’m Jom, a passionate developer who loves building immersive
-                digital experiences. Whether I’m crafting sleek front-end
-                interfaces or experimenting with creative animations, I strive
-                for clean code and compelling visuals. Outside coding, I enjoy
-                learning new technologies and creating inspiring projects.
+                <div className="flex flex gap-5">
+                  <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/80 bg-gradient-to-b from-white/60 to-white/30 p-4 transition-[transform,border,background-color] duration-300 hover:scale-110 hover:border-[rgb(70,71,77)] hover:bg-[rgb(33,34,36)] md:h-[70px] md:w-[70px]">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
+                      className="w-10"
+                    />
+                  </span>
+
+                  <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/80 bg-gradient-to-b from-white/60 to-white/30 p-4 transition-[transform,border,background-color] duration-300 hover:scale-110 hover:border-[rgb(70,71,77)] hover:bg-[rgb(33,34,36)] md:h-[70px] md:w-[70px]">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
+                      className="w-10"
+                    />
+                  </span>
+
+                  <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/80 bg-gradient-to-b from-white/60 to-white/30 p-4 transition-[transform,border,background-color] duration-300 hover:scale-110 hover:border-[rgb(70,71,77)] hover:bg-[rgb(33,34,36)] md:h-[70px] md:w-[70px]">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
+                      className="w-10"
+                    />
+                  </span>
+
+                  <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/80 bg-gradient-to-b from-white/60 to-white/30 p-4 transition-[transform,border,background-color] duration-300 hover:scale-110 hover:border-[rgb(70,71,77)] hover:bg-[rgb(33,34,36)] md:h-[70px] md:w-[70px]">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
+                      className="w-10"
+                    />
+                  </span>
+                </div>
               </p>
             </div>
           </div>
         </section>
       </main>
+
+      {/* <section>
+        <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/80 bg-gradient-to-b from-white/60 to-white/30 p-4 transition-[transform,border,background-color] duration-300 hover:scale-110 hover:border-[rgb(70,71,77)] hover:bg-[rgb(33,34,36)] md:h-[70px] md:w-[70px]">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
+            className="w-10"
+          />
+        </span>{" "}
+      </section> */}
     </div>
   );
 }
