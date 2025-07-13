@@ -99,12 +99,12 @@ export default function Home() {
   };
 
   return (
-    <div ref={scope} className="bg-slate-900 bg-cover fixed">
+    <div ref={scope} className="bg-slate-950 bg-cover fixed">
       <motion.div
         initial={{ opacity: "0%" }}
         transition={{ duration: 1, ease: "easeInOut" }}
         animate={{ opacity: "100%" }}
-        className="min-h-screen w-full bg-slate-900 bg-[linear-gradient(to_right,rgba(240,240,240,0.2)_0px,transparent_1px),linear-gradient(to_bottom,rgba(240,240,240,0.2)_0px,transparent_1px)] bg-[size:18rem_12rem] bg-[position:center] items-center"
+        className="min-h-screen w-full bg-slate-950 "
       >
         <div className="pt-8 mb-2"></div>
         <div className="mx-5">
