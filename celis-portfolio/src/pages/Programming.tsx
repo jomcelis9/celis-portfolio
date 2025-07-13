@@ -13,10 +13,6 @@ export default function Programming() {
           scale: 1.2,
           filter: "blur(15px)",
         }}
-        animate={{
-          opacity: 0.5,
-          scale: 1,
-        }}
         transition={{
           duration: 5,
           repeat: Infinity,

@@ -62,7 +62,7 @@ export default function Home() {
           "#blueWrapper",
           {
             x: "-58%",
-            scale: 2,
+            scale: 1.95,
           },
           {
             duration: 3,
@@ -74,7 +74,7 @@ export default function Home() {
         animate(
           "#blueWrapper",
           {
-            filter: "blur(15px)",
+            filter: "blur(8px)",
           },
           {
             duration: 3,
