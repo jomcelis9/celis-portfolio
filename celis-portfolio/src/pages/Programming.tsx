@@ -1,72 +1,134 @@
 import "../index.css";
 import meshCircle from "../assets/Images/Mesh Circle.svg";
 import meshCircle2 from "../assets/Images/Mesh Circle2.svg";
-import {easeIn, easeInOut, easeOut, motion} from "motion/react"
-import { useAnimate, AnimatePresence } from "motion/react";
-import {useEffect, useState} from "react";
-import { NavLink, useNavigate } from "react-router";
+import { motion } from "motion/react";
 
-export default function Programming(){
+export default function Programming() {
+  return (
+    <div className="relative w-full min-h-screen bg-slate-950 overflow-x-hidden">
+      {/* Fixed Blue Circle */}
+      <motion.img
+        initial={{
+          opacity: 1,
+          scale: 1.2,
+          filter: "blur(15px)",
+        }}
+        animate={{
+          opacity: 0.5,
+          scale: 1.1,
+        }}
+        transition={{
+          duration: 5,
+          //   repeat: Infinity,
+          //   repeatType: "mirror",
+        }}
+        className="
+            fixed
+            top-1/2
+            left-1/2
+            -translate-x-1/2
+            -translate-y-1/2
+            w-[80vw]
+            max-w-[1000px]
+            z-0
+            pointer-events-none
+            mix-blend-screen
+            "
+        src={meshCircle}
+        alt="Blue Mesh Circle"
+      />
 
-    return(
-    <div className="bg-slate-900 bg-cover fixed" >
-        <motion.div initial={{opacity:"0%"}} transition={{duration:0.3, ease:"easeInOut"}} animate={{opacity:"100%"}} 
-        className="min-h-screen w-full bg-slate-900 bg-[linear-gradient(to_right,rgba(240,240,240,0.2)_0px,transparent_1px),linear-gradient(to_bottom,rgba(240,240,240,0.2)_0px,transparent_1px)] bg-[size:18rem_12rem] bg-[position:center] items-center">   
-            <div className="pt-8 font-Clash mb-2">
-            </div>    
-            <div className="mx-5">
-                <div id="meshCircles" className="flex flex-col md:flex-row justify-center items-center gap-x-10 text-white mt-5">
-                        {/* Orange Circle */}
-                        <div id="orangeCircleClass" className="flex flex-col items-center relative">
-                            <div>
-                                <motion.img
-                                    id="orangeCircle" 
-                                    initial= {{opacity:0, x:"50vh"}}
-                                    className="lg:w-180 md:w-100" 
-                                    src={meshCircle2} 
-                                />  
-                            </div>
-                        </div>
+      {/* Fixed Background Grid */}
+      <div
+        className="
+            fixed inset-0
+            bg-[linear-gradient(to_right,rgba(240,240,240,0.1)_1px,transparent_1px),
+                linear-gradient(to_bottom,rgba(240,240,240,0.1)_1px,transparent_1px)]
+            bg-[size:18rem_12rem]
+            z-10
+            "
+      />
 
-                        {/* Blue Circle  */}
-                        <div className="flex flex-col items-center relative cursor-pointer">
-                            <div id="blueWrapper">
-                                <motion.img
-                                id="blueCircle"
-                                initial={{ opacity: 1, x: "-50vh", scale: 2, filter: "blur(15px)"}}
-                                className="lg:w-180 md:w-10"
-                                src={meshCircle}
-                                />
-                            </div>
+      {/* Main Page Content */}
+      <main className="relative z-20">
+        {/* Hero Section */}
+        <motion.section
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash"
+        >
+          <div className="max-w-4xl text-left">
+            <p className="text-8xl ">Hello, I'm Jom!</p>
+            <p className="text-xl"> Full-stack Developer</p>
+          </div>
+        </motion.section>
 
-                            <motion.div
-                                className="absolute text-center font-Clash lg:text-7xl md:text-6xl sm:text-xl lg:bottom-20 m-5 z-10"
-                                initial={{ opacity: 0}}
-                            >
-                                <p>Programming <br /> Portfolio</p>
-                            </motion.div>
-                        </div>
-
-                                    <div className="absolute z-10 m-5 p-5 font-Clash text-9xl text-white ">
-
-                <p>Hello I'm Jom!,
-                    <br />
-                    <p className="text-7xl">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto, iusto! 
-                    Veritatis iusto sit quasi asperiores quos harum. 
-                    Delectus nisi doloremque tempore. Quidem odio voluptatum natus saepe eum ducimus sed quaerat?
-                    </p>
-
-                </p>
-
-
+        {/* About Me Section */}
+        <section className="flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash">
+          <div className="flex flex-row max-w-3xl text-left">
+            <div>
+              <h2 className="text-5xl mb-8">Who I am</h2>
+              <p className="text-lg">
+                I’m Jom, a passionate developer who loves building immersive
+                digital experiences. Whether I’m crafting sleek front-end
+                interfaces or experimenting with creative animations, I strive
+                for clean code and compelling visuals. Outside coding, I enjoy
+                learning new technologies and creating inspiring projects.
+              </p>
             </div>
+            <img src={meshCircle2} className="w-100" alt="" />
+          </div>
+        </section>
+
+        <section className="flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash">
+          <div className="flex flex-row max-w-3xl text-left">
+            <div>
+              <h2 className="text-5xl mb-8">My Skills</h2>
+              <p className="text-lg">
+                <div className="flex flex gap-5">
+                  <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/80 bg-gradient-to-b from-white/60 to-white/30 p-4 transition-[transform,border,background-color] duration-300 hover:scale-110 hover:border-[rgb(70,71,77)] hover:bg-[rgb(33,34,36)] md:h-[70px] md:w-[70px]">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
+                      className="w-10"
+                    />
+                  </span>
+
+                  <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/80 bg-gradient-to-b from-white/60 to-white/30 p-4 transition-[transform,border,background-color] duration-300 hover:scale-110 hover:border-[rgb(70,71,77)] hover:bg-[rgb(33,34,36)] md:h-[70px] md:w-[70px]">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
+                      className="w-10"
+                    />
+                  </span>
+
+                  <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/80 bg-gradient-to-b from-white/60 to-white/30 p-4 transition-[transform,border,background-color] duration-300 hover:scale-110 hover:border-[rgb(70,71,77)] hover:bg-[rgb(33,34,36)] md:h-[70px] md:w-[70px]">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
+                      className="w-10"
+                    />
+                  </span>
+
+                  <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/80 bg-gradient-to-b from-white/60 to-white/30 p-4 transition-[transform,border,background-color] duration-300 hover:scale-110 hover:border-[rgb(70,71,77)] hover:bg-[rgb(33,34,36)] md:h-[70px] md:w-[70px]">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
+                      className="w-10"
+                    />
+                  </span>
                 </div>
-
-                
+              </p>
             </div>
-        </motion.div>
-    </div>
+          </div>
+        </section>
+      </main>
 
-    )   
+      {/* <section>
+            <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/80 bg-gradient-to-b from-white/60 to-white/30 p-4 transition-[transform,border,background-color] duration-300 hover:scale-110 hover:border-[rgb(70,71,77)] hover:bg-[rgb(33,34,36)] md:h-[70px] md:w-[70px]">
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
+                className="w-10"
+            />
+            </span>{" "}
+        </section> */}
+    </div>
+  );
 }
