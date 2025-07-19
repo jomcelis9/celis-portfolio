@@ -3,6 +3,7 @@ import meshCircle from "../assets/Images/Mesh Circle.svg";
 import meshCircle2 from "../assets/Images/Mesh Circle2.svg";
 import { motion, scale, useInView, useScroll } from "motion/react";
 import { useState, useRef } from "react";
+import LogoCard from "../Components/LogoCard";
 
 export default function Programming() {
   const aboutMeRef = useRef(null);
@@ -83,7 +84,7 @@ export default function Programming() {
           whileInView={{
             opacity: 1,
           }}
-          transition={{ duration: 2, ease: "easeOut", delay: 0.5 }}
+          transition={{ duration: 2, ease: "easeOut", delay: 1 }}
           className="flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash"
         >
           <div className="flex flex-row max-w-3xl text-left">
@@ -107,33 +108,8 @@ export default function Programming() {
               <h2 className="text-5xl mb-8">My Skills</h2>
               <p className="text-lg">
                 <div className="flex flex gap-5">
-                  <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/80 bg-gradient-to-b from-white/60 to-white/30 p-4 transition-[transform,border,background-color] duration-300 hover:scale-110 hover:border-[rgb(70,71,77)] hover:bg-[rgb(33,34,36)] md:h-[70px] md:w-[70px]">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
-                      className="w-10"
-                    />
-                  </span>
-
-                  <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/80 bg-gradient-to-b from-white/60 to-white/30 p-4 transition-[transform,border,background-color] duration-300 hover:scale-110 hover:border-[rgb(70,71,77)] hover:bg-[rgb(33,34,36)] md:h-[70px] md:w-[70px]">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
-                      className="w-10"
-                    />
-                  </span>
-
-                  <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/80 bg-gradient-to-b from-white/60 to-white/30 p-4 transition-[transform,border,background-color] duration-300 hover:scale-110 hover:border-[rgb(70,71,77)] hover:bg-[rgb(33,34,36)] md:h-[70px] md:w-[70px]">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
-                      className="w-10"
-                    />
-                  </span>
-
-                  <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/80 bg-gradient-to-b from-white/60 to-white/30 p-4 transition-[transform,border,background-color] duration-300 hover:scale-110 hover:border-[rgb(70,71,77)] hover:bg-[rgb(33,34,36)] md:h-[70px] md:w-[70px]">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
-                      className="w-10"
-                    />
-                  </span>
+                  <LogoCard logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png" />{" "}
+                  <LogoCard logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png" />{" "}
                 </div>
               </p>
             </div>
