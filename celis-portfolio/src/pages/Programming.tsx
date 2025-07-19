@@ -1,13 +1,21 @@
 import "../index.css";
 import meshCircle from "../assets/Images/Mesh Circle.svg";
 import meshCircle2 from "../assets/Images/Mesh Circle2.svg";
-import { motion } from "motion/react";
+import { motion, scale, useInView, useScroll } from "motion/react";
+import { useState, useRef } from "react";
 
 export default function Programming() {
+  const aboutMeRef = useRef(null);
+  const isInView = useInView(aboutMeRef, { amount: 0.5 }); // triggers when 50% is visible
+  const { scrollYProgress } = useScroll();
+
   return (
     <div className="relative w-full min-h-screen bg-slate-950 overflow-x-hidden">
       {/* Fixed Blue Circle */}
       <motion.img
+        style={{
+          scale: scrollYProgress,
+        }}
         initial={{
           opacity: 1,
           scale: 1.2,
@@ -16,6 +24,9 @@ export default function Programming() {
         animate={{
           opacity: 0.5,
           scale: 1.1,
+          filter: isInView
+            ? "blur(15px) brightness(0.5) hue-rotate(160deg)" // Changes color
+            : "blur(15px) brightness(1) hue-rotate(0deg)", // Default color
         }}
         transition={{
           duration: 5,
@@ -65,7 +76,16 @@ export default function Programming() {
         </motion.section>
 
         {/* About Me Section */}
-        <section className="flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash">
+        <motion.section
+          initial={{
+            opacity: 0,
+          }}
+          whileInView={{
+            opacity: 1,
+          }}
+          transition={{ duration: 2, ease: "easeOut", delay: 0.5 }}
+          className="flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash"
+        >
           <div className="flex flex-row max-w-3xl text-left">
             <div>
               <h2 className="text-5xl mb-8">Who I am</h2>
@@ -79,7 +99,7 @@ export default function Programming() {
             </div>
             <img src={meshCircle2} className="w-100" alt="" />
           </div>
-        </section>
+        </motion.section>
 
         <section className="flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash">
           <div className="flex flex-row max-w-3xl text-left">
