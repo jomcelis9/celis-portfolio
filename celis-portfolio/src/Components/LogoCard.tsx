@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import CountUp from "react-countup";
 
-export default function LogoCard({ logo }) {
+export default function LogoCard({ logo, confidence, technology }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -12,9 +13,9 @@ export default function LogoCard({ logo }) {
       <motion.span
         initial={{ opacity: 0 }}
         animate={{ opacity: isHovered ? 1 : 0 }}
-        className="z-10 absolute top-0 left-0 bg-yellow-400 text-white text-xs px-2 py-1"
+        className="z-10 absolute top-0 left-0 bg-yellow-400 text-black text-xs px-2 py-1"
       >
-        React: 100%
+        {technology}: {isHovered ? <CountUp end={confidence} delay={0} /> : ""}
       </motion.span>
       {/* Image behind */}
       <img

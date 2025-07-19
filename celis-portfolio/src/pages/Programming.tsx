@@ -108,8 +108,26 @@ export default function Programming() {
               <h2 className="text-5xl mb-8">My Skills</h2>
               <p className="text-lg">
                 <div className="flex flex gap-5">
-                  <LogoCard logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png" />{" "}
-                  <LogoCard logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png" />{" "}
+                  <LogoCard
+                    logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
+                    confidence={90}
+                    technology={"React"}
+                  />{" "}
+                  <LogoCard
+                    logo="https://dac.digital/wp-content/uploads/2023/04/backend-java-optimized.png"
+                    confidence={90}
+                    technology={"Java"}
+                  />{" "}
+                  <LogoCard
+                    logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
+                    confidence={90}
+                    technology={"React"}
+                  />{" "}
+                  <LogoCard
+                    logo="https://dac.digital/wp-content/uploads/2023/04/backend-java-optimized.png"
+                    confidence={90}
+                    technology={"Java"}
+                  />{" "}
                 </div>
               </p>
             </div>
