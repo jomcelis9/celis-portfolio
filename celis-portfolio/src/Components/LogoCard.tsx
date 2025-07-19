@@ -15,7 +15,7 @@ export default function LogoCard({ logo, confidence, technology }) {
         animate={{ opacity: isHovered ? 1 : 0 }}
         className="z-10 absolute top-0 left-0 bg-yellow-400 text-black text-xs px-2 py-1"
       >
-        {technology}: {isHovered ? <CountUp end={confidence} delay={0} /> : ""}
+        {technology}: {isHovered ? <CountUp end={confidence} delay={0} /> : ""}%
       </motion.span>
       {/* Image behind */}
       <img
