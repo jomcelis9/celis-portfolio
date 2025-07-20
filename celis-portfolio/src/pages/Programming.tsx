@@ -1,40 +1,41 @@
 import "../index.css";
 import meshCircle from "../assets/Images/Mesh Circle.svg";
 import meshCircle2 from "../assets/Images/Mesh Circle2.svg";
-import { motion, scale, useInView, useScroll } from "motion/react";
+import { easeInOut, motion, scale, useInView, useScroll } from "motion/react";
 import { useState, useRef } from "react";
 import LogoCard from "../Components/LogoCard";
+import { delay } from "motion";
 
 export default function Programming() {
   const aboutMeRef = useRef(null);
-  const isInView = useInView(aboutMeRef, { amount: 0.5 }); // triggers when 50% is visible
-  const { scrollYProgress } = useScroll();
+  const mySkillsRef = useRef(null);
+
+  const isAboutMeInView = useInView(aboutMeRef, { amount: 0.5 }); // triggers when 50% is visible
+  const isMySkillsInView = useInView(mySkillsRef, { amount: 0.5 }); // triggers when 50% is visible
 
   return (
     <div className="relative w-full min-h-screen bg-slate-950 overflow-x-hidden">
       {/* Fixed Blue Circle */}
-      <motion.img
-        style={{
-          scale: scrollYProgress,
-        }}
-        initial={{
-          opacity: 1,
-          scale: 1.2,
-          filter: "blur(15px)",
-        }}
-        animate={{
-          opacity: 0.5,
-          scale: 1.1,
-          filter: isInView
-            ? "blur(15px) brightness(0.5) hue-rotate(160deg)" // Changes color
-            : "blur(15px) brightness(1) hue-rotate(0deg)", // Default color
-        }}
-        transition={{
-          duration: 5,
-          //   repeat: Infinity,
-          //   repeatType: "mirror",
-        }}
-        className="
+      <div>
+        <motion.img
+          initial={{
+            opacity: 1,
+            scale: 1.2,
+            filter: "blur(15px)",
+          }}
+          animate={{
+            opacity: 0.5,
+            scale: 1.1,
+            // filter: isInView
+            //   ? "blur(15px) brightness(0.5) hue-rotate(160deg)" // Changes color
+            //   : "blur(15px) brightness(1) hue-rotate(0deg)", // Default color
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            repeatType: "mirror",
+          }}
+          className="
             fixed
             top-1/2
             left-1/2
@@ -42,13 +43,103 @@ export default function Programming() {
             -translate-y-1/2
             w-[80vw]
             max-w-[1000px]
-            z-0
+            z-1
             pointer-events-none
             mix-blend-screen
             "
-        src={meshCircle}
-        alt="Blue Mesh Circle"
-      />
+          src={meshCircle}
+          alt="Blue Mesh Circle"
+        />
+        <div>
+          {/* Ring 1 */}
+          <motion.svg
+            initial={{ opacity: 0, filter: "blur(10px)" }}
+            animate={{ opacity: isAboutMeInView ? 1 : 0 }}
+            transition={{ duration: 1, ease: easeInOut }}
+            viewport={{ once: true }}
+            className="fixed
+              top-1/2
+              left-1/2
+              -translate-x-1/2
+              -translate-y-1/2
+              w-screen
+              h-screen
+              z-0
+              pointer-events-none
+              mix-blend-screen"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="xMidYMid meet"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              r="75"
+              cx="50"
+              cy="50"
+              stroke="white"
+              strokeWidth="0.4"
+              fill="none"
+              opacity="0.5"
+            />
+          </motion.svg>
+
+          {/* Ring 2 */}
+          <motion.svg
+            initial={{ opacity: 0, filter: "blur(10px)" }}
+            animate={{ opacity: isMySkillsInView ? 1 : 0 }}
+            transition={{ duration: 1, ease: easeInOut }}
+            viewport={{ once: true }}
+            className="fixed
+              top-1/2
+              left-1/2
+              -translate-x-1/2
+              -translate-y-1/2
+              w-screen
+              h-screen
+              z-0
+              pointer-events-none
+              mix-blend-screen"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="xMidYMid meet"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              r="90"
+              cx="50"
+              cy="50"
+              stroke="white"
+              strokeWidth="0.4"
+              fill="none"
+              opacity="0.5"
+            />
+          </motion.svg>
+        </div>
+
+        <motion.svg
+          className="fixed
+              top-1/2
+              left-1/2
+              -translate-x-1/2
+              -translate-y-1/2
+              w-screen
+              h-screen
+              z-0
+              pointer-events-none
+              mix-blend-screen"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="xMidYMid meet"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            r="105"
+            cx="50"
+            cy="50"
+            stroke="white"
+            strokeWidth="0.1"
+            fill="none"
+            opacity="0.5"
+          />
+        </motion.svg>
+      </div>
 
       {/* Fixed Background Grid */}
       <div
@@ -78,6 +169,8 @@ export default function Programming() {
 
         {/* About Me Section */}
         <motion.section
+          ref={aboutMeRef}
+          viewport={{ once: true }}
           initial={{
             opacity: 0,
           }}
@@ -102,7 +195,12 @@ export default function Programming() {
           </div>
         </motion.section>
 
-        <section className="flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash">
+        {/* My skills section */}
+
+        <motion.section
+          ref={mySkillsRef}
+          className="flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash"
+        >
           <div className="flex flex-row max-w-3xl text-left">
             <div>
               <h2 className="text-5xl mb-8">My Skills</h2>
@@ -132,7 +230,7 @@ export default function Programming() {
               </p>
             </div>
           </div>
-        </section>
+        </motion.section>
       </main>
 
       {/* <section>

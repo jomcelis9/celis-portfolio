@@ -23,7 +23,7 @@ export default function Home() {
         { opacity: 1 },
         { duration: 3, ease: easeInOut }
       );
-      await animate("#blueCircle", { x: 0 }, { duration: 3, ease: easeIn });
+      await animate("#blueCircle", { x: 0 }, { duration: 3, ease: easeInOut });
     };
 
     const entranceAnimationOrange = async () => {
