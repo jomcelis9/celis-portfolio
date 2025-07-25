@@ -20,19 +20,19 @@ export default function Programming() {
         <motion.img
           initial={{
             opacity: 1,
-            scale: 1.2,
-            filter: "blur(15px)",
+            scale: 1.5,
+            filter: "blur(10px)",
           }}
           animate={{
-            opacity: 0.5,
-            scale: 1.1,
+            opacity: isMySkillsInView ? 0 : 1,
+            scale: 1.6,
             // filter: isInView
             //   ? "blur(15px) brightness(0.5) hue-rotate(160deg)" // Changes color
             //   : "blur(15px) brightness(1) hue-rotate(0deg)", // Default color
           }}
           transition={{
-            duration: 5,
-            repeat: Infinity,
+            duration: 3,
+            repeat: isMySkillsInView ? 0 : Infinity,
             repeatType: "mirror",
           }}
           className="
@@ -53,7 +53,7 @@ export default function Programming() {
         <div>
           {/* Ring 1 */}
           <motion.svg
-            initial={{ opacity: 0, filter: "blur(10px)" }}
+            initial={{ opacity: 0, filter: "blur(5px)" }}
             animate={{ opacity: isAboutMeInView ? 1 : 0 }}
             transition={{ duration: 1, ease: easeInOut }}
             viewport={{ once: true }}
@@ -72,7 +72,7 @@ export default function Programming() {
             xmlns="http://www.w3.org/2000/svg"
           >
             <circle
-              r="75"
+              r="80"
               cx="50"
               cy="50"
               stroke="white"
@@ -84,9 +84,9 @@ export default function Programming() {
 
           {/* Ring 2 */}
           <motion.svg
-            initial={{ opacity: 0, filter: "blur(10px)" }}
-            animate={{ opacity: isMySkillsInView ? 1 : 0 }}
-            transition={{ duration: 1, ease: easeInOut }}
+            initial={{ opacity: 0, filter: "blur(5px)" }}
+            animate={{ opacity: isAboutMeInView ? 1 : 0 }}
+            transition={{ duration: 1, ease: easeInOut, delay: 0.5 }}
             viewport={{ once: true }}
             className="fixed
               top-1/2
@@ -114,7 +114,13 @@ export default function Programming() {
           </motion.svg>
         </div>
 
+        {/* Ring 3 */}
+
         <motion.svg
+          initial={{ opacity: 0, filter: "blur(10px)" }}
+          animate={{ opacity: isAboutMeInView ? 1 : 0 }}
+          transition={{ duration: 1, ease: easeInOut, delay: 1 }}
+          viewport={{ once: true }}
           className="fixed
               top-1/2
               left-1/2
@@ -206,11 +212,13 @@ export default function Programming() {
               <h2 className="text-5xl mb-8">My Skills</h2>
               <p className="text-lg">
                 <div className="flex flex gap-5">
-                  <LogoCard
-                    logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
-                    confidence={90}
-                    technology={"React"}
-                  />{" "}
+                  <div className="">
+                    <LogoCard
+                      logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
+                      confidence={90}
+                      technology={"React"}
+                    />{" "}
+                  </div>
                   <LogoCard
                     logo="https://dac.digital/wp-content/uploads/2023/04/backend-java-optimized.png"
                     confidence={90}
