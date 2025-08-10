@@ -7,7 +7,6 @@ export default function ProjectCard({
   projectLink,
   websiteLink,
   icons,
-  props,
 }) {
   const logoObject = new Logos();
   return (
