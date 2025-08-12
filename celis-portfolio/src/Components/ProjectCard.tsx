@@ -10,7 +10,7 @@ export default function ProjectCard({
 }) {
   const logoObject = new Logos();
   return (
-    <div>
+    <div className="my-6">
       <h3 className="text-3xl">{title}</h3>
 
       <div className="flex felx-col gap-5">

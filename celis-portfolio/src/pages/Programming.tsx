@@ -165,6 +165,7 @@ export default function Programming() {
       {/* Fixed Background Grid */}
       <div
         className="
+            
             fixed inset-0
             bg-[linear-gradient(to_right,rgba(240,240,240,0.1)_1px,transparent_1px),
                 linear-gradient(to_bottom,rgba(240,240,240,0.1)_1px,transparent_1px)]
@@ -180,11 +181,18 @@ export default function Programming() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash"
+          className="flex
+          items-center
+          justify-center 
+          w-full
+          min-h-screen 
+          p-10 
+          text-white 
+          font-Clash"
         >
-          <div className="max-w-4xl text-left">
-            <p className="text-8xl ">Hello, I'm Jom!</p>
-            <p className="text-xl"> Full-stack Developer</p>
+          <div className="max-w-5xl overflow-hidden leading[1 item-center justify-center">
+            <h1 className="text-BigAss my-[-2rem]">Jomari Celis</h1>
+            <p className="text-xl text-center"> Full-stack Developer</p>
           </div>
         </motion.section>
 
@@ -201,10 +209,13 @@ export default function Programming() {
           transition={{ duration: 2, ease: "easeOut", delay: 1 }}
           className="flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash"
         >
-          <div className="flex flex-row max-w-3xl text-left">
+          <div className="flex flex-col max-w-3xl ">
             <div>
-              <h2 className="text-5xl mb-8">Who I am</h2>
-              <p className="text-lg">
+              <h2 className="text-8xl mb-8 text-center">Who I am</h2>
+            </div>
+            <div className="flex flex-row items-center">
+              <img src={meshCircle2} className="w-100" alt="" />
+              <p className="text-xl ml-2 items-center">
                 I’m Jom, a passionate developer who loves building immersive
                 digital experiences. Whether I’m crafting sleek front-end
                 interfaces or experimenting with creative animations, I strive
@@ -212,7 +223,6 @@ export default function Programming() {
                 learning new technologies and creating inspiring projects.
               </p>
             </div>
-            <img src={meshCircle2} className="w-100" alt="" />
           </div>
         </motion.section>
 
@@ -220,11 +230,11 @@ export default function Programming() {
 
         <motion.section
           ref={mySkillsRef}
-          className="flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash"
+          className="flex grid items-center justify-center w-full min-h-screen p-10 text-white font-Clash"
         >
-          <div className="flex flex-row max-w-3xl text-left">
+          <div className="flex flex-row max-w-3xl text-center justify-center items-center">
             <div>
-              <h2 className="text-5xl mb-8">My Skills</h2>
+              <h2 className="text-8xl text-center ">My Skills</h2>
               <p className="text-lg">
                 <div className="flex flex gap-5">
                   <div className="">
@@ -258,9 +268,9 @@ export default function Programming() {
         {/* Projects section */}
 
         <motion.section className="flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash">
-          <div className="flex flex-row max-w-3xl text-left">
+          <div className="flex flex-row max-w-3xl">
             <div>
-              <h2 className="text-5xl mb-8">My Projects</h2>
+              <h2 className="text-8xl mb-8 text-center">My Projects</h2>
               <p className="text-lg"></p>
               <ProjectCard
                 projectImage="https://www.thedotstore.com/wp-content/uploads/sites/1417/2024/01/Wix-website-builder.jpg?w=1024"
@@ -270,8 +280,29 @@ export default function Programming() {
                 title="Title 1"
                 projectLink="https://facebook.com/"
                 websiteLink={""}
-                icons = {["reactLogoWhite", "postGresWhite"]}
+                icons={["reactLogoWhite", "postGresWhite", "javaLogo"]}
+              />
 
+              <ProjectCard
+                projectImage="https://www.thedotstore.com/wp-content/uploads/sites/1417/2024/01/Wix-website-builder.jpg?w=1024"
+                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem voluptas
+          provident, consectetur perferendis quos vel.
+"
+                title="Title 1"
+                projectLink="https://facebook.com/"
+                websiteLink={""}
+                icons={["reactLogoWhite", "postGresWhite", "javaLogo"]}
+              />
+
+              <ProjectCard
+                projectImage="https://www.thedotstore.com/wp-content/uploads/sites/1417/2024/01/Wix-website-builder.jpg?w=1024"
+                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem voluptas
+          provident, consectetur perferendis quos vel.
+"
+                title="Title 1"
+                projectLink="https://facebook.com/"
+                websiteLink={""}
+                icons={["reactLogoWhite", "postGresWhite", "javaLogo"]}
               />
             </div>
           </div>
