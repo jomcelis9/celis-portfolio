@@ -99,7 +99,7 @@ export default function Home() {
   };
 
   return (
-    <div ref={scope} className="bg-slate-950 bg-cover fixed">
+    <div ref={scope} className="bg-slate-950 bg-cover ">
       <motion.div
         initial={{ opacity: "0%" }}
         transition={{ duration: 1, ease: "easeInOut" }}
