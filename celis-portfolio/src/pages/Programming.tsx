@@ -1,31 +1,37 @@
 import "../index.css";
 import meshCircle from "../assets/Images/Mesh Circle.svg";
 import meshCircle2 from "../assets/Images/Mesh Circle2.svg";
-import { easeInOut, motion, scale, useInView, useScroll } from "motion/react";
-import { useState, useRef } from "react";
+import { easeInOut, motion, useInView } from "motion/react";
+import { useRef, useState } from "react";
 import LogoCard from "../Components/LogoCard";
-import ProjectCard from "../Components/ProjectCard";
-import { delay } from "motion";
 import Logos from "../assets/logos";
-import { footer } from "motion/react-client";
 import WebsiteCard from "../Components/WebsiteCard";
-import ProjectTemplate from "./ProjectPage";
 
 export default function Programming() {
   const logoObject = new Logos();
   const aboutMeRef = useRef(null);
   const mySkillsRef = useRef(null);
   const myProjectsRef = useRef(null);
-  const footerRef = useRef(null);
+  const footerRef = useRef<HTMLDivElement>(null);
 
-  const isAboutMeInView = useInView(aboutMeRef, { amount: 0.5 }); // triggers when 50% is visible
-  const isMySkillsInView = useInView(mySkillsRef, { amount: 0.5 }); // triggers when 50% is visible
+  const isAboutMeInView = useInView(aboutMeRef, { amount: 0.5 });
+  const isMySkillsInView = useInView(mySkillsRef, { amount: 0.5 });
   const isMyProjectsInView = useInView(myProjectsRef, { amount: 0.5 });
   const isFooterRef = useInView(footerRef, { amount: 0.5 });
 
+  const [footerMousePos, setFooterMousePos] = useState({ x: "50%", y: "50%" });
+  const [isFooterHovering, setIsFooterHovering] = useState(false);
+
+  const handleFooterMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!footerRef.current) return;
+    const rect = footerRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    setFooterMousePos({ x: `${x}px`, y: `${y}px` });
+  };
+
   return (
     <div className="relative w-full min-h-screen bg-slate-950 overflow-x-hidden">
-      {/* Fixed Blue Circle */}
       <div>
         <motion.img
           initial={{
@@ -37,14 +43,9 @@ export default function Programming() {
             opacity:
               isMySkillsInView || isMyProjectsInView || isFooterRef ? 0 : 1,
             scale: 1.6,
-            // filter: isInView
-            //   ? "blur(15px) brightness(0.5) hue-rotate(160deg)" // Changes color
-            //   : "blur(15px) brightness(1) hue-rotate(0deg)", // Default color
           }}
           transition={{
             duration: 3,
-            // repeat: isMySkillsInView ? 0 : Infinity,
-            // repeatType: "mirror",
           }}
           className="
             fixed
@@ -62,7 +63,6 @@ export default function Programming() {
           alt="Blue Mesh Circle"
         />
         <div>
-          {/* Ring 1 */}
           <motion.svg
             initial={{ opacity: 0, filter: "blur(5px)" }}
             animate={{ opacity: isAboutMeInView ? 1 : 0 }}
@@ -93,7 +93,6 @@ export default function Programming() {
             />
           </motion.svg>
 
-          {/* Ring 2 */}
           <motion.svg
             initial={{ opacity: 0, filter: "blur(5px)" }}
             animate={{ opacity: isAboutMeInView ? 1 : 0 }}
@@ -124,8 +123,6 @@ export default function Programming() {
             />
           </motion.svg>
         </div>
-
-        {/* Ring 3 */}
 
         <motion.svg
           initial={{ opacity: 0, filter: "blur(10px)" }}
@@ -158,10 +155,8 @@ export default function Programming() {
         </motion.svg>
       </div>
 
-      {/* Fixed Background Grid */}
       <div
         className="
-            
             fixed inset-0
             bg-[linear-gradient(to_right,rgba(240,240,240,0.1)_1px,transparent_1px),
                 linear-gradient(to_bottom,rgba(240,240,240,0.1)_1px,transparent_1px)]
@@ -170,9 +165,7 @@ export default function Programming() {
             "
       />
 
-      {/* Main Page Content */}
       <main className="relative z-20">
-        {/* Hero Section */}
         <motion.section
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -186,13 +179,12 @@ export default function Programming() {
           text-white 
           font-Clash"
         >
-          <div className="max-w-5xl overflow-hidden leading[1 item-center justify-center">
+          <div className="max-w-5xl overflow-hidden leading-[1] items-center justify-center">
             <h1 className="text-BigAss my-[-2rem]">Jomari Celis</h1>
             <p className="text-xl text-center"> Full-stack Developer</p>
           </div>
         </motion.section>
 
-        {/* About Me Section */}
         <motion.section
           ref={aboutMeRef}
           viewport={{ once: true }}
@@ -222,8 +214,6 @@ export default function Programming() {
           </div>
         </motion.section>
 
-        {/* My skills section */}
-
         <motion.section
           ref={mySkillsRef}
           className="flex grid items-center justify-center w-full min-h-screen p-10 text-white font-Clash"
@@ -232,7 +222,7 @@ export default function Programming() {
             <div>
               <h2 className="text-8xl text-center ">My Skills</h2>
               <p className="text-lg">
-                <div className="flex flex gap-5">
+                <div className="flex gap-5">
                   <div className="">
                     <LogoCard
                       logo={logoObject.reactLogoBlue}
@@ -260,8 +250,6 @@ export default function Programming() {
             </div>
           </div>
         </motion.section>
-
-        {/* Projects section */}
 
         <motion.section
           ref={myProjectsRef}
@@ -328,28 +316,35 @@ export default function Programming() {
         </motion.section>
       </main>
 
-      <footer
+      <motion.footer
         ref={footerRef}
-        className="bg-black  justify-center items-center "
+        onMouseMove={handleFooterMouseMove}
+        onMouseEnter={() => setIsFooterHovering(true)}
+        onMouseLeave={() => setIsFooterHovering(false)}
+        initial={{ backgroundColor: "#000000", color: "#ffffff" }}
+        animate={{
+          backgroundColor: isFooterRef ? "#ffffff" : "#000000",
+          color: isFooterRef ? "#000000" : "#ffffff",
+        }}
+        transition={{ duration: 0.3, delay: 0.3, ease: "easeOut" }}
+        className="relative overflow-hidden flex flex-col justify-center items-center w-full min-h-[50vh]"
       >
-        <div className="z-2 mt-5 text-white text-6xl text-center text-center font-Clash">
+        <div
+          className="absolute inset-0 z-0 pointer-events-none transition-opacity duration-300"
+          style={{
+            opacity: isFooterHovering ? 1 : 0,
+            background: `radial-gradient(500px circle at ${footerMousePos.x} ${footerMousePos.y}, rgba(0,0,0,0.15), transparent 60%)`,
+          }}
+        />
+
+        <div className="z-10 mt-5 text-6xl text-center font-Clash relative pointer-events-none">
           <p className="p-5"> Let's Work together!</p>
           <div className="m-5">
             <p className="text-2xl">Email Me</p>
           </div>
-
-          <button></button>
+          <button className="pointer-events-auto"></button>
         </div>
-      </footer>
-
-      {/* <section>
-            <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/80 bg-gradient-to-b from-white/60 to-white/30 p-4 transition-[transform,border,background-color] duration-300 hover:scale-110 hover:border-[rgb(70,71,77)] hover:bg-[rgb(33,34,36)] md:h-[70px] md:w-[70px]">
-            <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
-                className="w-10"
-            />
-            </span>{" "}
-        </section> */}
+      </motion.footer>
     </div>
   );
 }
