@@ -426,7 +426,7 @@ export default function Programming() {
           color: isFooterRef ? "#000000" : "#ffffff",
         }}
         transition={{ duration: 0.3, delay: 0.3, ease: "easeOut" }}
-        className="relative overflow-hidden flex flex-col justify-center items-center w-full min-h-[50vh] snap-end  "
+        className="relative overflow-hidden flex flex-col justify-center items-center w-full min-h-screen snap-center snap-always"
       >
         <div
           className="absolute inset-0 z-0 pointer-events-none transition-opacity duration-300"
