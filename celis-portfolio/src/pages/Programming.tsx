@@ -1,7 +1,13 @@
 import "../index.css";
 import meshCircle from "../assets/Images/Mesh Circle.svg";
 import meshCircle2 from "../assets/Images/Mesh Circle2.svg";
-import { easeInOut, motion, useInView } from "motion/react";
+import {
+  easeInOut,
+  motion,
+  useInView,
+  useScroll,
+  useTransform,
+} from "motion/react";
 import { useRef, useState } from "react";
 import LogoCard from "../Components/LogoCard";
 import Logos from "../assets/logos";
@@ -9,6 +15,7 @@ import WebsiteCard from "../Components/WebsiteCard";
 
 export default function Programming() {
   const logoObject = new Logos();
+  const containerRef = useRef<HTMLDivElement>(null);
   const aboutMeRef = useRef(null);
   const mySkillsRef = useRef(null);
   const myProjectsRef = useRef(null);
@@ -18,6 +25,14 @@ export default function Programming() {
   const isMySkillsInView = useInView(mySkillsRef, { amount: 0.5 });
   const isMyProjectsInView = useInView(myProjectsRef, { amount: 0.5 });
   const isFooterRef = useInView(footerRef, { amount: 0.5 });
+
+  const { scrollYProgress } = useScroll({
+    target: aboutMeRef,
+    container: containerRef,
+    offset: ["start end", "center center"],
+  });
+
+  const circleScale = useTransform(scrollYProgress, [0, 1], [1.6, 0]);
 
   const [footerMousePos, setFooterMousePos] = useState({ x: "50%", y: "50%" });
   const [isFooterHovering, setIsFooterHovering] = useState(false);
@@ -31,18 +46,20 @@ export default function Programming() {
   };
 
   return (
-    <div className="relative w-full min-h-screen bg-slate-950 overflow-x-hidden">
+    <div
+      ref={containerRef}
+      className="relative w-full h-screen bg-slate-950 overflow-x-hidden overflow-y-auto snap-y snap-proximity scroll-smooth"
+    >
       <div>
         <motion.img
+          style={{ scale: circleScale }}
           initial={{
             opacity: 1,
-            scale: 1.5,
             filter: "blur(10px)",
           }}
           animate={{
             opacity:
               isMySkillsInView || isMyProjectsInView || isFooterRef ? 0 : 1,
-            scale: 1.6,
           }}
           transition={{
             duration: 3,
@@ -162,6 +179,7 @@ export default function Programming() {
                 linear-gradient(to_bottom,rgba(240,240,240,0.1)_1px,transparent_1px)]
             bg-[size:18rem_12rem]
             z-10
+            pointer-events-none
             "
       />
 
@@ -177,7 +195,8 @@ export default function Programming() {
           min-h-screen 
           p-10 
           text-white 
-          font-Clash"
+          font-Clash
+          snap-center  "
         >
           <div className="max-w-5xl overflow-hidden leading-[1] flex flex-col items-center justify-center">
             <h1 className="text-5xl md:text-7xl lg:text-BigAss my-0 lg:my-[-2rem] text-center">
@@ -200,7 +219,7 @@ export default function Programming() {
             opacity: 1,
           }}
           transition={{ duration: 2, ease: "easeOut", delay: 1 }}
-          className="flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash"
+          className="flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash snap-center  "
         >
           <div className="flex flex-col max-w-6xl px-6 items-center">
             <div>
@@ -227,7 +246,7 @@ export default function Programming() {
 
         <motion.section
           ref={mySkillsRef}
-          className="relative flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash overflow-hidden"
+          className="relative flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash overflow-hidden snap-center  "
         >
           <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
             {[...Array(300)].map((_, i) => (
@@ -331,7 +350,7 @@ export default function Programming() {
 
         <motion.section
           ref={myProjectsRef}
-          className="relative flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash"
+          className="relative flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash snap-center  "
         >
           <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-t from-purple-900/40 via-transparent to-transparent" />
 
@@ -407,7 +426,7 @@ export default function Programming() {
           color: isFooterRef ? "#000000" : "#ffffff",
         }}
         transition={{ duration: 0.3, delay: 0.3, ease: "easeOut" }}
-        className="relative overflow-hidden flex flex-col justify-center items-center w-full min-h-[50vh]"
+        className="relative overflow-hidden flex flex-col justify-center items-center w-full min-h-[50vh] snap-end  "
       >
         <div
           className="absolute inset-0 z-0 pointer-events-none transition-opacity duration-300"
