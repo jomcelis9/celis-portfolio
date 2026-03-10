@@ -21,10 +21,12 @@ export default function Programming() {
   const myProjectsRef = useRef(null);
   const footerRef = useRef<HTMLDivElement>(null);
 
-  const isAboutMeInView = useInView(aboutMeRef, { amount: 0.5 });
+  const isAboutMeInView = useInView(aboutMeRef, { amount: 0.2 });
   const isMySkillsInView = useInView(mySkillsRef, { amount: 0.5 });
   const isMyProjectsInView = useInView(myProjectsRef, { amount: 0.5 });
   const isFooterRef = useInView(footerRef, { amount: 0.5 });
+
+  const textGlowAndShadow = "[text-shadow:0_0_15px_rgba(255,255,255,0.3),_2px_2px_4px_rgba(0,0,0,0.5)]";
 
   const { scrollYProgress } = useScroll({
     target: aboutMeRef,
@@ -32,7 +34,34 @@ export default function Programming() {
     offset: ["start end", "center center"],
   });
 
-  const circleScale = useTransform(scrollYProgress, [0, 1], [1.6, 0]);
+  const circleScale = useTransform(scrollYProgress, [0, 1], [1.3, 1.4]);
+
+  const { scrollYProgress: aboutScrollProgress } = useScroll({
+    target: aboutMeRef,
+    container: containerRef,
+    offset: ["start start", "end end"],
+  });
+
+  const p1Opacity = useTransform(aboutScrollProgress, [0, 0.3, 0.4], [1, 1, 0]);
+  const p1Y = useTransform(aboutScrollProgress, [0, 0.3, 0.4], [0, 0, -30]);
+
+  const p2Opacity = useTransform(
+    aboutScrollProgress,
+    [0.35, 0.5, 0.65],
+    [0, 1, 0]
+  );
+  const p2Y = useTransform(
+    aboutScrollProgress,
+    [0.35, 0.5, 0.65],
+    [30, 0, -30]
+  );
+
+  const p3Opacity = useTransform(
+    aboutScrollProgress,
+    [0.6, 0.75, 1],
+    [0, 1, 1]
+  );
+  const p3Y = useTransform(aboutScrollProgress, [0.6, 0.75, 1], [30, 0, 0]);
 
   const [footerMousePos, setFooterMousePos] = useState({ x: "50%", y: "50%" });
   const [isFooterHovering, setIsFooterHovering] = useState(false);
@@ -48,21 +77,24 @@ export default function Programming() {
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-screen bg-slate-950 overflow-x-hidden overflow-y-auto snap-y snap-proximity scroll-smooth"
+      className="relative w-full h-screen bg-black overflow-x-hidden overflow-y-auto snap-y snap-proximity scroll-smooth"
     >
       <div>
         <motion.img
           style={{ scale: circleScale }}
           initial={{
             opacity: 1,
-            filter: "blur(10px)",
+            filter: "",
+            rotate: 0,
           }}
           animate={{
             opacity:
               isMySkillsInView || isMyProjectsInView || isFooterRef ? 0 : 1,
+            rotate: 360,
           }}
           transition={{
-            duration: 3,
+            opacity: { duration: 3 },
+            rotate: { duration: 40, repeat: Infinity, ease: "linear" },
           }}
           className="
             fixed
@@ -81,9 +113,9 @@ export default function Programming() {
         />
         <div>
           <motion.svg
-            initial={{ opacity: 0, filter: "blur(5px)" }}
+            initial={{ opacity: 0, filter: "" }}
             animate={{ opacity: isAboutMeInView ? 1 : 0 }}
-            transition={{ duration: 1, ease: easeInOut }}
+            transition={{ duration: 0.5, ease: easeInOut }}
             viewport={{ once: true }}
             className="fixed
               top-1/2
@@ -104,16 +136,16 @@ export default function Programming() {
               cx="50"
               cy="50"
               stroke="white"
-              strokeWidth="0.4"
+              strokeWidth="0.1"
               fill="none"
               opacity="0.5"
             />
           </motion.svg>
 
           <motion.svg
-            initial={{ opacity: 0, filter: "blur(5px)" }}
+            initial={{ opacity: 0, filter: "" }}
             animate={{ opacity: isAboutMeInView ? 1 : 0 }}
-            transition={{ duration: 1, ease: easeInOut, delay: 0.5 }}
+            transition={{ duration: 0.5, ease: easeInOut, delay: 0.5 }}
             viewport={{ once: true }}
             className="fixed
               top-1/2
@@ -134,7 +166,37 @@ export default function Programming() {
               cx="50"
               cy="50"
               stroke="white"
-              strokeWidth="0.4"
+              strokeWidth="0.1"
+              fill="none"
+              opacity="0.5"
+            />
+          </motion.svg>
+
+          <motion.svg
+            initial={{ opacity: 0, filter: "" }}
+            animate={{ opacity: isAboutMeInView ? 1 : 0 }}
+            transition={{ duration: 0.5, ease: easeInOut, delay: 1 }}
+            viewport={{ once: true }}
+            className="fixed
+              top-1/2
+              left-1/2
+              -translate-x-1/2
+              -translate-y-1/2
+              w-screen
+              h-screen
+              z-0
+              pointer-events-none
+              mix-blend-screen"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="xMidYMid meet"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              r="100"
+              cx="50"
+              cy="50"
+              stroke="white"
+              strokeWidth="0.1"
               fill="none"
               opacity="0.5"
             />
@@ -209,40 +271,76 @@ export default function Programming() {
           </div>
         </motion.section>
 
-        <motion.section
+        <section
           ref={aboutMeRef}
-          viewport={{ once: true }}
-          initial={{
-            opacity: 0,
-          }}
-          whileInView={{
-            opacity: 1,
-          }}
-          transition={{ duration: 2, ease: "easeOut", delay: 1 }}
-          className="flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash snap-center  "
+          className="relative w-full h-[300vh] snap-start"
         >
-          <div className="flex flex-col max-w-6xl px-6 items-center">
-            <div>
-              <h2 className="text-5xl md:text-7xl lg:text-8xl mb-12 text-center">
-                Who I am
-              </h2>
-            </div>
-            <div className="flex flex-col md:flex-row items-center justify-center">
-              <img
-                src={meshCircle2}
-                className="w-48 md:w-64 lg:w-96 mb-8 md:mb-0 shrink-0"
-                alt=""
-              />
-              <p className="text-lg md:text-xl lg:text-4xl md:ml-10 lg:ml-16 text-center md:text-left leading-relaxed lg:leading-normal font-light">
-                I’m Jom, a passionate developer who loves building immersive
-                digital experiences. Whether I’m crafting sleek front-end
-                interfaces or experimenting with creative animations, I strive
-                for clean code and compelling visuals. Outside coding, I enjoy
-                learning new technologies and creating inspiring projects.
-              </p>
+          <div className="sticky top-0 h-screen flex items-center justify-center w-full p-10 text-white font-Clash">
+            <div className="flex flex-col max-w-6xl px-6 items-center w-full">
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
+              >
+                {/* <h2 className="text-5xl md:text-7xl lg:text-8xl mb-12 text-center">
+                  Who I am
+                </h2> */}
+              </motion.div>
+
+              <div className="flex flex-col md:flex-row items-center justify-center w-full">
+                <motion.img
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
+                  src={meshCircle2}
+                  className="w-48 md:w-64 lg:w-96 mb-8 md:mb-0 shrink-0"
+                  alt=""
+                />
+                <div className="relative w-full md:ml-10 lg:ml-16 flex items-center justify-center h-[200px] lg:h-[300px]">
+                  <motion.p
+                    style={{ opacity: p1Opacity, y: p1Y }}
+                    className={`absolute text-lg md:text-xl lg:text-4xl text-center md:text-left leading-relaxed lg:leading-normal font-light ${textGlowAndShadow}`}
+                  >
+                    I’m Jom, a passionate developer who loves building immersive
+                    digital experiences. Whether I’m crafting sleek front-end
+                    interfaces or experimenting with creative animations, I
+                    strive for clean code and compelling visuals. Outside
+                    coding, I enjoy learning new technologies and creating
+                    inspiring projects.
+                  </motion.p>
+                  <motion.p
+                    style={{ opacity: p2Opacity, y: p2Y }}
+                    className={`absolute text-lg md:text-xl lg:text-4xl text-center md:text-left leading-relaxed lg:leading-normal font-light ${textGlowAndShadow}`}
+                  >
+                    <div className="flex flex-col">
+                      <div className="text-5xl">MOTION DESIGN</div>
+                      <div>
+                        Whether I’m crafting sleek front-end interfaces or
+                        experimenting with creative animations, I strive for
+                        clean code and compelling visuals.
+                      </div>
+                    </div>
+                  </motion.p>
+                  <motion.p
+                    style={{ opacity: p3Opacity, y: p3Y }}
+                    className={`absolute text-lg md:text-xl lg:text-4xl text-center md:text-left leading-relaxed lg:leading-normal font-light ${textGlowAndShadow}`}
+                  >
+                    <div className="flex flex-col">
+                      <div className="text-5xl">MOTION DESIGN</div>
+                      <div>
+                        Whether I’m crafting sleek front-end interfaces or
+                        experimenting with creative animations, I strive for
+                        clean code and compelling visuals.
+                      </div>
+                    </div>
+                  </motion.p>
+                </div>
+              </div>
             </div>
           </div>
-        </motion.section>
+        </section>
 
         <motion.section
           ref={mySkillsRef}
@@ -353,12 +451,13 @@ export default function Programming() {
           className="relative flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash snap-center  "
         >
           <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-t from-purple-900/40 via-transparent to-transparent" />
-
-          <div className="relative z-10 flex flex-row max-w-7xl w-full">
+          <div className="relative z-10 flex flex-col lg:flex-row max-w-7xl w-full px-4 lg:px-0">
             <div className="w-full">
-              <h2 className="text-8xl mb-10 text-center">My Projects</h2>
+              <h2 className="text-5xl md:text-7xl lg:text-8xl mb-10 text-center">
+                My Projects
+              </h2>
               <p className="text-lg"></p>
-              <div className="flex flex-col lg:flex-row flex-wrap gap-6 justify-center items-stretch">
+              <div className="flex flex-col lg:flex-row flex-wrap gap-6 justify-center items-center lg:items-stretch">
                 <WebsiteCard
                   title="Jacsons' Website"
                   description="ABCDEFG"
@@ -414,20 +513,33 @@ export default function Programming() {
           </div>
         </motion.section>
       </main>
-
       <motion.footer
         ref={footerRef}
         onMouseMove={handleFooterMouseMove}
         onMouseEnter={() => setIsFooterHovering(true)}
         onMouseLeave={() => setIsFooterHovering(false)}
-        initial={{ backgroundColor: "#000000", color: "#ffffff" }}
+        initial={{ backgroundColor: "#020617", color: "#ffffff" }}
         animate={{
-          backgroundColor: isFooterRef ? "#ffffff" : "#000000",
-          color: isFooterRef ? "#000000" : "#ffffff",
+          backgroundColor: isFooterRef ? "#ffffff" : "#020617",
+          color: isFooterRef ? "#020617" : "#ffffff",
         }}
         transition={{ duration: 0.3, delay: 0.3, ease: "easeOut" }}
         className="relative overflow-hidden flex flex-col justify-center items-center w-full min-h-screen snap-center snap-always"
       >
+        <motion.div
+          className="absolute inset-0 z-0 pointer-events-none"
+          initial={{
+            backgroundImage:
+              "linear-gradient(to bottom, rgba(88, 28, 135, 0.4) 0%, rgba(88, 28, 135, 0) 100%)",
+          }}
+          animate={{
+            backgroundImage: isFooterRef
+              ? "linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%)"
+              : "linear-gradient(to bottom, rgba(88, 28, 135, 0.4) 0%, rgba(88, 28, 135, 0) 100%)",
+          }}
+          transition={{ duration: 0.3, delay: 0.3, ease: "easeOut" }}
+        />
+
         <div
           className="absolute inset-0 z-0 pointer-events-none transition-opacity duration-300"
           style={{
