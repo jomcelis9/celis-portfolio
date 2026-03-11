@@ -12,6 +12,7 @@ import { useRef, useState } from "react";
 import LogoCard from "../Components/LogoCard";
 import Logos from "../assets/logos";
 import WebsiteCard from "../Components/WebsiteCard";
+import SectionTag from "../Components/SectionTag";
 
 export default function Programming() {
   const logoObject = new Logos();
@@ -408,6 +409,12 @@ export default function Programming() {
 
           <div className="relative z-10 flex flex-col w-full max-w-3xl text-center justify-center items-center px-4">
             <div className="w-full">
+              <SectionTag
+              text="CAPABILITIES"
+                textColor="#FFFFFF"
+                outlineColor="#FFFFFF"
+                className="mb-5"
+              ></SectionTag>
               <h2 className="text-5xl md:text-7xl lg:text-8xl text-center mb-8">
                 My Skills
               </h2>
@@ -444,9 +451,28 @@ export default function Programming() {
           <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-t from-purple-900/40 via-transparent to-transparent" />
           <div className="relative z-10 flex flex-col lg:flex-row max-w-7xl w-full px-4 lg:px-0">
             <div className="w-full">
-              <h2 className="text-5xl md:text-7xl lg:text-8xl mb-10 text-center">
-                My Projects
-              </h2>
+              <div className="flex justify-center w-full">
+                <SectionTag
+                  textColor="#FFFFFF"
+                  outlineColor="#FFFFFF"
+                  className="mb-5"
+                ></SectionTag>
+              </div>
+
+              <div className="mb-10">
+                <h2 className="text-5xl md:text-7xl lg:text-8xl mb-2 text-center">
+                  My Projects
+                </h2>
+                <p className="text-center">
+                  {" "}
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Accusamus omnis quos molestiae facilis alias inventore
+                  dignissimos quisquam cum, repudiandae fugit repellendus
+                  doloremque in a, aliquam amet temporibus quibusdam atque
+                  quasi.
+                </p>
+              </div>
+
               <p className="text-lg"></p>
               <div className="flex flex-col lg:flex-row flex-wrap gap-6 justify-center items-center lg:items-stretch">
                 <WebsiteCard
