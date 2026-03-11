@@ -8,7 +8,7 @@ import {
   useScroll,
   useTransform,
 } from "motion/react";
-import { useRef, useState, useMemo } from "react"; // Added useMemo
+import { useRef, useState } from "react";
 import LogoCard from "../Components/LogoCard";
 import Logos from "../assets/logos";
 import WebsiteCard from "../Components/WebsiteCard";
@@ -63,36 +63,6 @@ export default function Programming() {
     [0, 1, 1]
   );
   const p3Y = useTransform(aboutScrollProgress, [0.6, 0.75, 1], [30, 0, 0]);
-
-  // Generate random circle data for the Hero section once on component mount
-const heroBgCircles = useMemo(() => {
-  const circleCount = 35;
-  const minSmall = 60;
-  const minBig = 150;
-  const maxBig = 350;
-  const bigProbability = 0.5;
-
-  const purple = "rgba(168, 85, 247, 0.4)";
-  const cyan = "rgba(34, 211, 238, 0.4)";
-
-  return [...Array(circleCount)].map((_, i) => {
-    const isBig = Math.random() < bigProbability;
-    const size = isBig
-      ? Math.floor(Math.random() * (maxBig - minBig)) + minBig
-      : Math.floor(Math.random() * (minSmall - 20)) + 20;
-    const color = Math.random() > 0.5 ? purple : cyan;
-    return {
-      id: i,
-      size: `${size}px`,
-      top: `${Math.random() * 100}%`,
-      left: `${Math.random() * 100}%`,
-      color: color,
-      // Add stable random timings for the twinkle effect
-      duration: Math.random() * 3 + 2, // between 2 and 5 seconds
-      delay: Math.random() * 2, // up to 2 seconds delay
-    };
-  });
-}, []);
 
   const [footerMousePos, setFooterMousePos] = useState({ x: "50%", y: "50%" });
   const [isFooterHovering, setIsFooterHovering] = useState(false);
@@ -283,32 +253,7 @@ const heroBgCircles = useMemo(() => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="relative flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash snap-center overflow-hidden"
         >
-          {/* Fading Grid Background */}
-          <div className="absolute inset-0 z-0 pointer-events-none bg-[linear-gradient(to_right,rgba(255,255,255,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_80%,transparent_100%)]" />
-          {/* Random Big and Small Gradient Circles - only in this section, behind content */}
-          {heroBgCircles.map((circle) => (
-            <motion.div
-              key={`hero-bg-circle-${circle.id}`}
-              className="absolute rounded-full pointer-events-none mix-blend-screen blur-[10px]"
-              style={{
-                width: circle.size,
-                height: circle.size,
-                top: circle.top,
-                left: circle.left,
-                background: `radial-gradient(circle, ${circle.color} 40%, rgba(255, 255, 255, 0) 80%)`,
-              }}
-              animate={{
-                opacity: [0.3, 1, 0.3],
-                scale: [0.8, 1.1, 0.8],
-              }}
-              transition={{
-                duration: circle.duration,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: circle.delay,
-              }}
-            />
-          ))}
+          <div className="absolute inset-0 z-0 pointer-events-none bg-[linear-gradient(to_right,rgba(255,255,255,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,transparent_40%,#000_100%)]" />
 
           <div className="relative z-20 max-w-5xl overflow-hidden leading-[1] flex flex-col items-center justify-center">
             <h1 className="text-5xl md:text-7xl lg:text-BigAss my-0 lg:my-[-2rem] text-center">
@@ -448,13 +393,13 @@ const heroBgCircles = useMemo(() => {
                     opacity: [0, 1, 0],
                     x: -800,
                     y: 800,
-                    transition: {
-                      duration: 1.5,
-                      ease: "easeIn",
-                      repeat: Infinity,
-                      delay: Math.random() * 10 + 2,
-                      repeatDelay: Math.random() * 15 + 5,
-                    },
+                  }}
+                  transition={{
+                    duration: 1.5,
+                    ease: "easeIn",
+                    repeat: Infinity,
+                    delay: Math.random() * 10 + 2,
+                    repeatDelay: Math.random() * 15 + 5,
                   }}
                 />
               );
