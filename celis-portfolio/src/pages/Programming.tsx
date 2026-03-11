@@ -8,7 +8,7 @@ import {
   useScroll,
   useTransform,
 } from "motion/react";
-import { useRef, useState } from "react";
+import { useRef, useState, useMemo } from "react"; // Added useMemo
 import LogoCard from "../Components/LogoCard";
 import Logos from "../assets/logos";
 import WebsiteCard from "../Components/WebsiteCard";
@@ -26,7 +26,8 @@ export default function Programming() {
   const isMyProjectsInView = useInView(myProjectsRef, { amount: 0.5 });
   const isFooterRef = useInView(footerRef, { amount: 0.5 });
 
-  const textGlowAndShadow = "[text-shadow:0_0_15px_rgba(255,255,255,0.3),_2px_2px_4px_rgba(0,0,0,0.5)]";
+  const textGlowAndShadow =
+    "[text-shadow:0_0_15px_rgba(255,255,255,0.3),_2px_2px_4px_rgba(0,0,0,0.5)]";
 
   const { scrollYProgress } = useScroll({
     target: aboutMeRef,
@@ -62,6 +63,36 @@ export default function Programming() {
     [0, 1, 1]
   );
   const p3Y = useTransform(aboutScrollProgress, [0.6, 0.75, 1], [30, 0, 0]);
+
+  // Generate random circle data for the Hero section once on component mount
+const heroBgCircles = useMemo(() => {
+  const circleCount = 35;
+  const minSmall = 60;
+  const minBig = 150;
+  const maxBig = 350;
+  const bigProbability = 0.5;
+
+  const purple = "rgba(168, 85, 247, 0.4)";
+  const cyan = "rgba(34, 211, 238, 0.4)";
+
+  return [...Array(circleCount)].map((_, i) => {
+    const isBig = Math.random() < bigProbability;
+    const size = isBig
+      ? Math.floor(Math.random() * (maxBig - minBig)) + minBig
+      : Math.floor(Math.random() * (minSmall - 20)) + 20;
+    const color = Math.random() > 0.5 ? purple : cyan;
+    return {
+      id: i,
+      size: `${size}px`,
+      top: `${Math.random() * 100}%`,
+      left: `${Math.random() * 100}%`,
+      color: color,
+      // Add stable random timings for the twinkle effect
+      duration: Math.random() * 3 + 2, // between 2 and 5 seconds
+      delay: Math.random() * 2, // up to 2 seconds delay
+    };
+  });
+}, []);
 
   const [footerMousePos, setFooterMousePos] = useState({ x: "50%", y: "50%" });
   const [isFooterHovering, setIsFooterHovering] = useState(false);
@@ -104,7 +135,7 @@ export default function Programming() {
             -translate-y-1/2
             w-[80vw]
             max-w-[1000px]
-            z-1
+            z-10
             pointer-events-none
             mix-blend-screen
             "
@@ -124,7 +155,7 @@ export default function Programming() {
               -translate-y-1/2
               w-screen
               h-screen
-              z-0
+              z-10
               pointer-events-none
               mix-blend-screen"
             viewBox="0 0 100 100"
@@ -154,7 +185,7 @@ export default function Programming() {
               -translate-y-1/2
               w-screen
               h-screen
-              z-0
+              z-10
               pointer-events-none
               mix-blend-screen"
             viewBox="0 0 100 100"
@@ -184,7 +215,7 @@ export default function Programming() {
               -translate-y-1/2
               w-screen
               h-screen
-              z-0
+              z-10
               pointer-events-none
               mix-blend-screen"
             viewBox="0 0 100 100"
@@ -215,7 +246,7 @@ export default function Programming() {
               -translate-y-1/2
               w-screen
               h-screen
-              z-0
+              z-10
               pointer-events-none
               mix-blend-screen"
           viewBox="0 0 100 100"
@@ -240,27 +271,46 @@ export default function Programming() {
             bg-[linear-gradient(to_right,rgba(240,240,240,0.1)_1px,transparent_1px),
                 linear-gradient(to_bottom,rgba(240,240,240,0.1)_1px,transparent_1px)]
             bg-[size:18rem_12rem]
-            z-10
+            z-0
             pointer-events-none
             "
       />
 
-      <main className="relative z-20">
+      <main className="relative">
         <motion.section
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="flex
-          items-center
-          justify-center 
-          w-full
-          min-h-screen 
-          p-10 
-          text-white 
-          font-Clash
-          snap-center  "
+          className="relative flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash snap-center overflow-hidden"
         >
-          <div className="max-w-5xl overflow-hidden leading-[1] flex flex-col items-center justify-center">
+          {/* Fading Grid Background */}
+          <div className="absolute inset-0 z-0 pointer-events-none bg-[linear-gradient(to_right,rgba(255,255,255,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_80%,transparent_100%)]" />
+          {/* Random Big and Small Gradient Circles - only in this section, behind content */}
+          {heroBgCircles.map((circle) => (
+            <motion.div
+              key={`hero-bg-circle-${circle.id}`}
+              className="absolute rounded-full pointer-events-none mix-blend-screen blur-[10px]"
+              style={{
+                width: circle.size,
+                height: circle.size,
+                top: circle.top,
+                left: circle.left,
+                background: `radial-gradient(circle, ${circle.color} 40%, rgba(255, 255, 255, 0) 80%)`,
+              }}
+              animate={{
+                opacity: [0.3, 1, 0.3],
+                scale: [0.8, 1.1, 0.8],
+              }}
+              transition={{
+                duration: circle.duration,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: circle.delay,
+              }}
+            />
+          ))}
+
+          <div className="relative z-20 max-w-5xl overflow-hidden leading-[1] flex flex-col items-center justify-center">
             <h1 className="text-5xl md:text-7xl lg:text-BigAss my-0 lg:my-[-2rem] text-center">
               Jomari Celis
             </h1>
@@ -273,7 +323,7 @@ export default function Programming() {
 
         <section
           ref={aboutMeRef}
-          className="relative w-full h-[300vh] snap-start"
+          className="relative z-20 w-full h-[300vh] snap-start"
         >
           <div className="sticky top-0 h-screen flex items-center justify-center w-full p-10 text-white font-Clash">
             <div className="flex flex-col max-w-6xl px-6 items-center w-full">
@@ -282,11 +332,7 @@ export default function Programming() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
-              >
-                {/* <h2 className="text-5xl md:text-7xl lg:text-8xl mb-12 text-center">
-                  Who I am
-                </h2> */}
-              </motion.div>
+              ></motion.div>
 
               <div className="flex flex-col md:flex-row items-center justify-center w-full">
                 <motion.img
@@ -344,7 +390,7 @@ export default function Programming() {
 
         <motion.section
           ref={mySkillsRef}
-          className="relative flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash overflow-hidden snap-center  "
+          className="relative z-20 flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash overflow-hidden snap-center  "
         >
           <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
             {[...Array(300)].map((_, i) => (
@@ -402,13 +448,13 @@ export default function Programming() {
                     opacity: [0, 1, 0],
                     x: -800,
                     y: 800,
-                  }}
-                  transition={{
-                    duration: 1.5,
-                    ease: "easeIn",
-                    repeat: Infinity,
-                    delay: Math.random() * 10 + 2,
-                    repeatDelay: Math.random() * 15 + 5,
+                    transition: {
+                      duration: 1.5,
+                      ease: "easeIn",
+                      repeat: Infinity,
+                      delay: Math.random() * 10 + 2,
+                      repeatDelay: Math.random() * 15 + 5,
+                    },
                   }}
                 />
               );
@@ -448,7 +494,7 @@ export default function Programming() {
 
         <motion.section
           ref={myProjectsRef}
-          className="relative flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash snap-center  "
+          className="relative z-20 flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash snap-center  "
         >
           <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-t from-purple-900/40 via-transparent to-transparent" />
           <div className="relative z-10 flex flex-col lg:flex-row max-w-7xl w-full px-4 lg:px-0">
@@ -524,7 +570,7 @@ export default function Programming() {
           color: isFooterRef ? "#020617" : "#ffffff",
         }}
         transition={{ duration: 0.3, delay: 0.3, ease: "easeOut" }}
-        className="relative overflow-hidden flex flex-col justify-center items-center w-full min-h-screen snap-center snap-always"
+        className="relative z-20 overflow-hidden flex flex-col justify-center items-center w-full min-h-screen snap-center snap-always"
       >
         <motion.div
           className="absolute inset-0 z-0 pointer-events-none"
