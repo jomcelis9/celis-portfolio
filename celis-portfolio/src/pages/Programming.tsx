@@ -1,6 +1,7 @@
 import "../index.css";
 import meshCircle from "../assets/Images/Mesh Circle.svg";
 import meshCircle2 from "../assets/Images/Mesh Circle2.svg";
+import AI_Stars from "../assets/Images/AI_Stars.png";
 import {
   easeInOut,
   motion,
@@ -281,7 +282,11 @@ export default function Programming() {
                   Recusandae eos eaque culpa cum, accusantium excepturi labore
                   tempora eum dignissimos, deleniti ducimus consectetur
                   temporibus voluptatibus sapiente, porro doloribus repellendus
-                  magnam iste.
+                  magnam iste. Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. In autem cum totam reprehenderit fugiat
+                  perferendis nihil fuga sint voluptatem ipsa magni commodi,
+                  necessitatibus provident aliquid doloribus nulla iusto
+                  excepturi! Eligendi.
                 </motion.p>
               </div>
             </div>
@@ -290,66 +295,85 @@ export default function Programming() {
 
         <section
           ref={aboutMeRef}
-          className="relative z-20 w-full h-[300vh] snap-start"
+          className="relative z-20 w-full text-white font-Clash"
         >
-          <div className="sticky top-0 h-screen flex items-center justify-center w-full p-10 text-white font-Clash">
-            <div className="flex flex-col max-w-6xl px-6 items-center w-full">
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
-              ></motion.div>
-
-              <div className="flex flex-col md:flex-row items-center justify-center w-full">
+          <div className="flex items-start justify-center w-full max-w-6xl mx-auto px-6 h-full">
+            <div className="flex flex-col md:flex-row items-start justify-center w-full relative h-full">
+              <div className="md:sticky md:top-1/2 md:-translate-y-1/2 flex justify-center w-full md:w-1/2 mb-8 md:mb-0 shrink-0 z-10 pt-[20vh] md:pt-0">
                 <motion.img
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
+                  viewport={{ once: false, amount: 0.2 }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
                   src={meshCircle2}
-                  className="w-48 md:w-64 lg:w-96 mb-8 md:mb-0 shrink-0"
+                  className="w-48 md:w-64 lg:w-96"
                   alt=""
                 />
-                <div className="relative w-full md:ml-10 lg:ml-16 flex items-center justify-center h-[200px] lg:h-[300px]">
-                  <motion.p
-                    style={{ opacity: p1Opacity, y: p1Y }}
-                    className={`absolute text-lg md:text-xl lg:text-4xl text-center md:text-left leading-relaxed lg:leading-normal font-light ${textGlowAndShadow}`}
-                  >
-                    I’m Jom, a passionate developer who loves building immersive
-                    digital experiences. Whether I’m crafting sleek front-end
-                    interfaces or experimenting with creative animations, I
-                    strive for clean code and compelling visuals. Outside
-                    coding, I enjoy learning new technologies and creating
-                    inspiring projects.
-                  </motion.p>
-                  <motion.p
-                    style={{ opacity: p2Opacity, y: p2Y }}
-                    className={`absolute text-lg md:text-xl lg:text-4xl text-center md:text-left leading-relaxed lg:leading-normal font-light ${textGlowAndShadow}`}
-                  >
-                    <div className="flex flex-col">
-                      <div className="text-5xl">MOTION DESIGN</div>
-                      <div>
-                        Whether I’m crafting sleek front-end interfaces or
-                        experimenting with creative animations, I strive for
-                        clean code and compelling visuals.
-                      </div>
-                    </div>
-                  </motion.p>
-                  <motion.p
-                    style={{ opacity: p3Opacity, y: p3Y }}
-                    className={`absolute text-lg md:text-xl lg:text-4xl text-center md:text-left leading-relaxed lg:leading-normal font-light ${textGlowAndShadow}`}
-                  >
-                    <div className="flex flex-col">
-                      <div className="text-5xl">MOTION DESIGN</div>
-                      <div>
-                        Whether I’m crafting sleek front-end interfaces or
-                        experimenting with creative animations, I strive for
-                        clean code and compelling visuals.
-                      </div>
-                    </div>
-                  </motion.p>
-                </div>
+              </div>
+
+              <div className="relative w-full md:w-1/2 md:ml-10 lg:ml-16 flex flex-col z-20 pb-[20vh]">
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.5 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  className="flex flex-col items-center md:items-start w-full min-h-[80vh] justify-center snap-center"
+                >
+                  <div className="w-10 h-10 mb-3 rounded-md flex items-center justify-center">
+                    <img src={AI_Stars} alt="" />
+                  </div>
+                  <h3 className="font-Satoshi text-5xl md:text-7xl text-center md:text-left font-light mb-3">
+                    Motion Design
+                  </h3>
+                  <p className="font-Satoshi text-lg md:text-xl text-center md:text-left leading-relaxed lg:leading-normal font-light">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Tempora modi esse optio dolore dolor debitis, ab voluptates
+                    animi nemo accusantium ipsam placeat impedit at odio, minima
+                    sunt soluta architecto reiciendis!
+                  </p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.5 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  className="flex flex-col items-center md:items-start w-full min-h-[80vh] justify-center snap-center"
+                >
+                  <div className="w-10 h-10 mb-3 rounded-md flex items-center justify-center">
+                    <img src={AI_Stars} alt="" />
+                  </div>
+                  <h3 className="font-Satoshi text-5xl md:text-7xl text-center md:text-left font-light mb-3">
+                    Web Development
+                  </h3>
+                  <p className="font-Satoshi text-lg md:text-xl text-center md:text-left leading-relaxed lg:leading-normal font-light">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Tempora modi esse optio dolore dolor debitis, ab voluptates
+                    animi nemo accusantium ipsam placeat impedit at odio, minima
+                    sunt soluta architecto reiciendis!
+                  </p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.5 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  className="flex flex-col items-center md:items-start w-full min-h-[80vh] justify-center snap-center"
+                >
+                  <div className="w-10 h-10 mb-3 rounded-md flex items-center justify-center">
+                    <img src={AI_Stars} alt="" />
+                  </div>
+                  <h3 className="font-Satoshi text-5xl md:text-7xl text-center md:text-left font-light mb-3">
+                    Visual Design
+                  </h3>
+                  <p className="font-Satoshi text-lg md:text-xl text-center md:text-left leading-relaxed lg:leading-normal font-light">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Tempora modi esse optio dolore dolor debitis, ab voluptates
+                    animi nemo accusantium ipsam placeat impedit at odio, minima
+                    sunt soluta architecto reiciendis!
+                  </p>
+                </motion.div>
               </div>
             </div>
           </div>
