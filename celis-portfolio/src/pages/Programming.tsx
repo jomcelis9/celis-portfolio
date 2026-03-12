@@ -36,7 +36,7 @@ export default function Programming() {
     offset: ["start end", "center center"],
   });
 
-  const circleScale = useTransform(scrollYProgress, [0, 1], [1.3, 1.4]);
+  const circleScale = useTransform(scrollYProgress, [0, 1], [1.6, 1.8]);
 
   const { scrollYProgress: aboutScrollProgress } = useScroll({
     target: aboutMeRef,
@@ -238,13 +238,7 @@ export default function Programming() {
 
       <div
         className="
-            fixed inset-0
-            bg-[linear-gradient(to_right,rgba(240,240,240,0.1)_1px,transparent_1px),
-                linear-gradient(to_bottom,rgba(240,240,240,0.1)_1px,transparent_1px)]
-            bg-[size:18rem_12rem]
-            z-0
-            pointer-events-none
-            "
+"
       />
 
       <main className="relative">
@@ -252,18 +246,45 @@ export default function Programming() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="relative flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash snap-center overflow-hidden"
+          className="relative flex items-start justify-start w-full min-h-screen p-10 text-white font-Clash snap-center overflow-hidden"
         >
           <div className="absolute inset-0 z-0 pointer-events-none bg-[linear-gradient(to_right,rgba(255,255,255,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,transparent_40%,#000_100%)]" />
-
-          <div className="relative z-20 max-w-5xl overflow-hidden leading-[1] flex flex-col items-center justify-center">
-            <h1 className="text-5xl md:text-7xl lg:text-BigAss my-0 lg:my-[-2rem] text-center">
+          <div className="relative z-20 p-6 sm:p-12 ml-12 sm:ml-32 lg:ml-48 flex flex-col w-max">
+            <motion.p
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-4xl font-Satoshi"
+            >
+              <i>Hello I'm</i>
+            </motion.p>
+            <motion.h1
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-5xl md:text-7xl lg:text-KindaBigAss leading-none whitespace-nowrap"
+            >
               Jomari Celis
-            </h1>
-            <p className="text-lg md:text-xl text-center mt-2 lg:mt-0">
-              {" "}
-              Full-stack Developer
-            </p>
+            </motion.h1>
+
+            <div className="grid grid-cols-[1fr_3fr]">
+              <div className="ml-2"></div>
+
+              <div>
+                <motion.p
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                  className="font-Satoshi font-[350] text-[3.5rem] max-w-4xl leading-tight tracking-relaxed self-end mt-2"
+                >
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Recusandae eos eaque culpa cum, accusantium excepturi labore
+                  tempora eum dignissimos, deleniti ducimus consectetur
+                  temporibus voluptatibus sapiente, porro doloribus repellendus
+                  magnam iste.
+                </motion.p>
+              </div>
+            </div>
           </div>
         </motion.section>
 
@@ -410,7 +431,7 @@ export default function Programming() {
           <div className="relative z-10 flex flex-col w-full max-w-3xl text-center justify-center items-center px-4">
             <div className="w-full">
               <SectionTag
-              text="CAPABILITIES"
+                text="CAPABILITIES"
                 textColor="#FFFFFF"
                 outlineColor="#FFFFFF"
                 className="mb-5"

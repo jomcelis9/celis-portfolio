@@ -25,7 +25,6 @@
   font-weight: 200 700;
   font-display: swap;
   src: url("./assets/fonts/Satoshi-Variable.ttf") format("truetype");
-
 }
 
 @theme{
@@ -33,7 +32,9 @@
   --font-Garamond: "EbGaramond-VariableFont_wght", "sans-serif";
   --font-Satoshi: "Satoshi-Variable", "sans-serif";
   --color-jomsGray: #3B3939;
-  --text-BigAss: 10rem;  
+  --text-BigAss: 10rem;
+  --text-KindaBigAss: 7rem;
+
 }
 
 #meshCircles > div{

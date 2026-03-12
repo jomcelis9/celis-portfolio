@@ -82,7 +82,7 @@ const WebsiteCard: React.FC<WebsiteCardProps> = ({
         }}
       />
 
-      <div className="relative z-10 flex items-start justify-between bg-slate-950 rounded-3xl p-6 w-full h-full border border-neutral-900 gap-6 overflow-hidden bg-clip-padding">
+      <div className="relative z-10 flex items-start justify-between bg-mist-950 rounded-3xl p-6 w-full h-full border border-neutral-900 gap-6 overflow-hidden bg-clip-padding">
         <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none z-10" />
 
         <div className="flex-1 mt-2 overflow-hidden z-10 pointer-events-none">
