@@ -2,6 +2,7 @@ import "../index.css";
 import meshCircle from "../assets/Images/Mesh Circle.svg";
 import meshCircle2 from "../assets/Images/Mesh Circle2.svg";
 import AI_Stars from "../assets/Images/AI_Stars.png";
+import pfp_profile from "../assets/Images/pfp_profile.png";
 import {
   easeInOut,
   motion,
@@ -242,31 +243,54 @@ export default function Programming() {
 "
       />
 
-      <main className="relative">
+      <main className="relative font-Satoshi">
         <motion.section
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
           className="relative flex items-start justify-start w-full min-h-screen p-10 text-white font-Clash snap-center overflow-hidden"
+          id="Hero"
         >
           <div className="absolute inset-0 z-0 pointer-events-none bg-[linear-gradient(to_right,rgba(255,255,255,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,transparent_40%,#000_100%)]" />
           <div className="relative z-20 p-6 sm:p-12 ml-12 sm:ml-32 lg:ml-48 flex flex-col w-max">
-            <motion.p
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-4xl font-Satoshi"
-            >
-              <i>Hello I'm</i>
-            </motion.p>
-            <motion.h1
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-5xl md:text-7xl lg:text-KindaBigAss leading-none whitespace-nowrap"
-            >
-              Jomari Celis
-            </motion.h1>
+            <div>
+              <motion.p
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-4xl font-Satoshi"
+              >
+                <i>Hello I'm</i>
+              </motion.p>
+              <motion.h1
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="font-Tangerine font-[700] text-5xl md:text-7xl lg:text-BigAss leading-none whitespace-nowrap mb-4"
+              >
+                Jomari Celis
+              </motion.h1>
+            </div>
+            <div className="flex flex-row gap-5">
+              <a
+                href="#Projects"
+                className="font-Satoshi cursor-pointer block w-max relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1px] after:bg-current after:scale-x-0 after:origin-right hover:after:scale-x-100 hover:after:origin-left after:transition-transform after:duration-500 after:delay-150 after:ease-out"
+              >
+                my projects
+              </a>
+              <a
+                href="#footer"
+                className="font-Satoshi cursor-pointer block w-max relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1px] after:bg-current after:scale-x-0 after:origin-right hover:after:scale-x-100 hover:after:origin-left after:transition-transform after:duration-500 after:delay-150 after:ease-out"
+              >
+                contact
+              </a>
+              <a
+                href="#skills"
+                className="font-Satoshi cursor-pointer block w-max relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1px] after:bg-current after:scale-x-0 after:origin-right hover:after:scale-x-100 hover:after:origin-left after:transition-transform after:duration-500 after:delay-150 after:ease-out"
+              >
+                skills
+              </a>
+            </div>
 
             <div className="grid grid-cols-[1fr_3fr]">
               <div className="ml-2"></div>
@@ -293,6 +317,27 @@ export default function Programming() {
           </div>
         </motion.section>
 
+        <motion.section
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="relative flex items-start justify-start w-full mb-50 h-full min-h-screen p-10 text-white font-Clash snap-center overflow-hidden"
+        >
+          <div className="absolute inset-0 z-0 pointer-events-none bg-[linear-gradient(to_right,rgba(255,255,255,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,transparent_40%,#000_100%)]" />
+          <div className="relative z-20 p-6 sm:p-12 ml-12 sm:ml-32 lg:ml-40 flex flex-col">
+            <div className="font-Satoshi font-[350] text-[3.5rem] max-w-7xl leading-tight tracking-relaxed self-end mt-2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
+              repudiandae asperiores itaque delectus, necessitatibus suscipit
+              assumenda quam officia, tempore tempora omnis, aspernatur sed
+              facere. Atque quaerat unde officia adipisci quis.
+            </div>
+
+            <div className="font-Tangerine self-end text-right text-7xl sm:text-8xl lg:text-BigAss font-bold mt-10">
+              Lorem ipsum
+            </div>
+          </div>
+        </motion.section>
+
         <section
           ref={aboutMeRef}
           className="relative z-20 w-full text-white font-Clash"
@@ -305,8 +350,17 @@ export default function Programming() {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: false, amount: 0.2 }}
                   transition={{ duration: 0.5, ease: "easeInOut" }}
+                  src={pfp_profile}
+                  className="w-48 md:w-64 lg:w-120 absolute z-20"
+                  alt=""
+                />
+                <motion.img
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: false, amount: 0.2 }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
                   src={meshCircle2}
-                  className="w-48 md:w-64 lg:w-96"
+                  className="w-48 md:w-64 lg:w-120 "
                   alt=""
                 />
               </div>
@@ -381,7 +435,8 @@ export default function Programming() {
 
         <motion.section
           ref={mySkillsRef}
-          className="relative z-20 flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash overflow-hidden snap-center  "
+          className="relative z-20 flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash overflow-hidden snap-center border-blue-500 shadow-[inset_0_0_1000px_10px_rgba(59,130,246,0.3)]"
+          id="skills"
         >
           <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
             {[...Array(300)].map((_, i) => (
@@ -490,6 +545,7 @@ export default function Programming() {
         </motion.section>
 
         <motion.section
+          id="Projects"
           ref={myProjectsRef}
           className="relative z-20 flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash snap-center  "
         >
@@ -535,7 +591,7 @@ export default function Programming() {
                   imageUrl=""
                   badgeText="dd"
                   glowColor="rgba(246, 83, 255, 0.69)"
-                  linkUrl=""
+                  linkUrl="/thepoint"
                 />
 
                 <WebsiteCard
@@ -586,36 +642,58 @@ export default function Programming() {
           color: isFooterRef ? "#020617" : "#ffffff",
         }}
         transition={{ duration: 0.3, delay: 0.3, ease: "easeOut" }}
-        className="relative z-20 overflow-hidden flex flex-col justify-center items-center w-full min-h-screen snap-center snap-always"
+        className="relative z-20 overflow-hidden flex flex-col justify-center items-center w-full min-h-screen snap-center snap-always px-6"
+        id="footer"
       >
-        <motion.div
-          className="absolute inset-0 z-0 pointer-events-none"
-          initial={{
-            backgroundImage:
-              "linear-gradient(to bottom, rgba(88, 28, 135, 0.4) 0%, rgba(88, 28, 135, 0) 100%)",
-          }}
-          animate={{
-            backgroundImage: isFooterRef
-              ? "linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%)"
-              : "linear-gradient(to bottom, rgba(88, 28, 135, 0.4) 0%, rgba(88, 28, 135, 0) 100%)",
-          }}
-          transition={{ duration: 0.3, delay: 0.3, ease: "easeOut" }}
-        />
+        <a
+          href="#Hero"
+          className="absolute top-10 left-10 z-30 font-Satoshi text-lg font-medium hover:underline hover:opacity-80 transition-all duration-200 cursor-pointer"
+        >
+          back to top
+        </a>
 
-        <div
-          className="absolute inset-0 z-0 pointer-events-none transition-opacity duration-300"
-          style={{
-            opacity: isFooterHovering ? 1 : 0,
-            background: `radial-gradient(500px circle at ${footerMousePos.x} ${footerMousePos.y}, rgba(0,0,0,0.15), transparent 60%)`,
-          }}
-        />
+        <div className="font-Satoshi z-10 flex flex-col items-center justify-center gap-10 w-full max-w-5xl mx-auto font-Clash text-center pointer-events-none">
+          <motion.h2
+            animate={{ color: ["#000000", "#3b82f6", "#000000"] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            className="text-6xl md:text-8xl lg:text-9xl font-semibold tracking-tight"
+          >
+            Let's Work Together!
+          </motion.h2>
 
-        <div className="z-10 mt-5 text-6xl text-center font-Clash relative pointer-events-none">
-          <p className="p-5"> Let's Work together!</p>
-          <div className="m-5">
-            <p className="text-2xl">Email Me</p>
+          <div className="flex flex-col items-center gap-10 mt-4 pointer-events-auto w-full">
+            <motion.p className="text-2xl md:text-3xl font-light opacity-80 pointer-events-none">
+              Got a project in mind?
+            </motion.p>
+
+            <div className="flex flex-row items-center justify-center gap-8 md:gap-12 text-lg md:text-lg font-small mb-20">
+              <a
+                href="mailto:your@email.com"
+                className="hover:scale-105 hover:underline hover:opacity-80 active:scale-95 transition-all duration-200 cursor-pointer"
+              >
+                Email
+              </a>
+              <a
+                href="https://linkedin.com/in/yourusername"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:scale-105 hover:underline hover:opacity-80 active:scale-95 transition-all duration-200 cursor-pointer"
+              >
+                LinkedIn
+              </a>
+
+              <a
+                href="https://github.com/yourusername"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:scale-105 hover:underline hover:opacity-80 active:scale-95 transition-all duration-200 cursor-pointer"
+              >
+                GitHub
+              </a>
+            </div>
+
+            <div className="w-[100vw] h-[1px] bg-current opacity-20 mt-20"></div>
           </div>
-          <button className="pointer-events-auto"></button>
         </div>
       </motion.footer>
     </div>

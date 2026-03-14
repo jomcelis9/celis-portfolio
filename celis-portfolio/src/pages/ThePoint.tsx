@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function JacsonsPage() {
+export default function ThePoint() {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-neutral-200 font-sans py-20 px-6 md:px-12 flex flex-col items-center">
       <div className="max-w-2xl w-full">
@@ -10,7 +10,7 @@ export default function JacsonsPage() {
 
           </div>
           <h1 className="font-Satoshi text-5xl md:text-7xl lg:text-7xl font-normal tracking-tight text-white leading-[1.05]">
-            Jacsons' website design
+            The Point T herapy website
           </h1>
         </div>  
 

@@ -1,5 +1,29 @@
 
 @font-face {
+
+  font-family: "Satoshi-Variable";
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("./assets/fonts/Satoshi-Variable.ttf") format("truetype");
+}
+
+@font-face{
+    font-family: "Lobster-Regular";
+    font-style: normal;
+    font-weight: 200 700;
+    font-style: normal;
+    src: url("./assets/fonts/Lobster-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Tangerine-Regular";
+  font-style: normal;
+  font-weight: 200 700;
+  font-style: normal;
+  src: url("./assets/fonts/Tangerine-Bold.ttf") format("truetype");
+}
+
+@font-face {
   font-family: "ClashDisplay-Variable";
   font-style: normal;
   font-weight: 200 700;
@@ -18,22 +42,18 @@
 
 }
 
-@font-face {
 
-  font-family: "Satoshi-Variable";
-  font-style: normal;
-  font-weight: 200 700;
-  font-display: swap;
-  src: url("./assets/fonts/Satoshi-Variable.ttf") format("truetype");
-}
 
 @theme{
+  --font-Satoshi: "Satoshi-Variable", "sans-serif";
   --font-Clash: "ClashDisplay-Variable", "sans-serif";
   --font-Garamond: "EbGaramond-VariableFont_wght", "sans-serif";
-  --font-Satoshi: "Satoshi-Variable", "sans-serif";
+  --font-Lobster: "Lobster-Regular", "sans-serif";
+  --font-Tangerine: "Tangerine-Regular", "sens-serif";
   --color-jomsGray: #3B3939;
   --text-BigAss: 10rem;
   --text-KindaBigAss: 7rem;
+  
 
 }
 
