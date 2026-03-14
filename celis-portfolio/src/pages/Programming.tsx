@@ -271,6 +271,14 @@ export default function Programming() {
                 Jomari Celis
               </motion.h1>
             </div>
+            <div className="font-Satoshi flex flex-row items-center gap-5">
+              <p>Software Designer</p>
+              <span>|</span>
+              <div className="flex items-center gap-2">
+                <div className="w-2.5 h-2.5 rounded-full bg-green-500 shadow-[0_0_10px_2px_rgba(34,197,94,0.6)] animate-pulse"></div>
+                <p>Available for work</p>
+              </div>
+            </div>
             <div className="flex flex-row gap-5">
               <a
                 href="#Projects"
