@@ -81,7 +81,7 @@ export default function Programming() {
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-screen bg-black overflow-x-hidden overflow-y-auto snap-y snap-proximity scroll-smooth"
+      className="relative w-full h-screen bg-black overflow-x-hidden overflow-y-auto scroll-smooth"
     >
       <div>
         <motion.img
@@ -248,7 +248,7 @@ export default function Programming() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="relative flex items-start justify-start w-full min-h-screen p-10 text-white font-Clash snap-center overflow-hidden"
+          className="relative flex items-start justify-start w-full min-h-screen p-10 text-white font-Clash overflow-hidden"
           id="Hero"
         >
           <div className="absolute inset-0 z-0 pointer-events-none bg-[linear-gradient(to_right,rgba(255,255,255,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,transparent_40%,#000_100%)]" />
@@ -300,17 +300,18 @@ export default function Programming() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
-                  className="font-Satoshi font-[350] text-[3.5rem] max-w-4xl leading-tight tracking-relaxed self-end mt-2"
+                  className="font-Satoshi font-[350] text-[3rem] max-w-4xl leading-tight tracking-relaxed self-end mt-2"
                 >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Recusandae eos eaque culpa cum, accusantium excepturi labore
-                  tempora eum dignissimos, deleniti ducimus consectetur
-                  temporibus voluptatibus sapiente, porro doloribus repellendus
-                  magnam iste. Lorem ipsum dolor sit amet consectetur
-                  adipisicing elit. In autem cum totam reprehenderit fugiat
-                  perferendis nihil fuga sint voluptatem ipsa magni commodi,
-                  necessitatibus provident aliquid doloribus nulla iusto
-                  excepturi! Eligendi.
+                  I am a creative technologist focused on building intelligent,
+                  user-centered digital systems. My work combines{" "}
+                  <b>AI engineering</b>, <b>full-stack development</b>, and{" "}
+                  <b>UI/UX design</b>. I develop <b>PERN</b>-stack platforms,
+                  database-driven applications, and machine learning systems
+                  using PyTorch and computer vision. I <b>lead</b> agile
+                  development teams, coordinating developers and designing
+                  system architectures to bring ideas from concept to deployment
+                  while building technology that blends engineering, data, and
+                  thoughtful design.
                 </motion.p>
               </div>
             </div>
@@ -321,20 +322,55 @@ export default function Programming() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="relative flex items-start justify-start w-full mb-50 h-full min-h-screen p-10 text-white font-Clash snap-center overflow-hidden"
+          className="relative flex items-start justify-start w-full mb-50 h-full min-h-screen p-10 text-white font-Clash overflow-hidden"
         >
           <div className="absolute inset-0 z-0 pointer-events-none bg-[linear-gradient(to_right,rgba(255,255,255,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,transparent_40%,#000_100%)]" />
           <div className="relative z-20 p-6 sm:p-12 ml-12 sm:ml-32 lg:ml-40 flex flex-col">
+            <div className="flex justify-center w-full">
+              <SectionTag
+                text="My Principles"
+                textColor="#FFFFFF"
+                outlineColor="#FFFFFF"
+                className="mb-5"
+              ></SectionTag>
+            </div>
             <div className="font-Satoshi font-[350] text-[3.5rem] max-w-7xl leading-tight tracking-relaxed self-end mt-2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-              repudiandae asperiores itaque delectus, necessitatibus suscipit
-              assumenda quam officia, tempore tempora omnis, aspernatur sed
-              facere. Atque quaerat unde officia adipisci quis.
+              I approach both my work and daily life by combining leadership,
+              problem solving, and a growth mindset. I take initiative in
+              guiding teams and ideas forward, tackle challenges with analytical
+              thinking and persistence, and continuously seek opportunities to
+              learn and improve. Together, these attitudes shape how I build
+              solutions, collaborate with others, and grow as a working member
+              of society.
             </div>
 
-            <div className="font-Tangerine self-end text-right text-7xl sm:text-8xl lg:text-BigAss font-bold mt-10">
-              Lorem ipsum
-            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="mt-10 flex flex-col items-end text-right text-white"
+            >
+              <p className="font-Tangerine font-bold text-7xl sm:text-8xl lg:text-BigAss leading-none">
+                Virtus
+              </p>
+
+              <div className="font-Satoshi mt-4 flex flex-col items-end w-full max-w-md">
+                <div className="flex items-baseline gap-3 mb-2">
+                  <span className="text-lg italic opacity-70">vir·tus</span>
+                  <span className="text-base italic font-medium">noun</span>
+                </div>
+
+                <div className="text-xl md:text-2xl font-light mb-4">
+                  <span className="font-bold mr-2">1.</span>
+                  Excellence; moral perfection.
+                </div>
+
+                <p className="text-sm md:text-base font-light italic opacity-60 border-blue-500 pl-3">
+                  "Virtus in actione consistit."
+                </p>
+              </div>
+            </motion.div>
           </div>
         </motion.section>
 
@@ -351,18 +387,18 @@ export default function Programming() {
                   viewport={{ once: false, amount: 0.2 }}
                   transition={{ duration: 0.5, ease: "easeInOut" }}
                   src={pfp_profile}
-                  className="w-48 md:w-64 lg:w-120 absolute z-20"
+                  className="w-48 md:w-64 lg:w-120  z-20"
                   alt=""
                 />
-                <motion.img
+                {/* <motion.img
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: false, amount: 0.2 }}
                   transition={{ duration: 0.5, ease: "easeInOut" }}
                   src={meshCircle2}
-                  className="w-48 md:w-64 lg:w-120 "
+                  className="w-48 md:w-64 lg:w-120"
                   alt=""
-                />
+                /> */}
               </div>
 
               <div className="relative w-full md:w-1/2 md:ml-10 lg:ml-16 flex flex-col z-20 pb-[20vh]">
@@ -371,19 +407,18 @@ export default function Programming() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, amount: 0.5 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
-                  className="flex flex-col items-center md:items-start w-full min-h-[80vh] justify-center snap-center"
+                  className="flex flex-col items-center md:items-start w-full min-h-[80vh] justify-center"
                 >
                   <div className="w-10 h-10 mb-3 rounded-md flex items-center justify-center">
                     <img src={AI_Stars} alt="" />
                   </div>
                   <h3 className="font-Satoshi text-5xl md:text-7xl text-center md:text-left font-light mb-3">
-                    Motion Design
+                    Leadership
                   </h3>
                   <p className="font-Satoshi text-lg md:text-xl text-center md:text-left leading-relaxed lg:leading-normal font-light">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Tempora modi esse optio dolore dolor debitis, ab voluptates
-                    animi nemo accusantium ipsam placeat impedit at odio, minima
-                    sunt soluta architecto reiciendis!
+                    Comfortable leading small teams in agile environments,
+                    coordinating developers, managing project timelines, and
+                    ensuring technical goals are delivered effectively.
                   </p>
                 </motion.div>
 
@@ -392,19 +427,18 @@ export default function Programming() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, amount: 0.5 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
-                  className="flex flex-col items-center md:items-start w-full min-h-[80vh] justify-center snap-center"
+                  className="flex flex-col items-center md:items-start w-full min-h-[80vh] justify-center"
                 >
                   <div className="w-10 h-10 mb-3 rounded-md flex items-center justify-center">
                     <img src={AI_Stars} alt="" />
                   </div>
                   <h3 className="font-Satoshi text-5xl md:text-7xl text-center md:text-left font-light mb-3">
-                    Web Development
+                    Growth Mindset
                   </h3>
                   <p className="font-Satoshi text-lg md:text-xl text-center md:text-left leading-relaxed lg:leading-normal font-light">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Tempora modi esse optio dolore dolor debitis, ab voluptates
-                    animi nemo accusantium ipsam placeat impedit at odio, minima
-                    sunt soluta architecto reiciendis!
+                    Continuously learning new tools, technologies, and methods
+                    to improve as a developer and engineer while staying
+                    adaptable in fast-changing tech environments.
                   </p>
                 </motion.div>
 
@@ -413,19 +447,18 @@ export default function Programming() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, amount: 0.5 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
-                  className="flex flex-col items-center md:items-start w-full min-h-[80vh] justify-center snap-center"
+                  className="flex flex-col items-center md:items-start w-full min-h-[80vh] justify-center"
                 >
                   <div className="w-10 h-10 mb-3 rounded-md flex items-center justify-center">
                     <img src={AI_Stars} alt="" />
                   </div>
                   <h3 className="font-Satoshi text-5xl md:text-7xl text-center md:text-left font-light mb-3">
-                    Visual Design
+                    Creative Thinking
                   </h3>
                   <p className="font-Satoshi text-lg md:text-xl text-center md:text-left leading-relaxed lg:leading-normal font-light">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Tempora modi esse optio dolore dolor debitis, ab voluptates
-                    animi nemo accusantium ipsam placeat impedit at odio, minima
-                    sunt soluta architecto reiciendis!
+                    Combines engineering with creativity to design systems that
+                    are both functional and user-focused, integrating UI/UX
+                    thinking with modern technologies.
                   </p>
                 </motion.div>
               </div>
@@ -434,10 +467,23 @@ export default function Programming() {
         </section>
 
         <motion.section
+          initial={{
+            opacity: 0,
+            boxShadow: "inset 0 0 0px 0px rgba(59,130,246,0)",
+            borderColor: "rgba(59,130,246,0)",
+          }}
+          whileHover={{
+            opacity: 1,
+            boxShadow: "inset 0 0 1000px 10px rgba(59,130,246,0.2)",
+            borderColor: "rgba(59,130,246,1)",
+          }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
           ref={mySkillsRef}
-          className="relative z-20 flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash overflow-hidden snap-center border-blue-500 shadow-[inset_0_0_1000px_10px_rgba(59,130,246,0.3)]"
+          className="relative z-20 flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash overflow-hidden"
           id="skills"
         >
+          <div></div>
           <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
             {[...Array(300)].map((_, i) => (
               <motion.div
@@ -547,7 +593,7 @@ export default function Programming() {
         <motion.section
           id="Projects"
           ref={myProjectsRef}
-          className="relative z-20 flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash snap-center  "
+          className="relative z-20 flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash"
         >
           <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-t from-purple-900/40 via-transparent to-transparent" />
           <div className="relative z-10 flex flex-col lg:flex-row max-w-7xl w-full px-4 lg:px-0">
@@ -561,7 +607,7 @@ export default function Programming() {
               </div>
 
               <div className="mb-10">
-                <h2 className="text-5xl md:text-7xl lg:text-8xl mb-2 text-center">
+                <h2 className="text-5xl font-Satoshi md:text-7xl lg:text-8xl mb-2 text-center">
                   My Projects
                 </h2>
                 <p className="text-center">
@@ -642,7 +688,7 @@ export default function Programming() {
           color: isFooterRef ? "#020617" : "#ffffff",
         }}
         transition={{ duration: 0.3, delay: 0.3, ease: "easeOut" }}
-        className="relative z-20 overflow-hidden flex flex-col justify-center items-center w-full min-h-screen snap-center snap-always px-6"
+        className="relative z-20 overflow-hidden flex flex-col justify-center items-center w-full min-h-screen px-6"
         id="footer"
       >
         <a

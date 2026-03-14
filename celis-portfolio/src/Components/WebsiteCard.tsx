@@ -65,7 +65,7 @@ const WebsiteCard: React.FC<WebsiteCardProps> = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       style={{ transform }}
-      className="group relative block w-[400px] h-[220px] shrink-0 font-sans transition-all duration-200 ease-out active:invert cursor-pointer focus:outline-none decoration-transparent will-change-transform"
+      className="group relative block w-[400px] h-[220px] shrink-0 font-Satoshi font-[400] transition-all duration-200 ease-out active:invert cursor-pointer focus:outline-none decoration-transparent will-change-transform"
       role="button"
       tabIndex={0}
       onKeyDown={(e) => {

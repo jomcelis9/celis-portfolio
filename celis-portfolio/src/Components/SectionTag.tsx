@@ -19,7 +19,7 @@ const SectionTag = ({
 }: SectionTagProps) => {
   return (
     <div
-      className={`relative inline-flex p-[1px] rounded-full ${className}`}
+      className={`relative inline-flex p-[1px] rounded-full ${className} pointer-events-none`}
       style={{
         background: `linear-gradient(to top right, ${outlineColor}80, ${outlineColor}, #ffffff80)`,
       }}
