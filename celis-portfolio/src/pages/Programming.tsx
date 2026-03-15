@@ -488,13 +488,13 @@ export default function Programming() {
         <motion.section
           initial={{
             opacity: 0,
-            boxShadow: "inset 0 0 0px 0px rgba(59,130,246,0)",
-            borderColor: "rgba(59,130,246,0)",
+            // boxShadow: "inset 0 0 0px 0px rgba(59,130,246,0)",
+            // borderColor: "rgba(59,130,246,0)",
           }}
           whileHover={{
             opacity: 1,
-            boxShadow: "inset 0 0 1000px 10px rgba(59,130,246,0.2)",
-            borderColor: "rgba(59,130,246,1)",
+            // boxShadow: "inset 0 0 1000px 10px rgba(59,130,246,0.2)",
+            // borderColor: "rgba(59,130,246,1)",
           }}
           viewport={{ once: true }}
           transition={{ duration: 1.5, ease: "easeInOut" }}
@@ -580,7 +580,7 @@ export default function Programming() {
                 outlineColor="#FFFFFF"
                 className="mb-5"
               ></SectionTag>
-              <h2 className="text-5xl md:text-7xl lg:text-8xl text-center mb-8">
+              <h2 className="font-Satoshi text-5xl md:text-7xl lg:text-8xl text-center mb-8">
                 My Skills
               </h2>
               <div className="flex flex-wrap justify-center gap-4 md:gap-6">
@@ -626,10 +626,10 @@ export default function Programming() {
               </div>
 
               <div className="mb-10">
-                <h2 className="text-5xl font-Clash md:text-7xl lg:text-8xl mb-7 text-center">
+                <h2 className="font-Satoshi font-700 text-5xl font-Clash md:text-7xl lg:text-8xl mb-7 text-center">
                   My Projects
                 </h2>
-                <p className="text-center">
+                <p className="font-Satoshi text-center">
                   {" "}
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                   Accusamus omnis quos molestiae facilis alias inventore
