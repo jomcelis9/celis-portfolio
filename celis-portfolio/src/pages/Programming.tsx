@@ -12,7 +12,7 @@ import {
 } from "motion/react";
 import { useRef, useState } from "react";
 import LogoCard from "../Components/LogoCard";
-import Logos from "../assets/logos";
+import Logos from "../assets/Logos";
 import WebsiteCard from "../Components/WebsiteCard";
 import SectionTag from "../Components/SectionTag";
 
