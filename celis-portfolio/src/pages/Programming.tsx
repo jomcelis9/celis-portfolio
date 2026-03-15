@@ -269,7 +269,7 @@ export default function Programming() {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="font-Tangerine font-[700] text-5xl md:text-7xl lg:text-BigAss leading-none whitespace-nowrap mb-4"
               >
-                Hello Production
+                Hello Joey
               </motion.h1>
             </div>
             <div className="font-Satoshi flex flex-row items-center gap-5">
