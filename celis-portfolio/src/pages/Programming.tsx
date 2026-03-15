@@ -60,7 +60,7 @@ export default function Programming() {
     [0.35, 0.5, 0.65],
     [30, 0, -30]
   );
-
+// sdsdsds
   const p3Opacity = useTransform(
     aboutScrollProgress,
     [0.6, 0.75, 1],
