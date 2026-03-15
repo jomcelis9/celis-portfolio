@@ -274,11 +274,21 @@ export default function Programming() {
             <div className="font-Satoshi flex flex-row items-center gap-5">
               <p>Software Designer</p>
               <span>|</span>
-              <div className="flex items-center gap-2">
-                <div className="w-2.5 h-2.5 rounded-full bg-green-500 shadow-[0_0_10px_2px_rgba(34,197,94,0.6)] animate-pulse"></div>
+              <motion.div
+                // className="flex items-center gap-2"
+                animate={{ color: ["#FFFFFF", "#2E6F40", "#FFFFFF"] }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="font-semibold tracking-tight"
+              >
+                {/* <div className="w-2.5 h-2.5 rounded-full bg-green-500 shadow-[0_0_10px_2px_rgba(34,197,94,0.6)] animate-pulse"></div> */}
                 <p>Available for work</p>
-              </div>
+              </motion.div>
             </div>
+
             <div className="flex flex-row gap-5">
               <a
                 href="#Projects"
@@ -615,7 +625,7 @@ export default function Programming() {
               </div>
 
               <div className="mb-10">
-                <h2 className="text-5xl font-Satoshi md:text-7xl lg:text-8xl mb-2 text-center">
+                <h2 className="text-5xl font-Clash md:text-7xl lg:text-8xl mb-7 text-center">
                   My Projects
                 </h2>
                 <p className="text-center">
