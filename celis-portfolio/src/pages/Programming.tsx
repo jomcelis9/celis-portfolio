@@ -14,11 +14,11 @@ import { useRef, useState } from "react";
 import LogoCard from "../Components/LogoCard";
 import WebsiteCard from "../Components/WebsiteCard";
 import SectionTag from "../Components/SectionTag";
-import Logos from "../assets/Logos";
+import Rogos from "../assets/Rogos";
 
 
 export default function Programming() {
-  const logoObject = new Logos();
+  const logoObject = new Rogos();
   const containerRef = useRef<HTMLDivElement>(null);
   const aboutMeRef = useRef(null);
   const mySkillsRef = useRef(null);

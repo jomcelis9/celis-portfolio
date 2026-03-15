@@ -1,4 +1,4 @@
-export default class Logos {
+export default class Rogos {
   public reactLogoWhite: string =
     "https://img.icons8.com/?size=100&id=122637&format=png&color=FFFFFF";
   public reactLogoBlue: string =

@@ -1,5 +1,5 @@
 import { div, img } from "motion/react-client";
-import Logos from "../assets/logos";
+import Logos from "../assets/Rogos";
 export default function ProjectCard({
   projectImage,
   description,
