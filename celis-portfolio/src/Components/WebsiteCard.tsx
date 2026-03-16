@@ -86,7 +86,7 @@ const WebsiteCard: React.FC<WebsiteCardProps> = ({
         <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none z-10" />
 
         <div className="flex-1 mt-1 sm:mt-2 overflow-hidden z-10 pointer-events-none">
-          <h2 className="text-white text-lg sm:text-3xl font-normal tracking-tight mb-2 sm:mb-4 line-clamp-2">
+          <h2 className="text-white text-lg sm:text-3xl font-300 tracking-tight mb-2 sm:mb-4 line-clamp-2">
             {title}
           </h2>
           <p className="text-neutral-400 text-sm sm:text-lg leading-relaxed line-clamp-3">
@@ -95,7 +95,7 @@ const WebsiteCard: React.FC<WebsiteCardProps> = ({
         </div>
 
         <div className="flex flex-col items-center gap-2 sm:gap-3 shrink-0 z-10 pointer-events-none">
-          <div className="w-16 h-16 sm:w-24 sm:h-24 bg-[#8be6d6] rounded-xl sm:rounded-3xl overflow-hidden relative shadow-inner shrink-0">
+          <div className="w-16 h-16 sm:w-24 sm:h-24 bg-transparent rounded-xl sm:rounded-3xl overflow-hidden relative shadow-inner shrink-0">
             {imageUrl ? (
               <img
                 src={imageUrl}

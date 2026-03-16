@@ -244,15 +244,50 @@ export default function Programming() {
       />
 
       <main className="relative font-Satoshi">
+        {/* HERO SECTION */}
         <motion.section
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="relative flex items-start justify-start w-full min-h-screen p-6 sm:p-10 text-white font-Clash overflow-hidden"
+          className="relative flex flex-col w-full min-h-screen p-6 sm:p-10 text-white font-Clash overflow-hidden"
           id="Hero"
         >
-          <div className="absolute inset-0 z-0 pointer-events-none bg-[linear-gradient(to_right,rgba(255,255,255,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,transparent_40%,#000_100%)]" />
-          <div className="relative z-20 pt-20 sm:pt-12 md:p-12 lg:ml-48 flex flex-col w-full max-w-7xl">
+          <div className="absolute inset-0 z-0 pointer-events-none bg-[linear-gradient(to_right,rgba(255,255,255,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,transparent_40%,#000_100%)]" />
+          <motion.header
+            initial={{ color: "#ffffff" }}
+            animate={{ color: isFooterRef ? "#000000" : "#ffffff" }}
+            transition={{ duration: 0.3, delay: 0.3, ease: "easeOut" }}
+            className="font-Satoshi fixed top-0 left-0 z-50 w-full flex justify-between items-center text-sm sm:text-base p-6 mt-6 sm:px-10"
+          >
+            <a
+              href="#Hero"
+              className="font-Satoshi cursor-pointer block w-max relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1px] after:bg-current after:scale-x-0 after:origin-right hover:after:scale-x-100 hover:after:origin-left after:transition-transform after:duration-500 after:delay-150 after:ease-out"
+            >
+              back to top
+            </a>
+
+            <div className="flex gap-6 sm:gap-10">
+              <a
+                href="#Projects"
+                className="font-Satoshi cursor-pointer block w-max relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1px] after:bg-current after:scale-x-0 after:origin-right hover:after:scale-x-100 hover:after:origin-left after:transition-transform after:duration-500 after:delay-150 after:ease-out"
+              >
+                my projects
+              </a>
+              <a
+                href="#skills"
+                className="font-Satoshi cursor-pointer block w-max relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1px] after:bg-current after:scale-x-0 after:origin-right hover:after:scale-x-100 hover:after:origin-left after:transition-transform after:duration-500 after:delay-150 after:ease-out"
+              >
+                skills
+              </a>
+              <a
+                href="#footer"
+                className="font-Satoshi cursor-pointer block w-max relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1px] after:bg-current after:scale-x-0 after:origin-right hover:after:scale-x-100 hover:after:origin-left after:transition-transform after:duration-500 after:delay-150 after:ease-out"
+              >
+                contact
+              </a>
+            </div>
+          </motion.header>
+          <div className="relative z-20 pt-16 sm:pt-12 md:p-12 lg:ml-48 flex flex-col w-full max-w-7xl flex-grow justify-center">
             <div>
               <motion.p
                 initial={{ opacity: 0, x: -20 }}
@@ -287,28 +322,7 @@ export default function Programming() {
               </motion.div>
             </div>
 
-            <div className="flex flex-wrap flex-row gap-4 sm:gap-5 mt-6 mb-8 sm:mb-0 text-sm sm:text-base">
-              <a
-                href="#Projects"
-                className="font-Satoshi cursor-pointer block w-max relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1px] after:bg-current after:scale-x-0 after:origin-right hover:after:scale-x-100 hover:after:origin-left after:transition-transform after:duration-500 after:delay-150 after:ease-out"
-              >
-                my projects
-              </a>
-              <a
-                href="#footer"
-                className="font-Satoshi cursor-pointer block w-max relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1px] after:bg-current after:scale-x-0 after:origin-right hover:after:scale-x-100 hover:after:origin-left after:transition-transform after:duration-500 after:delay-150 after:ease-out"
-              >
-                contact
-              </a>
-              <a
-                href="#skills"
-                className="font-Satoshi cursor-pointer block w-max relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1px] after:bg-current after:scale-x-0 after:origin-right hover:after:scale-x-100 hover:after:origin-left after:transition-transform after:duration-500 after:delay-150 after:ease-out"
-              >
-                skills
-              </a>
-            </div>
-
-            <div className="flex flex-col md:grid md:grid-cols-[1fr_3fr] mt-4 sm:mt-8">
+            <div className="flex flex-col md:grid md:grid-cols-[1fr_3fr] mt-8 sm:mt-12">
               <div className="hidden md:block ml-2"></div>
 
               <div>
@@ -333,6 +347,7 @@ export default function Programming() {
             </div>
           </div>
         </motion.section>
+        {/* BIO SECTION */}
         <motion.section
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -392,6 +407,7 @@ export default function Programming() {
             </motion.div>
           </div>
         </motion.section>
+        {/* ATTITUDE SECTION */}
         <section
           ref={aboutMeRef}
           className="relative z-20 w-full text-white font-Clash"
@@ -483,13 +499,14 @@ export default function Programming() {
             </div>
           </div>
         </section>
+        {/* SKILLS SECTION */}
         <motion.section
           initial={{
             opacity: 0,
             // boxShadow: "inset 0 0 0px 0px rgba(59,130,246,0)",
             // borderColor: "rgba(59,130,246,0)",
           }}
-          whileHover={{
+          whileInView={{
             opacity: 1,
             // boxShadow: "inset 0 0 1000px 10px rgba(59,130,246,0.2)",
             // borderColor: "rgba(59,130,246,1)",
@@ -505,7 +522,7 @@ export default function Programming() {
             {[...Array(300)].map((_, i) => (
               <motion.div
                 key={`star-${i}`}
-                className="absolute bg-white rounded-full"
+                className="absolute bg-blue-400 rounded-full"
                 style={{
                   top: `${Math.random() * 100}%`,
                   left: `${Math.random() * 100}%`,
@@ -583,9 +600,9 @@ export default function Programming() {
               </h2>
               <div className="flex flex-wrap justify-center gap-4 md:gap-6">
                 <LogoCard
-                  logo={logoObject.reactLogoBlue}
+                  logo={logoObject.python}
                   confidence={90}
-                  technology={"React"}
+                  technology={"Python"}
                 />
                 <LogoCard
                   logo={logoObject.javaLogo}
@@ -593,26 +610,56 @@ export default function Programming() {
                   technology={"Java"}
                 />
                 <LogoCard
+                  logo={logoObject.typeScript}
+                  confidence={90}
+                  technology={"TypeScript"}
+                />
+                <LogoCard
                   logo={logoObject.reactLogoBlue}
                   confidence={90}
                   technology={"React"}
                 />
                 <LogoCard
-                  logo={logoObject.javaLogo}
+                  logo={logoObject.figma}
                   confidence={90}
-                  technology={"Java"}
+                  technology={"Figma"}
+                />
+                <LogoCard
+                  logo={logoObject.postgres}
+                  confidence={90}
+                  technology={"postgres"}
+                />
+                <LogoCard
+                  logo={logoObject.claude}
+                  confidence={90}
+                  technology={"Claude"}
+                />
+                <LogoCard
+                  logo={logoObject.nodeJs}
+                  confidence={90}
+                  technology={"NodeJs"}
+                />
+                <LogoCard
+                  logo={logoObject.bootstrap}
+                  confidence={90}
+                  technology={"Tailwind "}
+                />
+                <LogoCard
+                  logo={logoObject.pyTorch}
+                  confidence={90}
+                  technology={"PyTorch"}
                 />
               </div>
             </div>
           </div>
         </motion.section>
-        \
+        \{/* PROJECTS SECTION */}
         <motion.section
           id="Projects"
           ref={myProjectsRef}
           className="relative z-20 flex items-center justify-center w-full min-h-screen p-6 sm:p-10 text-white font-Clash"
         >
-          <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-t from-purple-900/40 via-transparent to-transparent" />
+          <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-t from-blue-900/40 via-transparent to-transparent" />
           <div className="relative z-10 flex flex-col max-w-7xl w-full px-0 sm:px-4 lg:px-0">
             <div className="w-full">
               <div className="flex justify-center w-full">
@@ -663,11 +710,11 @@ export default function Programming() {
                 <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none">
                   <WebsiteCard
                     title="Jom's CGS"
-                    description="ABCDEFG"
-                    imageUrl=""
-                    badgeText="dd"
+                    description="An website designed for my first business: Jom's Chili Garlic Sauce!"
+                    imageUrl="src/assets/Images/jomsChili.png"
+                    badgeText="Website"
                     glowColor="rgba(255, 195, 74, 0.69)"
-                    linkUrl=""
+                    linkUrl="/jomsCGS"
                   />
                 </div>
 
@@ -705,26 +752,26 @@ export default function Programming() {
           </div>
         </motion.section>
       </main>
+      {/* FOOTER */}
       <motion.footer
         ref={footerRef}
         onMouseMove={handleFooterMouseMove}
         onMouseEnter={() => setIsFooterHovering(true)}
         onMouseLeave={() => setIsFooterHovering(false)}
-        initial={{ backgroundColor: "#020617", color: "#ffffff" }}
+        initial={{ backgroundColor: "#000000", color: "#ffffff" }}
         animate={{
-          backgroundColor: isFooterRef ? "#ffffff" : "#020617",
-          color: isFooterRef ? "#020617" : "#ffffff",
+          backgroundColor: isFooterRef ? "#ffffff" : "#000000",
+          color: isFooterRef ? "#000000" : "#ffffff",
         }}
         transition={{ duration: 0.3, delay: 0.3, ease: "easeOut" }}
         className="relative z-20 overflow-hidden flex flex-col justify-center items-center w-full min-h-screen px-6"
         id="footer"
       >
-        <a
-          href="#Hero"
-          className="absolute top-10 left-10 z-30 font-Satoshi text-lg font-medium hover:underline hover:opacity-80 transition-all duration-200 cursor-pointer"
-        >
-          back to top
-        </a>
+        <motion.div
+          animate={{ opacity: isFooterRef ? 0 : 1 }}
+          transition={{ duration: 0.3, delay: 0.3, ease: "easeOut" }}
+          className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-b from-blue-900/40 via-transparent to-transparent"
+        />
 
         <div className="font-Satoshi z-10 flex flex-col items-center justify-center gap-10 w-full max-w-5xl mx-auto font-Clash text-center pointer-events-none">
           <motion.h2

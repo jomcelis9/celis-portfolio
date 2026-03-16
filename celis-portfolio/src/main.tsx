@@ -10,6 +10,7 @@ import Multimedia from "./pages/Multimedia.tsx";
 import ProjectPage from "./pages/ProjectPage.tsx";
 import JacsonsPage from "./pages/JacsonsPage.tsx";
 import ThePoint from "./pages/ThePoint.tsx";
+import JomsCGS from "./pages/JomsCGS.tsx";
 
 
 createRoot(document.getElementById("root")!).render(
@@ -22,6 +23,7 @@ createRoot(document.getElementById("root")!).render(
         <Route path="/project" element={<ProjectPage />} />
         <Route path="/jacsons" element={<JacsonsPage />} />
         <Route path="/thepoint" element={<ThePoint />} />
+        <Route path="/jomsCGS" element={<JomsCGS />} />
         <Route path="/multimedia" element={<Multimedia />} />
       </Routes>
     </BrowserRouter>
