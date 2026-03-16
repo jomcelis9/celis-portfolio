@@ -2,8 +2,8 @@ import React from "react";
 
 export default function JomsCGS() {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-neutral-200 font-sans py-20 px-6 md:px-12 flex flex-col items-center">
-      <div className="max-w-2xl w-full">
+    <div className="min-h-screen font-Satoshi bg-[#0a0a0a] text-neutral-200 font-sans py-20 px-6 md:px-12 flex flex-col items-center">
+      <div className="max-w-5xl w-full">
         {/* Header Section */}
         <div className="flex items-start gap-6 md:gap-8">
           <div className="w-14 h-16 md:w-20 md:h-20 bg-black rounded-2xl overflow-hidden relative shadow-inner shrink-0 mt-3 md:mt-4">
@@ -40,16 +40,23 @@ export default function JomsCGS() {
         </div>
 
         {/* Content Sections */}
-        <div className="mt-20 flex flex-col gap-16">
+        <div className="mt-20 w-full flex flex-col gap-16">
           <section>
-            <h2 className="text-3xl md:text-4xl text-white mb-6 font-normal tracking-tight">
-              What's been done
-            </h2>
-            <p className="text-neutral-400 text-lg md:text-xl leading-relaxed">
-              Designed the UI using a design system for 3 platforms: iOS,
-              Android and web. With the help of data analyst tested my solution
-              on a small batch of users. Eventually, rolled out to everyone.
-            </p>
+            <div>
+              <h2 className="text-3xl max-w-xl md:text-4xl text-white mb-6 font-normal tracking-tight">
+                What's been done
+              </h2>
+            </div>
+
+            <img src="src/assets/Images/Hero_CGS.png" alt="" />
+            <div>
+              <p className="text-neutral-400 text-xs md:text-xl max-w-xl leading-relaxed">
+                Designed the UI using a design system for 3 platforms: iOS,
+                Android and web. With the help of data analyst tested my
+                solution on a small batch of users. Eventually, rolled out to
+                everyone.
+              </p>
+            </div>
           </section>
 
           <section>
