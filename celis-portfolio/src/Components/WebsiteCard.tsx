@@ -65,7 +65,7 @@ const WebsiteCard: React.FC<WebsiteCardProps> = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       style={{ transform }}
-      className="group relative block w-[400px] h-[220px] shrink-0 font-Satoshi font-[400] transition-all duration-200 ease-out active:invert cursor-pointer focus:outline-none decoration-transparent will-change-transform"
+      className="group relative block w-full sm:w-[400px] h-auto min-h-[160px] sm:h-[220px] shrink-0 font-Satoshi font-[400] transition-all duration-200 ease-out active:invert cursor-pointer focus:outline-none decoration-transparent will-change-transform"
       role="button"
       tabIndex={0}
       onKeyDown={(e) => {
@@ -82,20 +82,20 @@ const WebsiteCard: React.FC<WebsiteCardProps> = ({
         }}
       />
 
-      <div className="relative z-10 flex items-start justify-between bg-mist-950 rounded-3xl p-6 w-full h-full border border-neutral-900 gap-6 overflow-hidden bg-clip-padding">
+      <div className="relative z-10 flex flex-row items-start justify-between bg-mist-950 rounded-2xl sm:rounded-3xl p-4 sm:p-6 w-full h-full border border-neutral-900 gap-3 sm:gap-6 overflow-hidden bg-clip-padding">
         <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none z-10" />
 
-        <div className="flex-1 mt-2 overflow-hidden z-10 pointer-events-none">
-          <h2 className="text-white text-3xl font-normal tracking-tight mb-4 line-clamp-2">
+        <div className="flex-1 mt-1 sm:mt-2 overflow-hidden z-10 pointer-events-none">
+          <h2 className="text-white text-lg sm:text-3xl font-normal tracking-tight mb-2 sm:mb-4 line-clamp-2">
             {title}
           </h2>
-          <p className="text-neutral-400 text-lg leading-relaxed line-clamp-3">
+          <p className="text-neutral-400 text-sm sm:text-lg leading-relaxed line-clamp-3">
             {description}
           </p>
         </div>
 
-        <div className="flex flex-col items-center gap-3 shrink-0 z-10 pointer-events-none">
-          <div className="w-24 h-24 bg-[#8be6d6] rounded-3xl overflow-hidden relative shadow-inner shrink-0">
+        <div className="flex flex-col items-center gap-2 sm:gap-3 shrink-0 z-10 pointer-events-none">
+          <div className="w-16 h-16 sm:w-24 sm:h-24 bg-[#8be6d6] rounded-xl sm:rounded-3xl overflow-hidden relative shadow-inner shrink-0">
             {imageUrl ? (
               <img
                 src={imageUrl}
@@ -103,14 +103,14 @@ const WebsiteCard: React.FC<WebsiteCardProps> = ({
                 className="w-full h-full object-cover"
               />
             ) : (
-              <div className="absolute inset-0 flex flex-col items-center justify-start pt-2 gap-2">
-                <div className="bg-white/95 rounded-md w-16 py-1 text-center text-xs text-neutral-800 font-medium shadow-sm">
+              <div className="absolute inset-0 flex flex-col items-center justify-start pt-1 sm:pt-2 gap-1 sm:gap-2">
+                <div className="bg-white/95 rounded-sm sm:rounded-md w-10 sm:w-16 py-0.5 sm:py-1 text-center text-[10px] sm:text-xs text-neutral-800 font-medium shadow-sm">
                   1 pc
                 </div>
-                <div className="bg-white/95 rounded-md w-16 py-1 text-center text-xs text-neutral-800 font-medium shadow-sm">
+                <div className="bg-white/95 rounded-sm sm:rounded-md w-10 sm:w-16 py-0.5 sm:py-1 text-center text-[10px] sm:text-xs text-neutral-800 font-medium shadow-sm">
                   2 pc
                 </div>
-                <div className="bg-white/95 rounded-md w-16 py-1 text-center text-xs text-neutral-800 font-medium shadow-sm">
+                <div className="bg-white/95 rounded-sm sm:rounded-md w-10 sm:w-16 py-0.5 sm:py-1 text-center text-[10px] sm:text-xs text-neutral-800 font-medium shadow-sm">
                   3 pc
                 </div>
               </div>
@@ -118,7 +118,7 @@ const WebsiteCard: React.FC<WebsiteCardProps> = ({
           </div>
 
           {badgeText && (
-            <span className="bg-[#2b2b2b] text-neutral-300 text-sm px-4 py-1.5 rounded-2xl border border-neutral-700 shadow-sm whitespace-nowrap">
+            <span className="bg-[#2b2b2b] text-neutral-300 text-[10px] sm:text-sm px-3 sm:px-4 py-1 sm:py-1.5 rounded-xl sm:rounded-2xl border border-neutral-700 shadow-sm whitespace-nowrap">
               {badgeText}
             </span>
           )}

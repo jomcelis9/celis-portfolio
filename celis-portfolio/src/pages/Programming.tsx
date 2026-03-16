@@ -16,7 +16,6 @@ import WebsiteCard from "../Components/WebsiteCard";
 import SectionTag from "../Components/SectionTag";
 import Rogos from "../assets/Rogos";
 
-
 export default function Programming() {
   const logoObject = new Rogos();
   const containerRef = useRef<HTMLDivElement>(null);
@@ -60,7 +59,7 @@ export default function Programming() {
     [0.35, 0.5, 0.65],
     [30, 0, -30]
   );
-// sdsdsds
+  // sdsdsds
   const p3Opacity = useTransform(
     aboutScrollProgress,
     [0.6, 0.75, 1],
@@ -249,17 +248,17 @@ export default function Programming() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="relative flex items-start justify-start w-full min-h-screen p-10 text-white font-Clash overflow-hidden"
+          className="relative flex items-start justify-start w-full min-h-screen p-6 sm:p-10 text-white font-Clash overflow-hidden"
           id="Hero"
         >
           <div className="absolute inset-0 z-0 pointer-events-none bg-[linear-gradient(to_right,rgba(255,255,255,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,transparent_40%,#000_100%)]" />
-          <div className="relative z-20 p-6 sm:p-12 ml-12 sm:ml-32 lg:ml-48 flex flex-col w-max">
+          <div className="relative z-20 pt-20 sm:pt-12 md:p-12 lg:ml-48 flex flex-col w-full max-w-7xl">
             <div>
               <motion.p
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-4xl font-Satoshi"
+                className="text-2xl sm:text-4xl font-Satoshi"
               >
                 <i>Hello I'm</i>
               </motion.p>
@@ -267,16 +266,15 @@ export default function Programming() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="font-Tangerine font-[700] text-5xl md:text-7xl lg:text-BigAss leading-none whitespace-nowrap mb-4"
+                className="font-Tangerine font-[700] text-6xl sm:text-7xl lg:text-BigAss leading-none mb-4"
               >
                 Hello Joey
               </motion.h1>
             </div>
-            <div className="font-Satoshi flex flex-row items-center gap-5">
+            <div className="font-Satoshi flex flex-wrap flex-row items-center gap-3 sm:gap-5 text-sm sm:text-base">
               <p>Software Designer</p>
-              <span>|</span>
+              <span className="hidden sm:inline">|</span>
               <motion.div
-                // className="flex items-center gap-2"
                 animate={{ color: ["#FFFFFF", "#2E6F40", "#FFFFFF"] }}
                 transition={{
                   duration: 3,
@@ -285,12 +283,11 @@ export default function Programming() {
                 }}
                 className="font-semibold tracking-tight"
               >
-                {/* <div className="w-2.5 h-2.5 rounded-full bg-green-500 shadow-[0_0_10px_2px_rgba(34,197,94,0.6)] animate-pulse"></div> */}
                 <p>Available for work</p>
               </motion.div>
             </div>
 
-            <div className="flex flex-row gap-5">
+            <div className="flex flex-wrap flex-row gap-4 sm:gap-5 mt-6 mb-8 sm:mb-0 text-sm sm:text-base">
               <a
                 href="#Projects"
                 className="font-Satoshi cursor-pointer block w-max relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1px] after:bg-current after:scale-x-0 after:origin-right hover:after:scale-x-100 hover:after:origin-left after:transition-transform after:duration-500 after:delay-150 after:ease-out"
@@ -311,15 +308,15 @@ export default function Programming() {
               </a>
             </div>
 
-            <div className="grid grid-cols-[1fr_3fr]">
-              <div className="ml-2"></div>
+            <div className="flex flex-col md:grid md:grid-cols-[1fr_3fr] mt-4 sm:mt-8">
+              <div className="hidden md:block ml-2"></div>
 
               <div>
                 <motion.p
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
-                  className="font-Satoshi font-[350] text-[3rem] max-w-4xl leading-tight tracking-relaxed self-end mt-2"
+                  className="font-Satoshi font-[350] text-xl sm:text-2xl lg:text-[3rem] max-w-4xl leading-snug sm:leading-tight tracking-relaxed self-end mt-2"
                 >
                   I am a creative technologist focused on building intelligent,
                   user-centered digital systems. My work combines{" "}
@@ -336,24 +333,23 @@ export default function Programming() {
             </div>
           </div>
         </motion.section>
-
         <motion.section
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="relative flex items-start justify-start w-full mb-50 h-full min-h-screen p-10 text-white font-Clash overflow-hidden"
+          className="relative flex items-start justify-start w-full mb-20 lg:mb-50 h-full min-h-screen p-6 sm:p-10 text-white font-Clash overflow-hidden"
         >
           <div className="absolute inset-0 z-0 pointer-events-none bg-[linear-gradient(to_right,rgba(255,255,255,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,transparent_40%,#000_100%)]" />
-          <div className="relative z-20 p-6 sm:p-12 ml-12 sm:ml-32 lg:ml-40 flex flex-col">
+          <div className="relative z-20 pt-16 sm:p-12 sm:ml-12 lg:ml-40 flex flex-col w-full max-w-7xl">
             <div className="flex justify-center w-full">
               <SectionTag
                 text="My Principles"
                 textColor="#FFFFFF"
                 outlineColor="#FFFFFF"
-                className="mb-5"
+                className="mb-8 sm:mb-5"
               ></SectionTag>
             </div>
-            <div className="font-Satoshi font-[350] text-[3.5rem] max-w-7xl leading-tight tracking-relaxed self-end mt-2">
+            <div className="font-Satoshi font-[350] text-2xl sm:text-4xl lg:text-[3.5rem] max-w-7xl leading-snug sm:leading-tight tracking-relaxed self-end mt-2">
               I approach both my work and daily life by combining leadership,
               problem solving, and a growth mindset. I take initiative in
               guiding teams and ideas forward, tackle challenges with analytical
@@ -368,31 +364,34 @@ export default function Programming() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="mt-10 flex flex-col items-end text-right text-white"
+              className="mt-16 sm:mt-10 flex flex-col items-end text-right text-white"
             >
-              <p className="font-Tangerine font-bold text-7xl sm:text-8xl lg:text-BigAss leading-none">
+              <p className="font-Tangerine font-bold text-6xl sm:text-7xl md:text-8xl lg:text-BigAss leading-none">
                 Virtus
               </p>
 
               <div className="font-Satoshi mt-4 flex flex-col items-end w-full max-w-md">
                 <div className="flex items-baseline gap-3 mb-2">
-                  <span className="text-lg italic opacity-70">vir·tus</span>
-                  <span className="text-base italic font-medium">noun</span>
+                  <span className="text-base sm:text-lg italic opacity-70">
+                    vir·tus
+                  </span>
+                  <span className="text-sm sm:text-base italic font-medium">
+                    noun
+                  </span>
                 </div>
 
-                <div className="text-xl md:text-2xl font-light mb-4">
+                <div className="text-lg sm:text-xl md:text-2xl font-light mb-4">
                   <span className="font-bold mr-2">1.</span>
                   Excellence; moral perfection.
                 </div>
 
-                <p className="text-sm md:text-base font-light italic opacity-60 border-blue-500 pl-3">
+                <p className="text-xs sm:text-sm md:text-base font-light italic opacity-60 border-r-2 border-blue-500 pr-3">
                   "Virtus in actione consistit."
                 </p>
               </div>
             </motion.div>
           </div>
         </motion.section>
-
         <section
           ref={aboutMeRef}
           className="relative z-20 w-full text-white font-Clash"
@@ -484,7 +483,6 @@ export default function Programming() {
             </div>
           </div>
         </section>
-
         <motion.section
           initial={{
             opacity: 0,
@@ -580,7 +578,7 @@ export default function Programming() {
                 outlineColor="#FFFFFF"
                 className="mb-5"
               ></SectionTag>
-              <h2 className="font-Satoshi text-5xl md:text-7xl lg:text-8xl text-center mb-8">
+              <h2 className="font-Satoshi font-[700] text-5xl md:text-7xl lg:text-8xl text-center mb-8">
                 My Skills
               </h2>
               <div className="flex flex-wrap justify-center gap-4 md:gap-6">
@@ -608,28 +606,28 @@ export default function Programming() {
             </div>
           </div>
         </motion.section>
-
+        \
         <motion.section
           id="Projects"
           ref={myProjectsRef}
-          className="relative z-20 flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash"
+          className="relative z-20 flex items-center justify-center w-full min-h-screen p-6 sm:p-10 text-white font-Clash"
         >
           <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-t from-purple-900/40 via-transparent to-transparent" />
-          <div className="relative z-10 flex flex-col lg:flex-row max-w-7xl w-full px-4 lg:px-0">
+          <div className="relative z-10 flex flex-col max-w-7xl w-full px-0 sm:px-4 lg:px-0">
             <div className="w-full">
               <div className="flex justify-center w-full">
                 <SectionTag
                   textColor="#FFFFFF"
                   outlineColor="#FFFFFF"
-                  className="mb-5"
+                  className="mb-6 sm:mb-8"
                 ></SectionTag>
               </div>
 
-              <div className="mb-10">
-                <h2 className="font-Satoshi font-700 text-5xl font-Clash md:text-7xl lg:text-8xl mb-7 text-center">
+              <div className="mb-10 sm:mb-14">
+                <h2 className="font-Satoshi font-[700] text-5xl md:text-7xl lg:text-8xl mb-5 sm:mb-7 text-center">
                   My Projects
                 </h2>
-                <p className="font-Satoshi text-center">
+                <p className="font-Satoshi text-center text-sm sm:text-base md:text-lg max-w-4xl mx-auto leading-relaxed">
                   {" "}
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                   Accusamus omnis quos molestiae facilis alias inventore
@@ -639,58 +637,69 @@ export default function Programming() {
                 </p>
               </div>
 
-              <p className="text-lg"></p>
-              <div className="flex flex-col lg:flex-row flex-wrap gap-6 justify-center items-center lg:items-stretch">
-                <WebsiteCard
-                  title="Jacsons' Website"
-                  description="ABCDEFG"
-                  imageUrl=""
-                  badgeText="dd"
-                  glowColor="rgba(83, 255, 166, 0.69)"
-                  linkUrl="/jacsons"
-                />
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 w-full justify-items-center lg:justify-items-stretch">
+                <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none">
+                  <WebsiteCard
+                    title="Jacsons' Website"
+                    description="ABCDEFG"
+                    imageUrl=""
+                    badgeText="dd"
+                    glowColor="rgba(83, 255, 166, 0.69)"
+                    linkUrl="/jacsons"
+                  />
+                </div>
 
-                <WebsiteCard
-                  title="The Point Website"
-                  description="ABCDEFG"
-                  imageUrl=""
-                  badgeText="dd"
-                  glowColor="rgba(246, 83, 255, 0.69)"
-                  linkUrl="/thepoint"
-                />
+                <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none">
+                  <WebsiteCard
+                    title="The Point Website"
+                    description="ABCDEFG"
+                    imageUrl=""
+                    badgeText="dd"
+                    glowColor="rgba(246, 83, 255, 0.69)"
+                    linkUrl="/thepoint"
+                  />
+                </div>
 
-                <WebsiteCard
-                  title="Jom's CGS"
-                  description="ABCDEFG"
-                  imageUrl=""
-                  badgeText="dd"
-                  glowColor="rgba(255, 195, 74, 0.69)"
-                  linkUrl=""
-                />
+                <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none">
+                  <WebsiteCard
+                    title="Jom's CGS"
+                    description="ABCDEFG"
+                    imageUrl=""
+                    badgeText="dd"
+                    glowColor="rgba(255, 195, 74, 0.69)"
+                    linkUrl=""
+                  />
+                </div>
 
-                <WebsiteCard
-                  title="Jacsons' Website"
-                  description="ABCDEFG"
-                  imageUrl=""
-                  badgeText="dd"
-                  linkUrl=""
-                />
+                <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none">
+                  <WebsiteCard
+                    title="Jacsons' Website"
+                    description="ABCDEFG"
+                    imageUrl=""
+                    badgeText="dd"
+                    linkUrl=""
+                  />
+                </div>
 
-                <WebsiteCard
-                  title="Jacsons' Website"
-                  description="ABCDEFG"
-                  imageUrl=""
-                  badgeText="dd"
-                  linkUrl=""
-                />
+                <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none">
+                  <WebsiteCard
+                    title="Jacsons' Website"
+                    description="ABCDEFG"
+                    imageUrl=""
+                    badgeText="dd"
+                    linkUrl=""
+                  />
+                </div>
 
-                <WebsiteCard
-                  title="Jacsons' Website"
-                  description="ABCDEFG"
-                  imageUrl=""
-                  badgeText="dd"
-                  linkUrl=""
-                />
+                <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none">
+                  <WebsiteCard
+                    title="Jacsons' Website"
+                    description="ABCDEFG"
+                    imageUrl=""
+                    badgeText="dd"
+                    linkUrl=""
+                  />
+                </div>
               </div>
             </div>
           </div>
