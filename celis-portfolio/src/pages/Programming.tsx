@@ -711,7 +711,7 @@ export default function Programming() {
                   <WebsiteCard
                     title="Jom's CGS"
                     description="A website designed for my first business: Jom's Chili Garlic Sauce!"
-                    imageUrl="https://imgur.com/a/rJMseaX"
+                    imageUrl={logoObject.jomsCgs}
                     badgeText="Website"
                     glowColor="rgba(255, 195, 74, 0.69)"
                     linkUrl="/jomsCGS"
@@ -722,7 +722,7 @@ export default function Programming() {
                   <WebsiteCard
                     title="Jacsons' Website"
                     description="ABCDEFG"
-                    imageUrl="src/assets/react.svg"
+                    imageUrl={logoObject.jomsCgs}
                     badgeText="dd"
                     linkUrl=""
                   />
