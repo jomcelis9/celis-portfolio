@@ -722,7 +722,7 @@ export default function Programming() {
                   <WebsiteCard
                     title="Jacsons' Website"
                     description="ABCDEFG"
-                    imageUrl="src/assets/Images/TopLogo.png"
+                    imageUrl="src/assets/react.svg"
                     badgeText="dd"
                     linkUrl=""
                   />
