@@ -48,11 +48,10 @@ export default function JomsCGS() {
                 What's been done
               </h2>
             </div>
-
-            <img src="src/assets/Images/Hero_CGS.png" alt="" />
+            <img src="https://imgur.com/RQwOvNM.png" alt="" />
             <div>
               <p className="text-neutral-400 text-xs md:text-xl leading-relaxed">
-                This is my first designing a hero section ever. 
+                This is my first designing a hero section ever.
               </p>
             </div>
           </section>

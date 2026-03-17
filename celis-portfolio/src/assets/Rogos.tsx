@@ -28,5 +28,6 @@ export default class Rogos {
   public pyTorch: string =
     "https://img.icons8.com/?size=100&id=jH4BpkMnRrU5&format=png&color=000000";
   public jomsCgs: string = "https://imgur.com/51TNYvP.png";
+  
 }
 
