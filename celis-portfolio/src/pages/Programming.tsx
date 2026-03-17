@@ -710,8 +710,8 @@ export default function Programming() {
                 <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none">
                   <WebsiteCard
                     title="Jom's CGS"
-                    description="An website designed for my first business: Jom's Chili Garlic Sauce!"
-                    imageUrl="src/assets/Images/jomsChili.png"
+                    description="A website designed for my first business: Jom's Chili Garlic Sauce!"
+                    imageUrl={logoObject.jomsCgs}
                     badgeText="Website"
                     glowColor="rgba(255, 195, 74, 0.69)"
                     linkUrl="/jomsCGS"
@@ -789,7 +789,7 @@ export default function Programming() {
 
             <div className="flex flex-row items-center justify-center gap-8 md:gap-12 text-lg md:text-lg font-small mb-20">
               <a
-                href="mailto:your@email.com"
+                href="mailto:jomaricelis@gmail.com"
                 className="hover:scale-105 hover:underline hover:opacity-80 active:scale-95 transition-all duration-200 cursor-pointer"
               >
                 Email
