@@ -14,7 +14,6 @@ import JomsCGS from "./pages/JomsCGS.tsx";
 
 
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
@@ -27,5 +26,4 @@ createRoot(document.getElementById("root")!).render(
         <Route path="/multimedia" element={<Multimedia />} />
       </Routes>
     </BrowserRouter>
-  </StrictMode>
 );
