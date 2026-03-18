@@ -87,7 +87,7 @@ export default function Home() {
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
       // Navigate to next page
-      navigate("/Programming");
+      navigate("/programming");
     } catch (error) {
       console.error("Animation error:", error);
     }
