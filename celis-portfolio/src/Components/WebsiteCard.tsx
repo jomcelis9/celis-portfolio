@@ -8,6 +8,8 @@ interface WebsiteCardProps {
   badgeText?: string;
   linkUrl: string;
   glowColor?: string;
+  isLocked?: boolean;
+  lockText?: string;
 }
 
 const WebsiteCard: React.FC<WebsiteCardProps> = ({
@@ -17,6 +19,8 @@ const WebsiteCard: React.FC<WebsiteCardProps> = ({
   badgeText = "Feature",
   linkUrl,
   glowColor = "rgba(255, 255, 255, 0.3)",
+  isLocked = false,
+  lockText = "Locked",
 }) => {
   const navigate = useNavigate();
   const cardRef = useRef<HTMLDivElement>(null);
@@ -25,7 +29,7 @@ const WebsiteCard: React.FC<WebsiteCardProps> = ({
   const [isHovering, setIsHovering] = useState(false);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return;
+    if (!cardRef.current || isLocked) return;
 
     const rect = cardRef.current.getBoundingClientRect();
     const width = rect.width;
@@ -54,7 +58,9 @@ const WebsiteCard: React.FC<WebsiteCardProps> = ({
   };
 
   const handleClick = () => {
-    navigate(linkUrl);
+    if (!isLocked) {
+      navigate(linkUrl);
+    }
   };
 
   return (
@@ -65,24 +71,53 @@ const WebsiteCard: React.FC<WebsiteCardProps> = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       style={{ transform }}
-      className="group relative block w-full sm:w-[400px] h-auto min-h-[160px] sm:h-[220px] shrink-0 font-Satoshi font-[400] transition-all duration-200 ease-out active:invert cursor-pointer focus:outline-none decoration-transparent will-change-transform"
+      className={`group relative block w-full sm:w-[400px] h-auto min-h-[160px] sm:h-[220px] shrink-0 font-Satoshi font-[400] transition-all duration-200 ease-out focus:outline-none decoration-transparent will-change-transform ${
+        isLocked ? "cursor-not-allowed" : "cursor-pointer active:invert"
+      }`}
       role="button"
-      tabIndex={0}
+      tabIndex={isLocked ? -1 : 0}
       onKeyDown={(e) => {
-        if (e.key === "Enter" || e.key === " ") {
+        if (!isLocked && (e.key === "Enter" || e.key === " ")) {
           handleClick();
         }
       }}
     >
-      <div
-        className="absolute -inset-1.5 z-0 pointer-events-none transition-opacity duration-300 blur-2xl rounded-[2.5rem]"
-        style={{
-          opacity: isHovering ? 1 : 0,
-          background: `radial-gradient(300px circle at ${mousePos.x} ${mousePos.y}, ${glowColor}, transparent 60%)`,
-        }}
-      />
+      {!isLocked && (
+        <div
+          className="absolute -inset-1.5 z-0 pointer-events-none transition-opacity duration-300 blur-2xl rounded-[2.5rem]"
+          style={{
+            opacity: isHovering ? 1 : 0,
+            background: `radial-gradient(300px circle at ${mousePos.x} ${mousePos.y}, ${glowColor}, transparent 60%)`,
+          }}
+        />
+      )}
 
       <div className="relative z-10 flex flex-row items-start justify-between bg-mist-950 rounded-2xl sm:rounded-3xl p-4 sm:p-6 w-full h-full border border-neutral-900 gap-3 sm:gap-6 overflow-hidden bg-clip-padding">
+        {isLocked && (
+          <div
+            className={`absolute inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-[2px] transition-opacity duration-300 ${
+              isHovering ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <div className="flex items-center gap-2 bg-neutral-800/90 px-4 py-2 rounded-full border border-neutral-700 shadow-xl">
+              <svg
+                className="w-4 h-4 text-neutral-300"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                />
+              </svg>
+              <span className="text-white text-sm font-medium">{lockText}</span>
+            </div>
+          </div>
+        )}
+
         <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none z-10" />
 
         <div className="flex-1 mt-1 sm:mt-2 overflow-hidden z-10 pointer-events-none">

@@ -10,7 +10,7 @@ export default function ThePoint() {
 
           </div>
           <h1 className="font-Satoshi text-5xl md:text-7xl lg:text-7xl font-normal tracking-tight text-white leading-[1.05]">
-            The Point T herapy website
+            The Point Therapy website
           </h1>
         </div>  
 
@@ -45,6 +45,8 @@ export default function ThePoint() {
             <h2 className="text-3xl md:text-4xl text-white mb-6 font-normal tracking-tight">
               What's been done
             </h2>
+
+            
             <p className="text-neutral-400 text-lg md:text-xl leading-relaxed">
               Designed the UI using a design system for 3 platforms: iOS,
               Android and web. With the help of data analyst tested my solution

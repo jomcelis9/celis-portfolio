@@ -11,19 +11,21 @@ import ProjectPage from "./pages/ProjectPage.tsx";
 import JacsonsPage from "./pages/JacsonsPage.tsx";
 import ThePoint from "./pages/ThePoint.tsx";
 import JomsCGS from "./pages/JomsCGS.tsx";
+import Drowsiness from "./pages/Drowsiness.tsx";
 
 
 createRoot(document.getElementById("root")!).render(
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route index element={<Home />} />
-        <Route path="/programming" element={<Programming />} />
-        <Route path="/project" element={<ProjectPage />} />
-        <Route path="/jacsons" element={<JacsonsPage />} />
-        <Route path="/thepoint" element={<ThePoint />} />
-        <Route path="/jomsCGS" element={<JomsCGS />} />
-        <Route path="/multimedia" element={<Multimedia />} />
-      </Routes>
-    </BrowserRouter>
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route index element={<Home />} />
+      <Route path="/programming" element={<Programming />} />
+      <Route path="/project" element={<ProjectPage />} />
+      <Route path="/jacsons" element={<JacsonsPage />} />
+      <Route path="/thepoint" element={<ThePoint />} />
+      <Route path="/jomsCGS" element={<JomsCGS />} />
+      <Route path="/multimedia" element={<Multimedia />} />
+      <Route path="/drowsiness" element={<Drowsiness />} />
+    </Routes>
+  </BrowserRouter>
 );

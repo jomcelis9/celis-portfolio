@@ -444,7 +444,7 @@ export default function Programming() {
                   className="flex flex-col items-center md:items-start w-full min-h-[80vh] justify-center"
                 >
                   <div className="w-10 h-10 mb-3 rounded-md flex items-center justify-center">
-                    <img src={AI_Stars} alt="" />
+                    <img src="src/assets/Images/Leader.png" alt="" />
                   </div>
                   <h3 className="font-Satoshi text-5xl md:text-7xl text-center md:text-left font-light mb-3">
                     Leadership
@@ -464,7 +464,7 @@ export default function Programming() {
                   className="flex flex-col items-center md:items-start w-full min-h-[80vh] justify-center"
                 >
                   <div className="w-10 h-10 mb-3 rounded-md flex items-center justify-center">
-                    <img src={AI_Stars} alt="" />
+                    <img src="src/assets/Images/Brain.png" alt="" />
                   </div>
                   <h3 className="font-Satoshi text-5xl md:text-7xl text-center md:text-left font-light mb-3">
                     Growth Mindset
@@ -484,7 +484,7 @@ export default function Programming() {
                   className="flex flex-col items-center md:items-start w-full min-h-[80vh] justify-center"
                 >
                   <div className="w-10 h-10 mb-3 rounded-md flex items-center justify-center">
-                    <img src={AI_Stars} alt="" />
+                    <img src="src/assets/Images/Art.png" alt="" />
                   </div>
                   <h3 className="font-Satoshi text-5xl md:text-7xl text-center md:text-left font-light mb-3">
                     Creative Thinking
@@ -676,11 +676,9 @@ export default function Programming() {
                 </h2>
                 <p className="font-Satoshi text-center text-sm sm:text-base md:text-lg max-w-4xl mx-auto leading-relaxed">
                   {" "}
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Accusamus omnis quos molestiae facilis alias inventore
-                  dignissimos quisquam cum, repudiandae fugit repellendus
-                  doloremque in a, aliquam amet temporibus quibusdam atque
-                  quasi.
+                  These are the most essential projects I worked in. They helped
+                  me discover the world of tech and gain more wisdom and
+                  knowledge along the process.
                 </p>
               </div>
 
@@ -720,21 +718,23 @@ export default function Programming() {
 
                 <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none">
                   <WebsiteCard
-                    title="Jacsons' Website"
-                    description="ABCDEFG"
-                    imageUrl={logoObject.jomsCgs}
-                    badgeText="dd"
-                    linkUrl=""
+                    title="Drowsiness Detector"
+                    description="It's the one you're lookin at!"
+                    imageUrl="https://img.icons8.com/?size=100&id=Rffi8qeb2fK5&format=png&color=000000"
+                    badgeText=""
+                    linkUrl="/drowsiness"
                   />
                 </div>
 
                 <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none">
                   <WebsiteCard
-                    title="Jacsons' Website"
-                    description="ABCDEFG"
-                    imageUrl=""
-                    badgeText="dd"
+                    title="MMCM RCEF system"
+                    description="Design of Registrar Credit Evaluation Form"
+                    imageUrl="src/assets/Images/ADMISSIONS.png"
+                    badgeText="Design & PM"
                     linkUrl=""
+                    isLocked={true}
+                    lockText="We signed an NDA :("
                   />
                 </div>
 
