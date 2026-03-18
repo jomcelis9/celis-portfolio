@@ -1,6 +1,6 @@
 import "../index.css";
 import meshCircle from "../assets/Images/Mesh Circle.svg";
-import meshCircle2 from "../assets/Images/Mesh Circle2.svg";
+// import meshCircle2 from "../assets/Images/Mesh Circle2.svg";
 import AI_Stars from "../assets/Images/AI_Stars.png";
 import pfp_profile from "../assets/Images/pfp_profile.png";
 import {
