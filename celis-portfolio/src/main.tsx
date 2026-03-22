@@ -12,6 +12,7 @@ import JacsonsPage from "./pages/JacsonsPage.tsx";
 import ThePoint from "./pages/ThePoint.tsx";
 import JomsCGS from "./pages/JomsCGS.tsx";
 import Drowsiness from "./pages/Drowsiness.tsx";
+import ImpactedDental from "./pages/ImpactedDental.tsx";
 
 
 createRoot(document.getElementById("root")!).render(
@@ -26,6 +27,7 @@ createRoot(document.getElementById("root")!).render(
       <Route path="/jomsCGS" element={<JomsCGS />} />
       <Route path="/multimedia" element={<Multimedia />} />
       <Route path="/drowsiness" element={<Drowsiness />} />
+      <Route path="/impact" element={<ImpactedDental />} />
     </Routes>
   </BrowserRouter>
 );

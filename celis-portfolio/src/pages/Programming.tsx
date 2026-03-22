@@ -683,16 +683,16 @@ export default function Programming() {
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 w-full justify-items-center lg:justify-items-stretch">
-                {/* <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none">
+                <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none">
                   <WebsiteCard
-                    title="Jacsons' Website"
+                    title="Impacted wisdom tooth classification"
                     description="ABCDEFG"
                     imageUrl=""
                     badgeText="dd"
                     glowColor="rgba(83, 255, 166, 0.69)"
-                    linkUrl="/jacsons"
+                    linkUrl="/impact"
                   />
-                </div> */}
+                </div>
 
                 <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none">
                   <WebsiteCard
