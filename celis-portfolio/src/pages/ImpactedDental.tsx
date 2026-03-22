@@ -29,11 +29,7 @@ export default function ImpactedDental() {
         {/* Header Section */}
         <div className="flex items-start gap-6 md:gap-8">
           <div className="w-14 h-16 md:w-20 md:h-20 bg-transparent rounded-2xl overflow-hidden relative shadow-inner shrink-0 mt-3 md:mt-4">
-            <img
-              src={"src/assets/Images/icons8-tooth-100.png"}
-              alt=""
-              className="object-cover w-full h-full"
-            />
+            <img src={"    "} alt="" className="object-cover w-full h-full" />
           </div>
           <h1 className="font-Satoshi text-5xl md:text-7xl lg:text-7xl font-normal tracking-tight text-white leading-[1.05]">
             Impacted 3rd molar classification
@@ -63,12 +59,6 @@ export default function ImpactedDental() {
         {/* Content Sections */}
         <div className="mt-20 w-full flex flex-col gap-16">
           <section>
-            <div>
-              <h2 className="text-3xl md:text-4xl text-white mb-6 font-normal tracking-tight">
-                What we did
-              </h2>
-            </div>
-
             <div
               onClick={() => {
                 const link = document.createElement("a");
@@ -145,6 +135,11 @@ export default function ImpactedDental() {
                   </div>
                 </div>
               </div>
+            </div>
+            <div>
+              <h2 className="text-3xl md:text-4xl text-white my-8 font-normal tracking-tight">
+                What we did
+              </h2>
             </div>
             <p className="  text-xs md:text-xl m-10 leading-relaxed">
               As a fourth-year computer science student navigating the
