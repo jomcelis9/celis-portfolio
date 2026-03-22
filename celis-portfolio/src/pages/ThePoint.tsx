@@ -32,7 +32,7 @@ export default function ThePoint() {
             <img className="w-xl" src="src/assets/Images/thepoint.png" alt="" />
           </div>
           <h1 className="font-Satoshi text-5xl md:text-7xl lg:text-7xl font-normal tracking-tight text-white leading-[1.05]">
-            The Point therapy clinic appointment system
+            The Point therapy clinic appointment system (Frontend only)
           </h1>
         </div>
 
@@ -58,11 +58,8 @@ export default function ThePoint() {
             </span>
             <div className="flex-grow border-b border-neutral-700 mx-4 opacity-50 relative top-[-6px]"></div>
             <span className="text-white text-lg md:text-xl shrink-0">
-              <a
-                className="underline decoration-2 text-slate-400 "
-                href="https://machine-learning-dsicvy4h5xd83rdjjbqxmr.streamlit.app/"
-              >
-                Drowsiness Detector
+              <a className="underline decoration-2 text-slate-400 " href="">
+                The point
               </a>{" "}
             </span>
           </div>
@@ -72,11 +69,11 @@ export default function ThePoint() {
         <div className="mt-20 w-full flex flex-col gap-16">
           <section>
             <div>
-              <h2 className="text-3xl md:text-4xl text-white mb-6 font-normal tracking-tight">
+              <h2 className="text-4xl md:text-4xl text-white mb-6 font-normal tracking-tight">
                 Overview:
               </h2>
-              <p>
-                It's in the name: Droswsiness Detector. You upload a video with
+              <p className="   text-xs md:text-xl m-10 leading-relaxed">
+                It's in the name: Drowsiness Detector. You upload a video with
                 people's faces, let the machine do it's thing, and viola! You
                 have a video with annotations in people's faces.{" "}
               </p>
@@ -86,20 +83,20 @@ export default function ThePoint() {
                 What's been done
               </h2>
             </div>
-            <img src="src/assets/Images/SS_Streamlit_1.png" alt="" />
-            <p className="text-neutral-400 text-xs md:text-xl m-10 leading-relaxed">
+            <img src="src/assets/Images/hero_thepoint.png" alt="" />
+            <p className="   text-xs md:text-xl m-10 leading-relaxed">
+              Hero page with video
+            </p>
+            <img src="src/assets/Images/loc_thepoint.png" alt="" />
+            <p className="   text-xs md:text-xl m-10 leading-relaxed">
               This is my first designing a hero section ever.
             </p>
-            <img src="src/assets/Images/SS_Streamlit_2.png" alt="" />
-            <p className="text-neutral-400 text-xs md:text-xl m-10 leading-relaxed">
+            <img src="src/assets/Images/newClient_thepoint.png" alt="" />
+            <p className="   text-xs md:text-xl m-10 leading-relaxed">
               This is my first designing a hero section ever.
             </p>
-            <img src="src/assets/Images/SS_Streamlit_4.png" alt="" />
-            <p className="text-neutral-400 text-xs md:text-xl m-10 leading-relaxed">
-              This is my first designing a hero section ever.
-            </p>
-            <img src="src/assets/Images/SS_Streamlit_5.png" alt="" />
-            <p className="text-neutral-400 text-xs md:text-xl m-10 leading-relaxed">
+            <img src="src/assets/Images/cleintDetails_thepoint.png" alt="" />
+            <p className="   text-xs md:text-xl m-10 leading-relaxed">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Cupiditate ducimus corporis commodi consectetur voluptates nisi
               officiis repudiandae accusamus inventore dolores in mollitia iure
@@ -111,13 +108,16 @@ export default function ThePoint() {
             <h2 className="text-3xl md:text-4xl text-white mb-6 font-normal tracking-tight">
               Insights
             </h2>
-            <p className="text-neutral-400 text-lg md:text-xl leading-relaxed">
-              This is my very first machine learning project ever. I learned,
-              data scraping, model training, the basics of YOLOv8, Roboflow, and
-              machine learning metrics. Overall, this project introduced me to
-              the world of Data Science and made me realize how when you type a
-              bunch of texts into a computer; make an algorithm, let it learn
-              some patterns, feed it some data and it will learn evetually.
+            <p className="   text-lg md:text-xl leading-relaxed">
+              Creating a fullstack appointment website is super hard work
+              There's lots of factors you have to keep in mind, don't even
+              mention the deployment -- it's like a whole different app!
+              Database design was the single most important thing in this
+              project. Without thorough analysis of the business requirements,
+              and storage management foresight, the website would likely go
+              haywire. Normalized databases and mastering the tech stack is
+              essential. Buildding a relational database should be take
+              intricate planning and perfect teamwork for things to work.
             </p>
           </section>
         </div>

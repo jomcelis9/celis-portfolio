@@ -56,6 +56,14 @@ export default function Programming() {
     },
   ];
 
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const leftIcons = [
+    "src/assets/Images/Leader.png",
+    "src/assets/Images/Brain.png",
+    "src/assets/Images/Art.png",
+  ];
+
   const textGlowAndShadow =
     "[text-shadow:0_0_15px_rgba(255,255,255,0.3),_2px_2px_4px_rgba(0,0,0,0.5)]";
 
@@ -436,34 +444,29 @@ export default function Programming() {
         </motion.section>
         {/* ATTITUDE SECTION */}
         <section
-          ref={aboutMeRef}
+          // ref={aboutMeRef} // Uncomment if you have this ref defined in your file
           className="relative z-20 w-full text-white font-Clash"
         >
           <div className="flex items-start justify-center w-full max-w-6xl mx-auto px-6 h-full">
             <div className="flex flex-col md:flex-row items-start justify-center w-full relative h-full">
-              <div className="md:sticky md:top-1/2 md:-translate-y-1/2 flex justify-center w-full md:w-1/2 mb-8 md:mb-0 shrink-0 z-10 pt-[20vh] md:pt-0">
-                <motion.img
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: false, amount: 0.2 }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
-                  src={pfp_profile}
-                  className="w-48 md:w-64 lg:w-120  z-20"
-                  alt=""
-                />
-                {/* <motion.img
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: false, amount: 0.2 }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
-                  src={meshCircle2}
-                  className="w-48 md:w-64 lg:w-120"
-                  alt=""
-                /> */}
+              {/* Left Side: Sticky Icon Container */}
+              <div className="md:sticky md:top-1/2 md:-translate-y-1/2 flex justify-center items-center w-full md:w-1/2 mb-8 md:mb-0 shrink-0 z-10 pt-[20vh] md:pt-0 h-[300px] md:h-[500px] relative">
+                {leftIcons.map((icon, index) => (
+                  <motion.img
+                    key={index}
+                    src={icon}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: activeIndex === index ? 1 : 0 }}
+                    transition={{ duration: 0.6, ease: "easeInOut" }}
+                    className="absolute w-48 md:w-64 lg:w-96 object-contain"
+                    alt=""
+                  />
+                ))}
               </div>
 
               <div className="relative w-full md:w-1/2 md:ml-10 lg:ml-16 flex flex-col z-20 pb-[20vh]">
                 <motion.div
+                  onViewportEnter={() => setActiveIndex(0)}
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, amount: 0.5 }}
@@ -484,6 +487,7 @@ export default function Programming() {
                 </motion.div>
 
                 <motion.div
+                  onViewportEnter={() => setActiveIndex(1)}
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, amount: 0.5 }}
@@ -504,6 +508,7 @@ export default function Programming() {
                 </motion.div>
 
                 <motion.div
+                  onViewportEnter={() => setActiveIndex(2)}
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, amount: 0.5 }}
@@ -541,7 +546,7 @@ export default function Programming() {
           viewport={{ once: true }}
           transition={{ duration: 1.5, ease: "easeInOut" }}
           ref={mySkillsRef}
-          className="relative z-20 flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash overflow-hidden"
+          className="relative z-20 bg-black flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash overflow-hidden"
           id="skills"
         >
           <div></div>
@@ -684,9 +689,9 @@ export default function Programming() {
         <motion.section
           id="Projects"
           ref={myProjectsRef}
-          className="relative z-20 flex items-center justify-center w-full min-h-screen p-6 sm:p-10 text-white font-Clash"
+          className="relative z-20 flex items-center bg-black justify-center w-full min-h-screen p-6 sm:p-10 text-white font-Clash"
         >
-          <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-t from-blue-900/40 via-transparent to-transparent" />
+          <div className="absolute inset-0 z-0 pointer-events-none" />
           <div className="relative z-10 flex flex-col max-w-7xl w-full px-0 sm:px-4 lg:px-0">
             <div className="w-full">
               <div className="flex justify-center w-full">
@@ -716,7 +721,7 @@ export default function Programming() {
                     description="An A.I. research paper"
                     imageUrl="src/assets/Images/icons8-tooth-100.png"
                     badgeText="Research"
-                    glowColor="rgba(83, 255, 166, 0.69)"
+                    glowColor="rgba(83, 103, 255, 0.69)"
                     linkUrl="/impact"
                   />
                 </div>
@@ -738,7 +743,7 @@ export default function Programming() {
                     description="A website designed for my first business: Jom's Chili Garlic Sauce!"
                     imageUrl={logoObject.jomsCgs}
                     badgeText="Website"
-                    glowColor="rgba(255, 195, 74, 0.69)"
+                    glowColor="rgba(255, 163, 16, 0.91)"
                     linkUrl="/jomsCGS"
                   />
                 </div>
@@ -749,6 +754,7 @@ export default function Programming() {
                     description="Machine learning project that detects if a person is attentive or not."
                     imageUrl="https://img.icons8.com/?size=100&id=Rffi8qeb2fK5&format=png&color=000000"
                     badgeText=""
+                    glowColor="rgba(255, 16, 16, 0.91)"
                     linkUrl="/drowsiness"
                   />
                 </div>
@@ -778,55 +784,9 @@ export default function Programming() {
             </div>
           </div>
         </motion.section>
-        <section className="relative z-20 w-full py-20 px-6 sm:px-10 bg-gray-950 font-Satoshi">
-          <div className="max-w-5xl mx-auto relative">
-            {/* Main Vertical Line */}
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-neutral-800 md:-translate-x-1/2"></div>
+        /**
 
-            <div className="flex flex-col gap-16 md:gap-24">
-              {timelineData.map((item, index) => (
-                <div
-                  key={index}
-                  className={`relative flex flex-col md:flex-row items-start md:items-center ${
-                    index % 2 === 0 ? "md:flex-row-reverse" : ""
-                  }`}
-                >
-                  {/* Center Node/Dot */}
-                  <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-blue-500 border-4 border-gray-950 transform -translate-x-[7px] md:-translate-x-1/2 mt-1.5 md:mt-0 z-10"></div>
-
-                  {/* Empty space for alternating layout on desktop */}
-                  <div className="hidden md:block md:w-1/2"></div>
-
-                  {/* Content Card */}
-                  <div
-                    className={`ml-12 md:ml-0 w-full md:w-1/2 ${
-                      index % 2 === 0 ? "md:pr-16" : "md:pl-16"
-                    }`}
-                  >
-                    <div className="flex flex-col gap-3">
-                      <span className="text-blue-400 font-bold text-sm tracking-widest uppercase">
-                        {item.year}
-                      </span>
-                      <h3 className="text-2xl md:text-3xl text-white font-bold leading-tight">
-                        {item.title}
-                      </h3>
-                      <p className="text-neutral-400 text-base md:text-lg leading-relaxed mb-4">
-                        {item.description}
-                      </p>
-                      <div className="w-full rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl">
-                        <img
-                          src={item.image}
-                          alt={item.title}
-                          className="w-full h-48 md:h-64 object-cover hover:scale-105 transition-transform duration-500"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        **/
       </main>
       {/* FOOTER */}
       <motion.footer
@@ -840,7 +800,7 @@ export default function Programming() {
           color: isFooterRef ? "#000000" : "#ffffff",
         }}
         transition={{ duration: 0.3, delay: 0.3, ease: "easeOut" }}
-        className="relative z-20 overflow-hidden flex flex-col justify-center items-center w-full min-h-screen px-6"
+        className="relative z-20 overflow-hidden flex flex-col justify-center items-center w-full min-h-screen px-6 py-20"
         id="footer"
       >
         <motion.div
@@ -849,49 +809,66 @@ export default function Programming() {
           className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-b from-blue-900/40 via-transparent to-transparent"
         />
 
-        <div className="font-Satoshi z-10 flex flex-col items-center justify-center gap-10 w-full max-w-5xl mx-auto font-Clash text-center pointer-events-none">
-          <motion.h2
-            animate={{ color: ["#000000", "#3b82f6", "#000000"] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            className="text-6xl md:text-8xl lg:text-9xl font-semibold tracking-tight"
-          >
-            Let's Work Together!
-          </motion.h2>
+        <div className="z-10 flex flex-col lg:flex-row items-center justify-between w-full max-w-7xl mx-auto gap-12 lg:gap-20">
+          {/* Left Side: Image */}
+          <div className="w-full lg:w-1/3 bg-blue-950 rounded-2xl  flex justify-center lg:justify-start pointer-events-auto">
+            <motion.img
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              src={pfp_profile}
+              className="w-48 md:w-64 lg:w-[28rem] z-20 object-contain"
+              alt=""
+            />
+          </div>
 
-          <div className="flex flex-col items-center gap-10 mt-4 pointer-events-auto w-full">
-            <motion.p className="text-2xl md:text-3xl font-light opacity-80 pointer-events-none">
-              Got a project in mind?
-            </motion.p>
+          {/* Right Side: Text Content */}
+          <div className="font-Satoshi flex flex-col items-center lg:items-start justify-center gap-10 w-full lg:w-2/3 pointer-events-none text-center lg:text-left">
+            <motion.h2
+              animate={{ color: ["#000000", "#3b82f6", "#000000"] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              className="text-6xl md:text-8xl lg:text-9xl font-semibold tracking-tight"
+            >
+              Let's Work Together!
+            </motion.h2>
 
-            <div className="flex flex-row items-center justify-center gap-8 md:gap-12 text-lg md:text-lg font-small mb-20">
-              <a
-                href="mailto:jomaricelis@gmail.com"
-                className="hover:scale-105 hover:underline hover:opacity-80 active:scale-95 transition-all duration-200 cursor-pointer"
-              >
-                Email
-              </a>
-              <a
-                href="https://linkedin.com/in/yourusername"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:scale-105 hover:underline hover:opacity-80 active:scale-95 transition-all duration-200 cursor-pointer"
-              >
-                LinkedIn
-              </a>
+            <div className="flex flex-col items-center lg:items-start gap-10 mt-4 pointer-events-auto w-full">
+              <motion.p className="text-2xl md:text-3xl font-light opacity-80 pointer-events-none">
+                Got a project in mind?
+              </motion.p>
 
-              <a
-                href="https://github.com/yourusername"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:scale-105 hover:underline hover:opacity-80 active:scale-95 transition-all duration-200 cursor-pointer"
-              >
-                GitHub
-              </a>
+              <div className="flex flex-row items-center justify-center lg:justify-start gap-8 md:gap-12 text-lg md:text-lg font-medium mb-10">
+                <a
+                  href="mailto:jomaricelis@gmail.com"
+                  className="hover:scale-105 hover:underline hover:opacity-80 active:scale-95 transition-all duration-200 cursor-pointer"
+                >
+                  Email
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/jomari-celis-b79050294/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:scale-105 hover:underline hover:opacity-80 active:scale-95 transition-all duration-200 cursor-pointer"
+                >
+                  LinkedIn
+                </a>
+
+                <a
+                  href="https://github.com/jomcelis9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:scale-105 hover:underline hover:opacity-80 active:scale-95 transition-all duration-200 cursor-pointer"
+                >
+                  GitHub
+                </a>
+              </div>
             </div>
-
-            <div className="w-[100vw] h-[1px] bg-current opacity-20 mt-20"></div>
           </div>
         </div>
+
+        {/* Bottom Divider */}
+        <div className="absolute bottom-10 w-[100vw] h-[1px] bg-current opacity-20 z-10"></div>
       </motion.footer>
     </div>
   );
