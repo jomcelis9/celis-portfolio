@@ -400,7 +400,7 @@ export default function Programming() {
                   Excellence; moral perfection.
                 </div>
 
-                <p className="text-xs sm:text-sm md:text-base font-light italic opacity-60 border-r-2 border-blue-500 pr-3">
+                <p className="text-xs sm:text-sm md:text-base font-light italic opacity-60 pr-3">
                   "Virtus in actione consistit."
                 </p>
               </div>
@@ -683,7 +683,7 @@ export default function Programming() {
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 w-full justify-items-center lg:justify-items-stretch">
-                <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none">
+                {/* <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none">
                   <WebsiteCard
                     title="Jacsons' Website"
                     description="ABCDEFG"
@@ -692,7 +692,7 @@ export default function Programming() {
                     glowColor="rgba(83, 255, 166, 0.69)"
                     linkUrl="/jacsons"
                   />
-                </div>
+                </div> */}
 
                 <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none">
                   <WebsiteCard
@@ -719,7 +719,7 @@ export default function Programming() {
                 <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none">
                   <WebsiteCard
                     title="Drowsiness Detector"
-                    description="It's the one you're lookin at!"
+                    description="Machine learning project that detects if a person is attentive or not."
                     imageUrl="https://img.icons8.com/?size=100&id=Rffi8qeb2fK5&format=png&color=000000"
                     badgeText=""
                     linkUrl="/drowsiness"
@@ -737,7 +737,7 @@ export default function Programming() {
                     lockText="We signed an NDA :("
                   />
                 </div>
-
+{/* 
                 <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none">
                   <WebsiteCard
                     title="Jacsons' Website"
@@ -746,7 +746,7 @@ export default function Programming() {
                     badgeText="dd"
                     linkUrl=""
                   />
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
