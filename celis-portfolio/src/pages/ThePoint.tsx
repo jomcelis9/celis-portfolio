@@ -29,10 +29,7 @@ export default function ThePoint() {
         {/* Header Section */}
         <div className="flex items-start gap-6 md:gap-8">
           <div className="w-14 h-16 md:w-20 md:h-20 bg-transparent rounded-2xl overflow-hidden relative shadow-inner shrink-0 mt-3 md:mt-4">
-            <img
-              src="https://img.icons8.com/?size=100&id=Rffi8qeb2fK5&format=png&color=000000 "
-              alt=""
-            />
+            <img className="w-xl" src="src/assets/Images/thepoint.png" alt="" />
           </div>
           <h1 className="font-Satoshi text-5xl md:text-7xl lg:text-7xl font-normal tracking-tight text-white leading-[1.05]">
             The Point therapy clinic appointment system

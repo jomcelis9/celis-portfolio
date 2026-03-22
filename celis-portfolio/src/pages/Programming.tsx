@@ -29,6 +29,33 @@ export default function Programming() {
   const isMyProjectsInView = useInView(myProjectsRef, { amount: 0.5 });
   const isFooterRef = useInView(footerRef, { amount: 0.5 });
 
+  const timelineData = [
+    {
+      year: "2024",
+      title: "A.I. Research Publication",
+      description:
+        "Published a comprehensive research paper on impacted wisdom tooth classification using EfficientNet-V2-S.",
+      image:
+        "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2000&auto=format&fit=crop",
+    },
+    {
+      year: "2023",
+      title: "The Point Clinic System",
+      description:
+        "Developed and deployed a full-stack appointment scheduling system for a local therapy clinic.",
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop",
+    },
+    {
+      year: "2022",
+      title: "Jom's CGS Launch",
+      description:
+        "Designed and built the e-commerce landing page for my first business venture, Jom's Chili Garlic Sauce.",
+      image:
+        "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=2000&auto=format&fit=crop",
+    },
+  ];
+
   const textGlowAndShadow =
     "[text-shadow:0_0_15px_rgba(255,255,255,0.3),_2px_2px_4px_rgba(0,0,0,0.5)]";
 
@@ -686,7 +713,7 @@ export default function Programming() {
                 <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none">
                   <WebsiteCard
                     title="Impacted wisdom tooth classification"
-                    description="ABCDEFG"
+                    description="An A.I. research paper"
                     imageUrl="src/assets/Images/icons8-tooth-100.png"
                     badgeText="Research"
                     glowColor="rgba(83, 255, 166, 0.69)"
@@ -697,9 +724,9 @@ export default function Programming() {
                 <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none">
                   <WebsiteCard
                     title="The Point Website"
-                    description="ABCDEFG"
-                    imageUrl=""
-                    badgeText="dd"
+                    description="A full stack appointment booking system for a therapy clinic"
+                    imageUrl="src/assets/Images/thepoint.png"
+                    badgeText="Website/System"
                     glowColor="rgba(246, 83, 255, 0.69)"
                     linkUrl="/thepoint"
                   />
@@ -751,6 +778,55 @@ export default function Programming() {
             </div>
           </div>
         </motion.section>
+        <section className="relative z-20 w-full py-20 px-6 sm:px-10 bg-gray-950 font-Satoshi">
+          <div className="max-w-5xl mx-auto relative">
+            {/* Main Vertical Line */}
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-neutral-800 md:-translate-x-1/2"></div>
+
+            <div className="flex flex-col gap-16 md:gap-24">
+              {timelineData.map((item, index) => (
+                <div
+                  key={index}
+                  className={`relative flex flex-col md:flex-row items-start md:items-center ${
+                    index % 2 === 0 ? "md:flex-row-reverse" : ""
+                  }`}
+                >
+                  {/* Center Node/Dot */}
+                  <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-blue-500 border-4 border-gray-950 transform -translate-x-[7px] md:-translate-x-1/2 mt-1.5 md:mt-0 z-10"></div>
+
+                  {/* Empty space for alternating layout on desktop */}
+                  <div className="hidden md:block md:w-1/2"></div>
+
+                  {/* Content Card */}
+                  <div
+                    className={`ml-12 md:ml-0 w-full md:w-1/2 ${
+                      index % 2 === 0 ? "md:pr-16" : "md:pl-16"
+                    }`}
+                  >
+                    <div className="flex flex-col gap-3">
+                      <span className="text-blue-400 font-bold text-sm tracking-widest uppercase">
+                        {item.year}
+                      </span>
+                      <h3 className="text-2xl md:text-3xl text-white font-bold leading-tight">
+                        {item.title}
+                      </h3>
+                      <p className="text-neutral-400 text-base md:text-lg leading-relaxed mb-4">
+                        {item.description}
+                      </p>
+                      <div className="w-full rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="w-full h-48 md:h-64 object-cover hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
       {/* FOOTER */}
       <motion.footer
