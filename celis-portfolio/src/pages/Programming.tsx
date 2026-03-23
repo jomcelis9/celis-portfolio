@@ -15,8 +15,15 @@ import { useRef, useState } from "react";
 import LogoCard from "../Components/LogoCard";
 import WebsiteCard from "../Components/WebsiteCard";
 import SectionTag from "../Components/SectionTag";
+
+
 import Rogos from "../assets/Rogos";
 import leader2 from "../assets/Images/leader2.png"
+import growthMindset from "../assets/Images/growth-mindset.png"
+import artStudies from "../assets/Images/art-studies.png"
+import tooth from "../assets/Images/icons8-tooth-100.png"
+import thePoint from "../assets/Images/thepoint.png";
+import RCEF from "../assets/Images/ADMISSIONS.png"
 
 export default function Programming() {
   const logoObject = new Rogos();
@@ -63,8 +70,8 @@ export default function Programming() {
 
   const leftIcons = [
     leader2,
-    "src/assets/Images/growth-mindset.png",
-    "src/assets/Images/art-studies.png",
+    growthMindset,
+    artStudies,
   ];
 
   const textGlowAndShadow =
@@ -769,7 +776,7 @@ export default function Programming() {
                   <WebsiteCard
                     title="Impacted wisdom tooth classification"
                     description="An A.I. research paper"
-                    imageUrl="src/assets/Images/icons8-tooth-100.png"
+                    imageUrl= {tooth}
                     badgeText="Research"
                     glowColor="rgba(83, 103, 255, 0.69)"
                     linkUrl="/impact"
@@ -780,7 +787,7 @@ export default function Programming() {
                   <WebsiteCard
                     title="The Point Website"
                     description="A full stack appointment booking system for a therapy clinic"
-                    imageUrl="src/assets/Images/thepoint.png"
+                    imageUrl= {thePoint}
                     badgeText="Website/System"
                     glowColor="rgba(246, 83, 255, 0.69)"
                     linkUrl="/thepoint"
@@ -813,7 +820,7 @@ export default function Programming() {
                   <WebsiteCard
                     title="MMCM RCEF system"
                     description="Design of Registrar Credit Evaluation Form"
-                    imageUrl="src/assets/Images/ADMISSIONS.png"
+                    imageUrl={RCEF}
                     badgeText="Design & PM"
                     linkUrl=""
                     isLocked={true}
