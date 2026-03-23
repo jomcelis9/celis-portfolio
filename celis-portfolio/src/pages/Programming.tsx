@@ -509,7 +509,7 @@ export default function Programming() {
           <div className="flex items-start justify-center w-full max-w-6xl mx-auto px-6 h-full">
             <div className="flex flex-col md:flex-row items-start justify-center w-full relative h-full">
               {/* Left Side: Sticky Icon Container */}
-              <div className="md:sticky md:top-1/2 md:-translate-y-1/2 flex justify-center items-center w-full md:w-1/2 mb-8 md:mb-0 shrink-0 z-10 pt-[20vh] md:pt-0 h-[300px] md:h-[500px] relative">
+              <div className="md:sticky md:top-0 flex justify-center items-center w-full md:w-1/2 mb-8 md:mb-0 shrink-0 z-10 pt-[20vh] md:pt-0 h-[300px] md:h-screen relative">
                 {leftIcons.map((icon, index) => (
                   <motion.img
                     key={index}
@@ -727,7 +727,7 @@ export default function Programming() {
                 />
                 <LogoCard
                   logo={logoObject.pyTorch}
-                  confidence={80}
+                  confidence={90}
                   technology={"PyTorch"}
                 />
               </div>
@@ -740,7 +740,7 @@ export default function Programming() {
           ref={myProjectsRef}
           className="bg-gradient-to-t from-blue-900/40 via-transparent to-transparent z-20 flex items-center bg-black justify-center w-full min-h-screen p-6 sm:p-10 text-white font-Clash"
         >
-          <div className=" inset-0 z-0 pointer-events-none" />
+          <div className="relative inset-0 z-0 pointer-events-none" />
           <div className="relative z-10 flex flex-col max-w-7xl w-full px-0 sm:px-4 lg:px-0">
             <div className="w-full">
               <div className="flex justify-center w-full">
@@ -823,7 +823,6 @@ export default function Programming() {
             </div>
           </div>
         </motion.section>
-        /** **/
       </main>
       {/* FOOTER */}
       <motion.footer
