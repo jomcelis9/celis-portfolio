@@ -62,7 +62,7 @@ export default function Programming() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const leftIcons = [
-    "src/assets/Images/leader2.png",
+    leader2,
     "src/assets/Images/growth-mindset.png",
     "src/assets/Images/art-studies.png",
   ];
