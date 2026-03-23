@@ -71,7 +71,7 @@ export default function JomsCGS() {
               alt=""
               className="w-full rounded-xl"
             />
-            <p className="text-neutral-400 text-xs md:text-xl m-10 leading-relaxed">
+            <p className="    text-xs md:text-xl m-10 leading-relaxed">
               Hero section.
             </p>
             <img
@@ -79,7 +79,7 @@ export default function JomsCGS() {
               alt=""
               className="w-full rounded-xl"
             />
-            <p className="text-neutral-400 text-xs md:text-xl m-10 leading-relaxed">
+            <p className="    text-xs md:text-xl m-10 leading-relaxed">
               Minimal colors make it easier for the eye also, easier to design
               lol.
             </p>
@@ -88,7 +88,7 @@ export default function JomsCGS() {
               alt=""
               className="w-full rounded-xl"
             />
-            <p className="text-neutral-400 text-xs md:text-xl m-10 leading-relaxed">
+            <p className="    text-xs md:text-xl m-10 leading-relaxed">
               I remembered how stoked I was making the background flow smoothly
               from one section to another :)).
             </p>
@@ -97,14 +97,14 @@ export default function JomsCGS() {
               alt=""
               className="w-full rounded-xl"
             />
-            <p className="text-neutral-400 text-xs md:text-xl m-10 leading-relaxed"></p>
+            <p className="    text-xs md:text-xl m-10 leading-relaxed"></p>
           </section>
 
           <section>
             <h2 className="text-3xl md:text-4xl text-white mb-6 font-normal tracking-tight">
               Insights
             </h2>
-            <p className="text-neutral-400 text-lg md:text-xl leading-relaxed">
+            <p className="    text-lg md:text-xl leading-relaxed">
               This was my first time using figma. In this project, I learned the
               basics of correct spacing, component use, and wireframing. The
               Jom's Chili Garlic helped me understand the importance of website
