@@ -1,6 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router";
 import Rogos from "../assets/Rogos";
+import thePoint from "../assets/Images/thepoint.png";
+import hero from "../assets/Images/hero_thepoint.png";
+import loc from "../assets/Images/loc_thepoint.png";
+import newClient from "../assets/Images/newClient_thepoint.png";
+import clientDetails from "../assets/Images/clientDetails_thepoint.png";
 const logos = new Rogos();
 
 export default function ThePoint() {
@@ -29,7 +34,7 @@ export default function ThePoint() {
         {/* Header Section */}
         <div className="flex items-start gap-6 md:gap-8">
           <div className="w-14 h-16 md:w-20 md:h-20 bg-transparent rounded-2xl overflow-hidden relative shadow-inner shrink-0 mt-3 md:mt-4">
-            <img className="w-xl" src="src/assets/Images/thepoint.png" alt="" />
+            <img className="w-xl" src={thePoint} alt="" />
           </div>
           <h1 className="font-Satoshi text-5xl md:text-7xl lg:text-7xl font-normal tracking-tight text-white leading-[1.05]">
             The Point therapy clinic appointment system (Frontend only)
@@ -86,24 +91,21 @@ export default function ThePoint() {
                 What's been done
               </h2>
             </div>
-            <img src="src/assets/Images/hero_thepoint.png" alt="" />
+            <img src={hero} alt="" />
             <p className="   text-xs md:text-xl m-10 leading-relaxed">
               Hero page with video
             </p>
-            <img src="src/assets/Images/loc_thepoint.png" alt="" />
+            <img src={loc} alt="" />
             <p className="   text-xs md:text-xl m-10 leading-relaxed">
               This is my first designing a hero section ever.
             </p>
-            <img src="src/assets/Images/newClient_thepoint.png" alt="" />
+            <img src={newClient} alt="" />
             <p className="   text-xs md:text-xl m-10 leading-relaxed">
               This is my first designing a hero section ever.
             </p>
-            <img src="src/assets/Images/cleintDetails_thepoint.png" alt="" />
-            <p className="   text-xs md:text-xl m-10 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Cupiditate ducimus corporis commodi consectetur voluptates nisi
-              officiis repudiandae accusamus inventore dolores in mollitia iure
-              labore nihil nulla, odit minus illum molestias?{" "}
+            <img src={clientDetails} className="flex w-100 items-center"alt="" />
+            <p className="text-xs md:text-xl m-10 leading-relaxed">
+            Book existing client form.
             </p>
           </section>
 

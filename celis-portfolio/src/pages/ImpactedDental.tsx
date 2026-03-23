@@ -1,6 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router";
 import Rogos from "../assets/Rogos";
+import ThePoint from "./ThePoint";
+import tooth from "../assets/Images/icons8-tooth-100.png";
+import Cover_534 from "../assets/Images/Cover_534.png";
+import urbidontics from "../assets/Images/urbidontics.jpg";
+import label_studio from "../assets/Images/label_studio.jpeg";
+import dataset from "../assets/Images/dataset_impacted.png";
 const logos = new Rogos();
 
 export default function ImpactedDental() {
@@ -29,7 +35,7 @@ export default function ImpactedDental() {
         {/* Header Section */}
         <div className="flex items-start gap-6 md:gap-8">
           <div className="w-14 h-16 md:w-20 md:h-20 bg-transparent rounded-2xl overflow-hidden relative shadow-inner shrink-0 mt-3 md:mt-4">
-            <img src={"    "} alt="" className="object-cover w-full h-full" />
+            <img src= {tooth} alt="" className="object-cover w-full h-full" />
           </div>
           <h1 className="font-Satoshi text-5xl md:text-7xl lg:text-7xl font-normal tracking-tight text-white leading-[1.05]">
             Impacted 3rd molar classification
@@ -76,7 +82,7 @@ export default function ImpactedDental() {
               <div className="relative h-[400px] w-full bg-neutral-800 overflow-hidden border-b border-neutral-800">
                 {/* Placeholder for PDF cover image */}
                 <img
-                  src="src/assets/Images/Cover_534.png"
+                  src={Cover_534}
                   alt="PDF Preview"
                   className="w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity duration-500"
                 />
@@ -168,7 +174,7 @@ export default function ImpactedDental() {
             {/* Photo Block */}
             <div className="flex flex-col items-center justify-center">
               <img
-                src="src/assets/Images/urbidontics.jpg"
+                src={urbidontics}
                 alt=""
                 className=" w-lg align-center items-center rounded-xl"
               />
@@ -191,7 +197,7 @@ export default function ImpactedDental() {
             {/* Photo Block */}
             <div className="flex flex-col items-center justify-center">
               <img
-                src="src/assets/Images/label_studio.jpeg"
+                src={label_studio}
                 alt=""
                 className=" w-lg align-center items-center rounded-xl"
               />
@@ -220,7 +226,7 @@ export default function ImpactedDental() {
             {/* Photo Block */}
             <div className="flex flex-col items-center justify-center">
               <img
-                src="src/assets/Images/dataset_impacted.png"
+                src={dataset}
                 alt=""
                 className=" w-lg align-center items-center rounded-xl"
               />
