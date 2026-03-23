@@ -9,6 +9,7 @@ import {
   useInView,
   useScroll,
   useTransform,
+  AnimatePresence
 } from "motion/react";
 import { useRef, useState } from "react";
 import LogoCard from "../Components/LogoCard";
@@ -23,6 +24,7 @@ export default function Programming() {
   const mySkillsRef = useRef(null);
   const myProjectsRef = useRef(null);
   const footerRef = useRef<HTMLDivElement>(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   const isAboutMeInView = useInView(aboutMeRef, { amount: 0.2 });
   const isMySkillsInView = useInView(mySkillsRef, { amount: 0.5 });
@@ -59,9 +61,9 @@ export default function Programming() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const leftIcons = [
-    "src/assets/Images/Leader.png",
-    "src/assets/Images/Brain.png",
-    "src/assets/Images/Art.png",
+    "src/assets/Images/leader2.png",
+    "src/assets/Images/growth-mindset.png",
+    "src/assets/Images/art-studies.png",
   ];
 
   const textGlowAndShadow =
@@ -296,12 +298,13 @@ export default function Programming() {
           >
             <a
               href="#Hero"
-              className="font-Satoshi cursor-pointer block w-max relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1px] after:bg-current after:scale-x-0 after:origin-right hover:after:scale-x-100 hover:after:origin-left after:transition-transform after:duration-500 after:delay-150 after:ease-out"
+              className="font-Satoshi cursor-pointer block w-max relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1px] after:bg-current after:scale-x-0 after:origin-right hover:after:scale-x-100 hover:after:origin-left after:transition-transform after:duration-500 after:delay-150 after:ease-out z-50"
             >
               back to top
             </a>
 
-            <div className="flex gap-6 sm:gap-10">
+            {/* Desktop Menu */}
+            <div className="hidden sm:flex gap-6 sm:gap-10">
               <a
                 href="#Projects"
                 className="font-Satoshi cursor-pointer block w-max relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1px] after:bg-current after:scale-x-0 after:origin-right hover:after:scale-x-100 hover:after:origin-left after:transition-transform after:duration-500 after:delay-150 after:ease-out"
@@ -321,6 +324,62 @@ export default function Programming() {
                 contact
               </a>
             </div>
+
+            {/* Mobile Hamburger Toggle */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="sm:hidden flex flex-col gap-1.5 z-50 cursor-pointer"
+            >
+              <span
+                className={`block w-6 h-0.5 bg-current transition-transform duration-300 ${isOpen ? "translate-y-2 rotate-45" : ""}`}
+              ></span>
+              <span
+                className={`block w-6 h-0.5 bg-current transition-opacity duration-300 ${isOpen ? "opacity-0" : ""}`}
+              ></span>
+              <span
+                className={`block w-6 h-0.5 bg-current transition-transform duration-300 ${isOpen ? "-translate-y-2 -rotate-45" : ""}`}
+              ></span>
+            </button>
+
+            {/* Mobile Dropdown Menu */}
+            <AnimatePresence>
+              {isOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  className="absolute top-0 left-0 w-full h-screen flex flex-col items-center justify-center gap-8 sm:hidden z-40 backdrop-blur-xl"
+                  style={{
+                    backgroundColor: isFooterRef
+                      ? "rgba(255, 255, 255, 0.95)"
+                      : "rgba(0, 0, 0, 0.95)",
+                    color: isFooterRef ? "#000000" : "#ffffff",
+                  }}
+                >
+                  <a
+                    href="#Projects"
+                    onClick={() => setIsOpen(false)}
+                    className="text-2xl font-Satoshi hover:opacity-70 transition-opacity"
+                  >
+                    my projects
+                  </a>
+                  <a
+                    href="#skills"
+                    onClick={() => setIsOpen(false)}
+                    className="text-2xl font-Satoshi hover:opacity-70 transition-opacity"
+                  >
+                    skills
+                  </a>
+                  <a
+                    href="#footer"
+                    onClick={() => setIsOpen(false)}
+                    className="text-2xl font-Satoshi hover:opacity-70 transition-opacity"
+                  >
+                    contact
+                  </a>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.header>
           <div className="relative z-20 pt-16 sm:pt-12 md:p-12 lg:ml-48 flex flex-col w-full max-w-7xl flex-grow justify-center">
             <div>
@@ -473,9 +532,6 @@ export default function Programming() {
                   transition={{ duration: 0.6, ease: "easeOut" }}
                   className="flex flex-col items-center md:items-start w-full min-h-[80vh] justify-center"
                 >
-                  <div className="w-10 h-10 mb-3 rounded-md flex items-center justify-center">
-                    <img src="src/assets/Images/Leader.png" alt="" />
-                  </div>
                   <h3 className="font-Satoshi text-5xl md:text-7xl text-center md:text-left font-light mb-3">
                     Leadership
                   </h3>
@@ -494,9 +550,6 @@ export default function Programming() {
                   transition={{ duration: 0.6, ease: "easeOut" }}
                   className="flex flex-col items-center md:items-start w-full min-h-[80vh] justify-center"
                 >
-                  <div className="w-10 h-10 mb-3 rounded-md flex items-center justify-center">
-                    <img src="src/assets/Images/Brain.png" alt="" />
-                  </div>
                   <h3 className="font-Satoshi text-5xl md:text-7xl text-center md:text-left font-light mb-3">
                     Growth Mindset
                   </h3>
@@ -515,9 +568,6 @@ export default function Programming() {
                   transition={{ duration: 0.6, ease: "easeOut" }}
                   className="flex flex-col items-center md:items-start w-full min-h-[80vh] justify-center"
                 >
-                  <div className="w-10 h-10 mb-3 rounded-md flex items-center justify-center">
-                    <img src="src/assets/Images/Art.png" alt="" />
-                  </div>
                   <h3 className="font-Satoshi text-5xl md:text-7xl text-center md:text-left font-light mb-3">
                     Creative Thinking
                   </h3>
@@ -632,17 +682,17 @@ export default function Programming() {
               <div className="flex flex-wrap justify-center gap-4 md:gap-6">
                 <LogoCard
                   logo={logoObject.python}
-                  confidence={90}
+                  confidence={70}
                   technology={"Python"}
                 />
                 <LogoCard
                   logo={logoObject.javaLogo}
-                  confidence={90}
+                  confidence={70}
                   technology={"Java"}
                 />
                 <LogoCard
                   logo={logoObject.typeScript}
-                  confidence={90}
+                  confidence={70}
                   technology={"TypeScript"}
                 />
                 <LogoCard
@@ -652,12 +702,12 @@ export default function Programming() {
                 />
                 <LogoCard
                   logo={logoObject.figma}
-                  confidence={90}
+                  confidence={95}
                   technology={"Figma"}
                 />
                 <LogoCard
                   logo={logoObject.postgres}
-                  confidence={90}
+                  confidence={80}
                   technology={"postgres"}
                 />
                 <LogoCard
@@ -667,17 +717,17 @@ export default function Programming() {
                 />
                 <LogoCard
                   logo={logoObject.nodeJs}
-                  confidence={90}
+                  confidence={80}
                   technology={"NodeJs"}
                 />
                 <LogoCard
-                  logo={logoObject.bootstrap}
+                  logo={logoObject.tailwind}
                   confidence={90}
                   technology={"Tailwind "}
                 />
                 <LogoCard
                   logo={logoObject.pyTorch}
-                  confidence={90}
+                  confidence={80}
                   technology={"PyTorch"}
                 />
               </div>
@@ -769,16 +819,6 @@ export default function Programming() {
                     lockText="We signed an NDA :("
                   />
                 </div>
-                {/* 
-                <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none">
-                  <WebsiteCard
-                    title="Jacsons' Website"
-                    description="ABCDEFG"
-                    imageUrl=""
-                    badgeText="dd"
-                    linkUrl=""
-                  />
-                </div> */}
               </div>
             </div>
           </div>
