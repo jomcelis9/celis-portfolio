@@ -16,6 +16,7 @@ import LogoCard from "../Components/LogoCard";
 import WebsiteCard from "../Components/WebsiteCard";
 import SectionTag from "../Components/SectionTag";
 import Rogos from "../assets/Rogos";
+import leader2 from "../assets/Images/leader2.png"
 
 export default function Programming() {
   const logoObject = new Rogos();
