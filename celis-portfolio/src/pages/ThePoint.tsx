@@ -58,7 +58,10 @@ export default function ThePoint() {
             </span>
             <div className="flex-grow border-b border-neutral-700 mx-4 opacity-50 relative top-[-6px]"></div>
             <span className="text-white text-lg md:text-xl shrink-0">
-              <a className="underline decoration-2 text-slate-400 " href="">
+              <a
+                className="underline decoration-2 text-slate-400 "
+                href="https://the-point.vercel.app/"
+              >
                 The point
               </a>{" "}
             </span>

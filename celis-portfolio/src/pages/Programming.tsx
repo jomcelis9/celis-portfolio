@@ -278,7 +278,7 @@ export default function Programming() {
 "
       />
 
-      <main className="relative font-Satoshi">
+      <main className="relative font-Satoshi bg-black">
         {/* HERO SECTION */}
         <motion.section
           initial={{ opacity: 0, y: 40 }}
@@ -549,7 +549,6 @@ export default function Programming() {
           className="relative z-20 bg-black flex items-center justify-center w-full min-h-screen p-10 text-white font-Clash overflow-hidden"
           id="skills"
         >
-          <div></div>
           <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
             {[...Array(300)].map((_, i) => (
               <motion.div
@@ -689,9 +688,9 @@ export default function Programming() {
         <motion.section
           id="Projects"
           ref={myProjectsRef}
-          className="relative z-20 flex items-center bg-black justify-center w-full min-h-screen p-6 sm:p-10 text-white font-Clash"
+          className="bg-gradient-to-t from-blue-900/40 via-transparent to-transparent z-20 flex items-center bg-black justify-center w-full min-h-screen p-6 sm:p-10 text-white font-Clash"
         >
-          <div className="absolute inset-0 z-0 pointer-events-none" />
+          <div className=" inset-0 z-0 pointer-events-none" />
           <div className="relative z-10 flex flex-col max-w-7xl w-full px-0 sm:px-4 lg:px-0">
             <div className="w-full">
               <div className="flex justify-center w-full">
@@ -784,9 +783,7 @@ export default function Programming() {
             </div>
           </div>
         </motion.section>
-        /**
-
-        **/
+        /** **/
       </main>
       {/* FOOTER */}
       <motion.footer
