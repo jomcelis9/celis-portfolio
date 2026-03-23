@@ -7,6 +7,8 @@ import Cover_534 from "../assets/Images/Cover_534.png";
 import urbidontics from "../assets/Images/urbidontics.jpg";
 import label_studio from "../assets/Images/label_studio.jpeg";
 import dataset from "../assets/Images/dataset_impacted.png";
+import icmip from "../assets/Images/ICMIP_Notif.png";
+import ig from "../assets/Images/ig_photo.jpg";
 const logos = new Rogos();
 
 export default function ImpactedDental() {
@@ -450,7 +452,7 @@ export default function ImpactedDental() {
               clinical relevance of AI-driven dental diagnostics.
             </p>
             <img
-              src="src/assets/Images/ICMIP_Notif.png"
+              src={icmip}
               alt=""
               className="mt-5 w-full rounded-xl"
             />
@@ -489,9 +491,9 @@ export default function ImpactedDental() {
               life.
             </p>
 
-            <div className="flex flex-col mt-7 items-center justify-center">
+            <div className="flex text-neutral-400 flex-col mt-7 items-center justify-center">
               <img
-                src="src/assets/Images/ig_photo.jpg"
+                src={ig}
                 alt=""
                 className="w-md align-center items-center rounded-xl"
               />

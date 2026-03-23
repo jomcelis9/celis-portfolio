@@ -1,6 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router";
 import Rogos from "../assets/Rogos";
+import streamlit_2 from "../assets/Images/SS_Streamlit_2.png";
+import streamlit_4 from "../assets/Images/SS_Streamlit_4.png";
+import streamlit_5 from "../assets/Images/SS_Streamlit_5.png";
 const logos = new Rogos();
 
 export default function Drowsiness() {
@@ -16,7 +19,7 @@ export default function Drowsiness() {
           backgroundBlendMode: "overlay",
         }}
       ></div>
-  
+
       {/* Navigate Button */}
       <button
         onClick={() => navigate(-1)}
@@ -78,7 +81,7 @@ export default function Drowsiness() {
               <h2 className="text-3xl md:text-4xl text-white mb-6 font-normal tracking-tight">
                 Overview:
               </h2>
-              <p>
+              <p className="text-xs md:text-xl m-10 leading-relaxed">
                 It's in the name: Droswsiness Detector. You upload a video with
                 people's faces, let the machine do it's thing, and viola! You
                 have a video with annotations in people's faces.{" "}
@@ -89,24 +92,21 @@ export default function Drowsiness() {
                 What's been done
               </h2>
             </div>
-            <img src="src/assets/Images/SS_Streamlit_1.png" alt="" />
-            <p className="text-neutral-400 text-xs md:text-xl m-10 leading-relaxed">
-              This is my first designing a hero section ever.
+            {/* <p className="  text-xs md:text-xl m-10 leading-relaxed">
+              Upload a video in a video call.
+            </p> */}
+            <img src={streamlit_2} alt="" />
+            <p className="  text-xs md:text-xl m-10 leading-relaxed">
+              Upload a video of people in a video call.
             </p>
-            <img src="src/assets/Images/SS_Streamlit_2.png" alt="" />
-            <p className="text-neutral-400 text-xs md:text-xl m-10 leading-relaxed">
-              This is my first designing a hero section ever.
+            <img src={streamlit_4} alt="" />
+            <p className="  text-xs md:text-xl m-10 leading-relaxed">
+              Wait for the processing.
             </p>
-            <img src="src/assets/Images/SS_Streamlit_4.png" alt="" />
-            <p className="text-neutral-400 text-xs md:text-xl m-10 leading-relaxed">
-              This is my first designing a hero section ever.
-            </p>
-            <img src="src/assets/Images/SS_Streamlit_5.png" alt="" />
-            <p className="text-neutral-400 text-xs md:text-xl m-10 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Cupiditate ducimus corporis commodi consectetur voluptates nisi
-              officiis repudiandae accusamus inventore dolores in mollitia iure
-              labore nihil nulla, odit minus illum molestias?{" "}
+            <img src={streamlit_5} alt="" />
+            <p className="  text-xs md:text-xl m-10 leading-relaxed">
+              And it's done! You have boxes over people's faces that classify if
+              they're paying attention or not.
             </p>
           </section>
 
@@ -114,7 +114,7 @@ export default function Drowsiness() {
             <h2 className="text-3xl md:text-4xl text-white mb-6 font-normal tracking-tight">
               Insights
             </h2>
-            <p className="text-neutral-400 text-lg md:text-xl leading-relaxed">
+            <p className="  text-lg md:text-xl leading-relaxed">
               This is my very first machine learning project ever. I learned,
               data scraping, model training, the basics of YOLOv8, Roboflow, and
               machine learning metrics. Overall, this project introduced me to
