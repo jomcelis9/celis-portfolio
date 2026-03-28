@@ -9,21 +9,20 @@ import {
   useInView,
   useScroll,
   useTransform,
-  AnimatePresence
+  AnimatePresence,
 } from "motion/react";
 import { useRef, useState } from "react";
 import LogoCard from "../Components/LogoCard";
 import WebsiteCard from "../Components/WebsiteCard";
 import SectionTag from "../Components/SectionTag";
 
-
 import Rogos from "../assets/Rogos";
-import leader2 from "../assets/Images/leader2.png"
-import growthMindset from "../assets/Images/growth-mindset.png"
-import artStudies from "../assets/Images/art-studies.png"
-import tooth from "../assets/Images/icons8-tooth-100.png"
+import leader2 from "../assets/Images/leader2.png";
+import growthMindset from "../assets/Images/growth-mindset.png";
+import artStudies from "../assets/Images/art-studies.png";
+import tooth from "../assets/Images/icons8-tooth-100.png";
 import thePoint from "../assets/Images/thepoint.png";
-import RCEF from "../assets/Images/ADMISSIONS.png"
+import RCEF from "../assets/Images/ADMISSIONS.png";
 
 export default function Programming() {
   const logoObject = new Rogos();
@@ -68,11 +67,7 @@ export default function Programming() {
 
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const leftIcons = [
-    leader2,
-    growthMindset,
-    artStudies,
-  ];
+  const leftIcons = [leader2, growthMindset, artStudies];
 
   const textGlowAndShadow =
     "[text-shadow:0_0_15px_rgba(255,255,255,0.3),_2px_2px_4px_rgba(0,0,0,0.5)]";
@@ -776,7 +771,7 @@ export default function Programming() {
                   <WebsiteCard
                     title="Impacted wisdom tooth classification"
                     description="An A.I. research paper"
-                    imageUrl= {tooth}
+                    imageUrl={tooth}
                     badgeText="Research"
                     glowColor="rgba(83, 103, 255, 0.69)"
                     linkUrl="/impact"
@@ -787,7 +782,7 @@ export default function Programming() {
                   <WebsiteCard
                     title="The Point Website"
                     description="A full stack appointment booking system for a therapy clinic"
-                    imageUrl= {thePoint}
+                    imageUrl={thePoint}
                     badgeText="Website/System"
                     glowColor="rgba(246, 83, 255, 0.69)"
                     linkUrl="/thepoint"
@@ -826,6 +821,40 @@ export default function Programming() {
                     isLocked={true}
                     lockText="We signed an NDA :("
                   />
+                </div>
+              </div>
+
+              <div className="my-25">
+                <div className="flex justify-center w-full">
+                  <SectionTag
+                    textColor="#FFFFFF"
+                    outlineColor="#FFFFFF"
+                    className="mb-6 sm:mb-8"
+                    text="What I'm currently working on"
+                  ></SectionTag>
+                </div>
+                <div className="flex flex-col   md:flex-row items-center justify-between gap-8 w-full max-w-6xl mx-auto p-6">
+                  <div className="w-full md:w-1/2 flex flex-col gap-4">
+                    <h2 className="font-Satoshi text-3xl md:text-5xl font-bold text-white">
+                      The Cisco Certified Network Associate (CCNA)
+                    </h2>
+                    <p className="text-lg text-neutral-300 leading-relaxed font-Satoshi">
+                      I believe learning about network fundamentals is essential
+                      to becoming a well-rounded developer and I.T. dude. This
+                      certfication will open up a lot of opportunities whether
+                      it be Cybersecurity, Cloud, DevOps, etc. The discipline I
+                      get from learning along the process will be vital in how I
+                      approach my work in the future.
+                    </p>
+                  </div>
+
+                  <div className="w-full md:w-1/2 rounded-2xl overflow-hidden">
+                    <img
+                      src="https://www.cimtcollege.com/cimt/images/cisco-ccna-2.jpg"
+                      alt="Description"
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
                 </div>
               </div>
             </div>

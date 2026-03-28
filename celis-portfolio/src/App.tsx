@@ -1,4 +1,5 @@
 import './App.css';
+// import { Analytics } from "@vercel/analytics/next";
 import React from 'react';
 import{Routes, Route} from 'react-router';
 import Home from './pages/Home';
