@@ -830,7 +830,7 @@ export default function Programming() {
                     textColor="#FFFFFF"
                     outlineColor="#FFFFFF"
                     className="mb-6 sm:mb-8"
-                    text="What I'm currently working on"
+                    text="My Certifications"
                   ></SectionTag>
                 </div>
                 <div className="flex flex-col   md:flex-row items-center justify-between gap-8 w-full max-w-6xl mx-auto p-6">
@@ -840,17 +840,19 @@ export default function Programming() {
                     </h2>
                     <p className="text-lg text-neutral-300 leading-relaxed font-Satoshi">
                       I believe learning about network fundamentals is essential
-                      to becoming a well-rounded developer and I.T. dude. This
-                      certfication will open up a lot of opportunities whether
-                      it be Cybersecurity, Cloud, DevOps, etc. The discipline I
-                      get from learning along the process will be vital in how I
-                      approach my work in the future.
+                      to becoming a well-rounded developer and I.T. dude.
+                      Studying for this certification has taught me discipline
+                      and persistence. It taught me the foundation of what it
+                      takes to become a Network Engineer. The practice of
+                      creating VLANs, Etherchannels and Layer 3 routing, has
+                      solidified my fundamental experience to be a well rounded
+                      network Engineer.
                     </p>
                   </div>
 
                   <div className="w-full md:w-1/2 rounded-2xl overflow-hidden">
                     <img
-                      src="https://www.cimtcollege.com/cimt/images/cisco-ccna-2.jpg"
+                      src="src/assets/Images/CCNA.png"
                       alt="Description"
                       className="w-full h-auto object-cover"
                     />
